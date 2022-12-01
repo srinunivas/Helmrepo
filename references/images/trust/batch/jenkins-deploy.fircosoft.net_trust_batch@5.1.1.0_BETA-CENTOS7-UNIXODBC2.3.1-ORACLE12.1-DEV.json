@@ -1,0 +1,55 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/trust/batch:5.1.1.0_BETA-CENTOS7-UNIXODBC2.3.1-ORACLE12.1-DEV",
+    "product": "trust",
+    "asset": "batch",
+    "version": "5.1.1.0_BETA",
+    "digest": "sha256:cb1c1b11ea183872a2fd107314f89e9ae6f29573022fb572c56db9a8a29cf2f6",
+    "buildDate": "2020-09-29T13:40:30.654Z",
+    "labels": {
+      "env.oracle-client.version": "12.1.0.2.0",
+      "env.os": "CentOS 7",
+      "env.unixodbc.version": "2.3.1",
+      "maintainer": "S\u00e9bastien Demanou <sebastien.demanou@accuity.com>",
+      "net.fircosoft.image.artefact": "http://dev-nexus.fircosoft.net/content/sites/site-builds/TrustBatch/5.1.1.0_BETA.p8-develop-master/TrustBatch-5.1.1.0_BETA.p8-Linux-i686.tar.gz",
+      "net.fircosoft.image.category": "Product",
+      "net.fircosoft.image.maintainer": "S\u00e9bastien Demanou <sebastien.demanou@accuity.com>",
+      "net.fircosoft.image.name": "Trust Batch",
+      "net.fircosoft.image.version": "5.1.1.0_BETA",
+      "org.label-schema.build-date": "20190801",
+      "org.label-schema.license": "GPLv2",
+      "org.label-schema.name": "CentOS Base Image",
+      "org.label-schema.schema-version": "1.0",
+      "org.label-schema.vendor": "CentOS",
+      "env": {
+        "oracle-client": {
+          "version": "12.1.0.2.0"
+        },
+        "os": "CentOS 7",
+        "unixodbc": {
+          "version": "2.3.1"
+        }
+      },
+      "net": {
+        "fircosoft": {
+          "image": {
+            "artefact": "http://dev-nexus.fircosoft.net/content/sites/site-builds/TrustBatch/5.1.1.0_BETA.p8-develop-master/TrustBatch-5.1.1.0_BETA.p8-Linux-i686.tar.gz",
+            "category": "Product",
+            "maintainer": "S\u00e9bastien Demanou <sebastien.demanou@accuity.com>",
+            "name": "Trust Batch",
+            "version": "5.1.1.0_BETA"
+          }
+        }
+      },
+      "org": {
+        "label-schema": {
+          "build-date": "20190801",
+          "license": "GPLv2",
+          "name": "CentOS Base Image",
+          "schema-version": "1.0",
+          "vendor": "CentOS"
+        }
+      }
+    }
+  }
+}

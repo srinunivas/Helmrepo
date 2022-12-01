@@ -1,0 +1,15 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/third-parties/mqadvanced-server-dev:9.1.2.0",
+    "product": "thirdparties",
+    "asset": "mqadvanced-server-dev",
+    "version": "9.1.2.0",
+    "digest": "sha256:b4773e79df9dc4075089f96186a29993dfbce658cd4749c5fb691cdc3c27c9f9",
+    "buildDate": "2020-06-19T12:57:37.342Z",
+    "labels": {
+      "IBM_PRODUCT_ID": "98102d16795c4263ad9ca075190a2d4d",
+      "IBM_PRODUCT_NAME": "IBM MQ Advanced for Developers (Non-Warranted)",
+      "IBM_PRODUCT_VERSION": "9.1.2.0"
+    }
+  }
+}

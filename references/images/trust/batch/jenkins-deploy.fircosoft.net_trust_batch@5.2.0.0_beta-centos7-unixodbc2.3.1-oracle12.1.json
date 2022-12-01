@@ -1,0 +1,41 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/trust/batch:5.2.0.0_beta-centos7-unixodbc2.3.1-oracle12.1",
+    "product": "Trust",
+    "asset": "Batch",
+    "version": "5.2.0.0_BETA",
+    "digest": "sha256:e59f6389d950e20279848f3de91610f9cc6375bb32e5034dd09447e9a8eb0821",
+    "buildDate": "2021-10-21T15:41:24.532Z",
+    "labels": {
+      "com.accuity.asset": "Batch",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "Linux",
+      "com.accuity.environment": "release",
+      "com.accuity.os": "centos7",
+      "com.accuity.product": "Trust",
+      "com.accuity.product.vcs-branch": "release/5.2.0.0",
+      "com.accuity.product.vcs-ref": "a3f38a012b1b8e709f3ab8241892d1afe8ce0071",
+      "com.accuity.product.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/trustv4/batch.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.third-parties.odbc-client": "oracle12.1",
+      "com.accuity.third-parties.odbc-manager": "unixodbc2.3.1",
+      "com.accuity.version": "5.2.0.0_BETA",
+      "env.oracle-client.version": "12.1.0.2.0",
+      "env.os": "CentOS 7",
+      "env.unixodbc.version": "2.3.1",
+      "maintainer": "Sébastien Demanou <sebastien.demanou@accuity.com>",
+      "org.label-schema.build-date": "2021-06-02T06:47:19Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "Trust Batch Linux 5.2.0.0_BETA",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "d698dbfb5afd87a7bbf40240c5959dc4cdc35162",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "5.2.0.0_BETA",
+      "org.opencontainers.image.created": "2020-11-13 00:00:00+00:00",
+      "org.opencontainers.image.licenses": "GPL-2.0-only",
+      "org.opencontainers.image.title": "CentOS Base Image",
+      "org.opencontainers.image.vendor": "CentOS"
+    }
+  }
+}

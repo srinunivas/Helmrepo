@@ -1,0 +1,43 @@
+#!groovy
+
+properties([
+    pipelineTriggers([pollSCM('')]),
+    disableConcurrentBuilds(),
+    buildDiscarder(logRotator(daysToKeepStr: '12'))
+])
+/**
+ * This job checks all shadoker packages and images are valid.
+ */
+ansiColor('xterm') {
+node('docker-build') {
+    checkout scm
+    //step([$class: 'StashNotifier', buildStatus: 'INPROGRESS'])
+    stage('Prepare shadoker-cli tool') {
+        sh """pushd shadoker
+pip3 install --user \$USER -r requirements.txt
+popd"""
+    }
+    try {
+        stage('Check packages') {
+            sh './shadoker-cli.sh package ls -w'
+        }
+        stage('Check images') {
+            sh './shadoker-cli.sh docker ls -w'
+        }
+        stage('Inspect latest packages') {
+            sh './shadoker-cli.sh package inspect -s HEAD~1'
+        }
+        stage('Check E2E-121 compliance on latest images') {
+            sh './shadoker-cli.sh docker check -s HEAD~1'
+        }
+        currentBuild.result = 'SUCCESS'
+        step([$class: 'StashNotifier', buildStatus: 'SUCCESSFUL', disableInprogressNotification: true])
+    } catch (e) {
+        currentBuild.result = 'FAILED'
+        step([$class: 'StashNotifier', buildStatus: 'FAILED', disableInprogressNotification: true])
+        throw e
+    } finally {
+        echo 'done'
+    }
+}
+}

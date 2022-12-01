@@ -1,0 +1,36 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity6/advr-db-sqlserver:master-mssql2019-dev",
+    "product": "continuity6",
+    "asset": "advr-db-sqlserver",
+    "version": "master",
+    "digest": "sha256:317c0348b2f4d80975a89c3ea1aeaa0cb186dd921716dfb5f87cc52dc2d746b1",
+    "buildDate": "2022-03-09T16:33:57.194Z",
+    "labels": {
+      "asset": "advr-db-sqlserver",
+      "com.microsoft.product": "Microsoft SQL Server",
+      "com.microsoft.version": "15.0.2000.5",
+      "maintainer": "RBI-DL Fircosoft Continuity Paris <FircosoftContinuityParis@reedbusiness.com>",
+      "product": "continuity6",
+      "push": "4",
+      "vendor": "Microsoft",
+      "version": "6.8.0.0",
+      "com.accuity.asset": "advr-db-sqlserver",
+      "com.accuity.product": "continuity6",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "database",
+      "com.accuity.product.vcs-ref": "4125f4ed337089b81c7c42f336e865481f1a5fb4",
+      "com.accuity.product.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/cty/continuity.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "master",
+      "org.label-schema.build-date": "2021-06-03T09:08:18Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "continuity6 advr-db-sqlserver database master",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "2dd7fd1208a742742651bcea06daaa87b0728479",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "master"
+    }
+  }
+}

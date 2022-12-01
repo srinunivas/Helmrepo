@@ -1,0 +1,26 @@
+{
+  "artifact": {
+    "name": "continuity6-requester-6.0.0.2_mtsm-linux",
+    "buildDate": "2020/12/10 11:12:17",
+    "commit": "0969a4db141e6ca318ef5c83e58c99a5994e9740",
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/Continuity-CEBACK/6.0.0.2_MTSM.p3-release-6.3.x/ContinuityRequester-6.0.0.2_MTSM.p3-linux.tar.gz",
+    "hash": "sha1:26c33c369cb74589666da1e0df8b2aeed6a754aa",
+    "product": "continuity6",
+    "asset": "Requester",
+    "env": "release",
+    "prefix": "release-6.3.x",
+    "version": "6.0.0.2_MTSM",
+    "push": "3",
+    "mutable": false,
+    "comment": "continuity6 Requester version 6.0.0.2_MTSM push 3 (release)",
+    "manifest": {
+      "entry": "docker/continuity6/CEBACK/Requester/RequesterManifest.mjs"
+    },
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/cty/continuity.git",
+      "branch": "release/6.3.x",
+      "commit": "0969a4db141e6ca318ef5c83e58c99a5994e9740"
+    }
+  }
+}

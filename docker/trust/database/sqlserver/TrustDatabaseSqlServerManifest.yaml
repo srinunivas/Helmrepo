@@ -1,0 +1,34 @@
+---
+project: TrustSql
+product: Trust
+asset: Database
+component: SQL Server
+buildDescFilenameFilterRegex: buildDesc-Linux-i686\.json$
+environments:
+  release: &release-environment
+    generateLatestTags: true
+    branchPrefixFilter: release
+    artifacts: &artifacts
+      - name: Database
+        filter: Single_Creation_SqlServer\.sql$
+    image: &image
+      type: db
+      db:
+        name: sqlserver
+        versions:
+          - 2019
+      labels:
+        maintainer: Sébastien Demanou <sebastien.demanou@accuity.com>
+        com.accuity.team: Trust
+        com.accuity.project-name: TRUST
+        com.accuity.project-url: http://jira.fircosoft.net/projects/TRUST
+    dependencies: &dependencies
+      - type: image
+        name: sqlserver
+        reference: jenkins-deploy.fircosoft.net/third-parties/sqlserver:2019-GA-ubuntu-16.04
+  develop:
+    <<: *release-environment
+    generateLatestTags: false
+    branchPrefixFilter: develop
+    onlyVersions:
+      - .+-SNAPSHOT

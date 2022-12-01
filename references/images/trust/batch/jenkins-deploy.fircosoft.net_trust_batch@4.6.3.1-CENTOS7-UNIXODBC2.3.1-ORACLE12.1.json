@@ -1,0 +1,26 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/trust/batch:4.6.3.1-CENTOS7-UNIXODBC2.3.1-ORACLE12.1",
+    "product": "trust",
+    "asset": "batch",
+    "version": "",
+    "digest": "sha256:66f77cbe03cab270f56a0747852c64e8a45f1baba52802c846e377810245a0ae",
+    "buildDate": "2020-04-24T16:06:35.847Z",
+    "labels": {
+      "env.oracle-client.version": "12.1.0.2.0",
+      "env.os": "CentOS 7",
+      "env.unixodbc.version": "2.3.1",
+      "maintainer": "S\u00e9bastien Demanou <sebastien.demanou@accuity.com>",
+      "net.fircosoft.image.artefact": "http://dev-nexus.fircosoft.net/content/sites/site-builds/TrustBatch/4.6.3.1.p1-release-4.6.3.x/TrustBatch-4.6.3.1.p1-Linux-i686.tar.gz",
+      "net.fircosoft.image.category": "Product",
+      "net.fircosoft.image.maintainer": "S\u00e9bastien Demanou <sebastien.demanou@accuity.com>",
+      "net.fircosoft.image.name": "Trust Batch",
+      "net.fircosoft.image.version": "4.6.3.1",
+      "org.label-schema.build-date": "20190801",
+      "org.label-schema.license": "GPLv2",
+      "org.label-schema.name": "CentOS Base Image",
+      "org.label-schema.schema-version": "1.0",
+      "org.label-schema.vendor": "CentOS"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "artifact": {
+    "name": "trust-verify-4.7.2.2-war",
+    "buildDate": "2021/10/25 11:27:47",
+    "commit": "74ac74d1c80bc25d6669759a88d6a6b5fe3173dc",
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/TrustFront/4.7.2.2.p0-release-master/FFFVerifyWeb-4.7.2.2.p0.war",
+    "hash": "sha1:83d735560a27230df792dc9755198b6f877a1a62",
+    "product": "Trust",
+    "asset": "Verify",
+    "env": "release",
+    "prefix": "release-master",
+    "version": "4.7.2.2",
+    "push": "0",
+    "mutable": false,
+    "comment": "Trust Verify version 4.7.2.2 push 0 (release)",
+    "manifest": {
+      "entry": "docker/trust/verify/weblogic/TrustVerify4WeblogicManifest.mjs",
+      "commit": "8327633d2a85b855194ded260c3c618a5e6b0f61"
+    },
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/trustv4/front.git",
+      "branch": "release/master",
+      "commit": "74ac74d1c80bc25d6669759a88d6a6b5fe3173dc"
+    }
+  }
+}

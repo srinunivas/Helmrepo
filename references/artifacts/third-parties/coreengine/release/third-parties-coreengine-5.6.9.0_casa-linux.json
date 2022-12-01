@@ -1,0 +1,26 @@
+{
+  "artifact": {
+    "name": "third-parties-coreengine-5.6.9.0_casa-linux",
+    "buildDate": "2020/10/09 10:15:01",
+    "commit": "c7f6f0dc86c8984d053c14f510bc19f8287e5b81",
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/CoreEngine/5.6.9.0_CASA.p5-release-5.6.9.0_CASA/CoreEngine32-5.6.9.0_CASA.p5-linux.tar.gz",
+    "hash": "sha1:708d5fed166d3e0c3dfc52a35c289e7265aa40a3",
+    "product": "Third Parties",
+    "asset": "CoreEngine",
+    "env": "release",
+    "prefix": "release-5.6.9.0_CASA",
+    "version": "5.6.9.0_CASA",
+    "push": "5",
+    "mutable": false,
+    "comment": "Third Parties CoreEngine version 5.6.9.0_CASA push 5 (release)",
+    "manifest": {
+      "entry": "docker/third-parties/coreengine/CoreEngineManifest.yaml"
+    },
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/cty/coreengine.git",
+      "branch": "release/5.6.9.0_CASA",
+      "commit": "c7f6f0dc86c8984d053c14f510bc19f8287e5b81"
+    }
+  }
+}

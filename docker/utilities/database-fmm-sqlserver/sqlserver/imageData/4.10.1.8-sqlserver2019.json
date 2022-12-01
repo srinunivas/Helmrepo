@@ -1,0 +1,37 @@
+{
+  "imageData": {
+    "name": "jenkins-deploy.fircosoft.net/utilities/database-fmm:4.10.1.8-sqlserver2019",
+    "product": "utilities",
+    "asset": "database-fmm",
+    "component": "SQL Server",
+    "version": "4.10.1.8",
+    "env": "release",
+    "manifest": {
+      "entry": "docker/utilities/database-fmm-sqlserver/sqlserver/UtilitiesDatabaseSqlServerManifest.yaml",
+      "commit": "964103dfea2e9abe4fe9369a1d315db7731ea22e"
+    },
+    "autoBuild": true,
+    "autoPush": true,
+    "tags": [
+      "4.10.1.latest-sqlserver2019",
+      "4.10.latest-sqlserver2019"
+    ],
+    "dependencies": [
+      {
+        "type": "image",
+        "name": "sqlserver",
+        "reference": "jenkins-deploy.fircosoft.net/third-parties/sqlserver:2019-GA-ubuntu-16.04"
+      },
+      {
+        "type": "artifact",
+        "name": "database",
+        "reference": "utilities-database-fmm-4.10.1.8-sql-server",
+        "expand": true
+      }
+    ],
+    "schemas": "e2e-121",
+    "thirdParties": {
+      "database": "sqlserver2019"
+    }
+  }
+}

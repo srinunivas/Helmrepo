@@ -1,0 +1,33 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/utilities/fum-database:4.12.0.0-oracle19cee",
+    "product": "utilities",
+    "asset": "fum-database",
+    "version": "4.12.0.0",
+    "digest": "sha256:d8bde0862b3dd18e7b517636a4e54ee6d30d62a0edd22fd919a6c055713c9a46",
+    "buildDate": "2021-08-11T07:20:37.093Z",
+    "labels": {
+      "com.accuity.asset": "fum-database",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "oracle",
+      "com.accuity.environment": "release",
+      "com.accuity.product": "utilities",
+      "com.accuity.product.vcs-ref": "36cd8d162843ba7e995ce3509af6874f9609f785",
+      "com.accuity.product.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/utilities/firco-utilities-manager.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.third-parties.database": "oracle19cee",
+      "com.accuity.version": "4.12.0.0",
+      "net.fircosoft.image.category": "fum-database",
+      "net.fircosoft.image.maintainer": "David Thomé <David.Thome@accuity.com>",
+      "net.fircosoft.image.name": "FUM Database",
+      "net.fircosoft.image.version": "4.12.0.0",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "utilities fum-database oracle 4.12.0.0",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "763c564c7f17f80aa8f0b48bb111823e8433c12f",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "4.12.0.0"
+    }
+  }
+}

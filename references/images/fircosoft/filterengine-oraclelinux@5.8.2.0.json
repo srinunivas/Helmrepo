@@ -1,0 +1,14 @@
+{
+  "image": {
+    "buildDate": "2020-07-21T08:18:20.310Z",
+    "commit": "0b7744cb9d6",
+    "name": "jenkins-deploy.fircosoft.net/continuity5/filterengine-oraclelinux:5.8.2.0",
+    "product": "filter",
+    "asset": "filter_engine",
+    "version": "",
+    "digest": "sha256:124423ea42e8090f384e1b8543452a6604c8ea45ea6fd57ff08b20c2a706ff48",
+    "labels": {
+      "maintainer": "Emmanuel MESSEGUE <emmanuel.messegue@fircosoft.com>"
+    }
+  }
+}

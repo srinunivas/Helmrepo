@@ -1,0 +1,39 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/trust/fsk:4.7.2.0-snapshot-centos7-unixodbc2.3.1-oracle12.1-webspheremq9.2.0.1-develop",
+    "product": "Trust",
+    "asset": "FSK",
+    "version": "4.7.2.0-SNAPSHOT",
+    "digest": "sha256:9f304c1c221f0d49deb242cfe51df2a7bc10f54e5a652e072108818557c5525c",
+    "buildDate": "2021-06-02T08:32:42.823Z",
+    "labels": {
+      "com.accuity.asset": "FSK",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "Linux",
+      "com.accuity.environment": "develop",
+      "com.accuity.os": "centos7",
+      "com.accuity.product": "Trust",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.third-parties.mq-client": "webspheremq9.2.0.1",
+      "com.accuity.third-parties.odbc-client": "oracle12.1",
+      "com.accuity.third-parties.odbc-manager": "unixodbc2.3.1",
+      "com.accuity.version": "4.7.2.0-SNAPSHOT",
+      "env.oracle-client.version": "12.1.0.2.0",
+      "env.os": "CentOS 7",
+      "env.unixodbc.version": "2.3.1",
+      "maintainer": "Sébastien Demanou <sebastien.demanou@accuity.com>",
+      "org.label-schema.build-date": "2021-06-02T07:05:40Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "Trust FSK Linux 4.7.2.0-SNAPSHOT",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "773df86cfe44fa0c6f359bcaeba9bb01b5b22cad",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "4.7.2.0-SNAPSHOT",
+      "org.opencontainers.image.created": "2020-11-13 00:00:00+00:00",
+      "org.opencontainers.image.licenses": "GPL-2.0-only",
+      "org.opencontainers.image.title": "CentOS Base Image",
+      "org.opencontainers.image.vendor": "CentOS"
+    }
+  }
+}

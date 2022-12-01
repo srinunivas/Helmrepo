@@ -1,0 +1,7 @@
+{
+    "image": {
+        "buildDate": "2020-02-21T11:06:54.372185811Z",
+        "name": "jenkins-deploy.fircosoft.net/third-parties/oracle:19.3.0-ee",
+        "digest": "sha256:92f1de798e4e5fad6da0b93260a73a15a01f069f2d08e8f5676d46575771acb0"
+    }
+}

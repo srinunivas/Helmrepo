@@ -1,0 +1,35 @@
+---
+project: TrustSql
+product: Trust
+asset: Database
+component: Oracle
+dockerfile: Oracle19Template.dockerfile
+buildDescFilenameFilterRegex: buildDesc-Linux-i686\.json$
+environments:
+  release: &release-environment
+    generateLatestTags: true
+    branchPrefixFilter: release
+    artifacts: &artifacts
+      - name: Database
+        filter: Single_Creation_Oracle.sql$
+    image: &image
+      type: db
+      db:
+        name: oracle
+        versions:
+          - '19cee'
+      labels:
+        maintainer: Sébastien Demanou <sebastien.demanou@accuity.com>
+        com.accuity.team: Trust
+        com.accuity.project-name: TRUST
+        com.accuity.project-url: http://jira.fircosoft.net/projects/TRUST
+    dependencies:
+      - type: image
+        name: oracle
+        reference: jenkins-deploy.fircosoft.net/third-parties/oracle:19.3.0-ee
+  develop:
+    <<: *release-environment
+    generateLatestTags: false
+    branchPrefixFilter: develop
+    onlyVersions:
+      - .+-SNAPSHOT

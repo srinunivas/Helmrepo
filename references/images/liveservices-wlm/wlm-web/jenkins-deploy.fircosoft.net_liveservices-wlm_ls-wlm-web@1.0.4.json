@@ -1,0 +1,35 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/liveservices-wlm/ls-wlm-web:1.0.4",
+    "product": "liveservices-wlm",
+    "asset": "wlm-web",
+    "version": "1.0.4",
+    "digest": "sha256:f2345b816e6d3052a3c0fbff3d5f30b1161a342292b8344035871edc1d0bd20d",
+    "buildDate": "2022-03-14T10:01:57.151Z",
+    "labels": {
+      "asset": "wlm-web",
+      "com.accuity.asset": "wlm-web",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "web",
+      "com.accuity.product": "liveservices-wlm",
+      "com.accuity.product.vcs-url": "ssh://git@bitbucket.fpa.rbxd.ds/wlm/wlm-web.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "1.0.4",
+      "maintainer": "Glauber ARAUJO <glauber.araujo@accuity.com>",
+      "org.label-schema.build-date": "20201113",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "liveservices-wlm wlm-web web 1.0.4",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "7ee6b10044f71d6da16fe440c6dc5f0c878c32bc",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "1.0.4",
+      "org.opencontainers.image.created": "2020-11-13 00:00:00+00:00",
+      "org.opencontainers.image.licenses": "GPL-2.0-only",
+      "org.opencontainers.image.title": "CentOS Base Image",
+      "org.opencontainers.image.vendor": "CentOS",
+      "product": "liveservices-wlm",
+      "version": "1.0.4"
+    }
+  }
+}

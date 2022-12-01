@@ -1,0 +1,35 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/liveservices-platform/ls-pfm-discovery:1.6.0.0",
+    "product": "liveservices-platform",
+    "asset": "discovery",
+    "version": "1.6.0.0",
+    "digest": "sha256:fb7584e8c00f935c9f2cb00e646a6983b0dc93e370f325beef9d3d30a08cd134",
+    "buildDate": "2021-11-03T07:56:04.607Z",
+    "labels": {
+      "asset": "discovery",
+      "com.accuity.asset": "discovery",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "discovery",
+      "com.accuity.product": "liveservices-platform",
+      "com.accuity.product.vcs-url": "ssh://git@bitbucket.fpa.rbxd.ds/ls/discovery.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "1.6.0.0",
+      "maintainer": "Glauber ARAUJO <glauber.araujo@accuity.com>",
+      "org.label-schema.build-date": "20201113",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "liveservices-platform discovery discovery 1.6.0.0",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "9b83fbff882118315dd6a2c65c588d78a44d2736",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "1.6.0.0",
+      "org.opencontainers.image.created": "2020-11-13 00:00:00+00:00",
+      "org.opencontainers.image.licenses": "GPL-2.0-only",
+      "org.opencontainers.image.title": "CentOS Base Image",
+      "org.opencontainers.image.vendor": "CentOS",
+      "product": "liveservices-platform",
+      "version": "1.6.0.0"
+    }
+  }
+}

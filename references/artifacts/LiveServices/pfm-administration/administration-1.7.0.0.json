@@ -1,0 +1,19 @@
+{
+  "artifact": {
+    "name": "administration-1.7.0.0",
+    "buildDate": "2022-03-12T11:57:14.3NZ",
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@bitbucket.fpa.rbxd.ds/ls/admin.git",
+      "commit": "",
+      "date": ""
+    },
+    "uri": "http://nexus.fpa.rbxd.ds/content/repositories/snapshots/com/accuity/sirius/services/administration/1.7.0.0.59/administration-1.7.0.0.59.zip",
+    "product": "liveservices-platform",
+    "asset": "admin",
+    "component": "admin",
+    "version": "1.7.0.0",
+    "push": "59",
+    "latest": true
+  }
+}

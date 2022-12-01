@@ -1,0 +1,34 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/utilities/javabatch-fmm:4.12.2.4",
+    "product": "utilities",
+    "asset": "javabatchfmm",
+    "version": "4.12.2.4",
+    "digest": "sha256:6d7d9a5ff9bc8d44034f0fd7ec4e52d618be4d5f713dde2116247ea2fd2230d3",
+    "buildDate": "2021-10-05T15:44:40.600Z",
+    "labels": {
+      "com.accuity.asset": "javabatchfmm",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "javabatchfmm",
+      "com.accuity.environment": "develop",
+      "com.accuity.os": "alpinejre-11.0.11_9",
+      "com.accuity.product": "utilities",
+      "com.accuity.product.vcs-ref": "65b598083617bec707f794c97dae41a4652bb4a2",
+      "com.accuity.product.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net/utilities/fmm.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.third-parties.java": "openjdk11",
+      "com.accuity.version": "4.12.2.4",
+      "net.fircosoft.image.category": "Java",
+      "net.fircosoft.image.maintainer": "David Thomé <david.thome@accuity.com>",
+      "net.fircosoft.image.name": "FMM JavaBatch",
+      "net.fircosoft.image.version": "41224",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "utilities javabatchfmm javabatchfmm 4.12.2.4",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "0a6a295f460d664a9da9263523770f0fb32afd14",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "4.12.2.4"
+    }
+  }
+}

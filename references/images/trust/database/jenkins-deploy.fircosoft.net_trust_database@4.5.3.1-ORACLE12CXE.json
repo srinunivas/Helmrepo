@@ -1,0 +1,27 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/trust/database:4.5.3.1-ORACLE12CXE",
+    "product": "trust",
+    "asset": "database",
+    "version": "4.5.0.0",
+    "digest": "sha256:888760bca843a5eac10d97e090bdc66b444012dfcdd7faa07aded6bf93a738be",
+    "buildDate": "2020-08-25T15:21:12.573Z",
+    "labels": {
+      "net.fircosoft.image.artefact": "http://dev-nexus.fircosoft.net/content/sites/site-builds/TrustSql/4.5.3.1.p0-develop-master/FFF_4531_Single_Creation_Oracle.sql",
+      "net.fircosoft.image.category": "database",
+      "net.fircosoft.image.maintainer": "S\u00e9bastien Demanou <sebastien.demanou@accuity.com>",
+      "net.fircosoft.image.name": "Trust Database",
+      "net.fircosoft.image.version": "4.5.0.0",
+      "net": {
+        "fircosoft": {
+          "image": {
+            "category": "database",
+            "maintainer": "S\u00e9bastien Demanou <sebastien.demanou@accuity.com>",
+            "name": "Trust Database",
+            "version": "4.5.0.0"
+          }
+        }
+      }
+    }
+  }
+}

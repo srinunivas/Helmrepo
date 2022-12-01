@@ -1,0 +1,25 @@
+{
+    "imageData" : {
+        "name" : "jenkins-deploy.fircosoft.net/continuity6/cty-cmapi-soap-client-mock:master-alpine-openjdk11",
+        "product": "continuity6",
+        "asset": "cty-cmapi",
+        "version": "master",
+        "component": "cmapi-soap-client-mock",
+        "dependencies" : [
+            {
+                "type"      : "image",
+                "name"      : "base",
+                "reference" : "jenkins-deploy.fircosoft.net/third-parties/alpine-with-certs"
+            },
+            {
+                "type"      : "artifact",
+                "name"      : "mock",
+                "reference" : "Continuity-CMAPI-master-CMAPISoapClientMock",
+                "download"  : true
+            }
+        ],
+        "autoBuild": true,
+        "autoPush": true,
+        "tags": ["latest", "master-p{{deps.mock.push}}-alpine-openjdk11", "{{deps.mock.version}}-p{{deps.mock.push}}-alpine-openjdk11"]
+    }
+}

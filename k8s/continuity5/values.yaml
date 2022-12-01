@@ -1,0 +1,341 @@
+#############################################################################################
+# Pod Annotations
+#############################################################################################
+
+podAnnotations:
+  dapr.io/app-port: "5400"
+  dapr.io/config: tracing
+
+
+#############################################################################################
+# XML mapper rules
+#############################################################################################
+
+# defines possible XML mapper rules
+xmlMapperRules:
+  standard:
+    ruleName: xml.mapping.rule
+    content: |
+      @type                                      */Document[xmlns]
+      @fuf         Yes          *                */Document/3
+      @fuf         Yes          *                */Document/3[*]
+      .type                     *camt.006*       */Document[]                CAMT006
+      .inout                    *                */Document[]                O
+      .amount                   *                */Document/*/Amt*
+      .currency                 *                *[Ccy]
+
+
+#############################################################################################
+# frontend instances
+#############################################################################################
+
+frontends:
+  webAppServer:
+    firco-verifyweb:
+      image: default                        # Reference to the image set to used (must correspond to a sub key of the global 'images:' key)
+      replicaCount: 1                       # Amount of pod replica
+      database: sqlserver                   # Reference to the database set to used (must correspond to a sub key of the global 'databases:' key)
+  deploymentConsole:
+    firco-deployment-console:
+      image: default                        # Reference to the image set to used (must correspond to a sub key of the global 'images:' key)
+      database: sqlserver                   # Reference to the database set to used (must correspond to a sub key of the global 'databases:' key)
+      ttlSecondsAfterFinished: 100          # FEATURE STATE: Kubernetes v1.21 [beta] - Defines the TTL Controller for Finished Resources
+
+
+
+#############################################################################################
+# Multiplexer instances
+#############################################################################################
+
+multiplexers:
+  firco-mux-swift-in:                     # Custom key that identifies an instance of MUX
+    image: default                        # Reference to the image set to used (must correspond to a sub key of the global 'images:' key)
+    replicaCount: 1                       # Amount of pod replica
+    verbose: 3                            # CoreEngine -verbose option
+    logInterface: ["q"]                   # CoreEngine -log-interface option
+    logProfile: false                     # [Optional: default false] Enables CoreEngine -log-profile all
+    unit: SWF                             # Maps to CoreEngine UNIT parameter
+    applicationCode: SWIFTAPP             # Maps to CoreEngine APPLICATION parameter
+    systemId:                             # How to construct a unique SystemID for the TXN
+      prefix: "SWF"                       # Maps to CoreEngine SYSTEMID_PREFIX parameter
+      forceNew: false                     # Maps to CoreEngine FORCE_NEW_SYSTEMID? parameter
+      pattern: "@(date)-@(counter)"       # Maps to CoreEngine SYSTEMID_PATTERN parameter
+    dapr:                                 # Reference to dapr.yml pubsub/state-store definitions
+      pubsub: kafka-pubsub
+    input:                                # Defines how to consume message
+      format: "filteras(swift,SWIFT)"     # Maps to CoreEngine FORMAT_IN parameter
+      topic: "swift-in"                   # Consumed topic
+      rawPayload: true                    # [Optional: default false] Whether or not the consumed message is wrapped into a Cloud Event
+    outputs:                              # Define here as many outputs as desired
+      filter:                             # Custom name of an output
+        format: "native"                  # TXN output format
+        topic: "filter"                   # Output topic
+  firco-mux-fuf-in:
+    image: default
+    replicaCount: 1
+    verbose: 3
+    logInterface: ["q"]
+    unit: FUF
+    applicationCode: FUFAPP
+    dapr:
+      pubsub: kafka-pubsub
+    input:
+      format: "filteras(fuf,FIRCO)"
+      topic: "fuf-in"
+      rawPayload: true
+    outputs:
+      filter:
+        format: "native"
+        topic: "filter"
+  firco-mux-xml-in:
+    image: default
+    replicaCount: 1
+    verbose: 3
+    logInterface: ["q"]
+    unit: XML
+    applicationCode: XMLAPP
+    dapr:
+      pubsub: kafka-pubsub
+    input:
+      xmlMapperRule: standard           # [Optional] When given, provision an XML mapper rule file in the config map in reference of global 'xmlMapperRules:' key
+      format: "xml(n,/fircosoft/config/xml.mapping.rule)"
+      topic: "xml-in"
+      rawPayload: true
+    outputs:
+      filter:
+        format: "native"
+        topic: "filter"
+  firco-mux-output:
+    image: default
+    replicaCount: 1
+    verbose: 3
+    logInterface: ["q"]
+    dapr:
+      pubsub: kafka-pubsub
+    input:
+      format: "native"
+      topic: "status"
+    outputs:
+      filter:
+        format: "wmqout"
+        topic: "output"
+        rawPayload: true                # [Optional: default false] Whether or not the produced message is wrapped into a Cloud Event
+
+
+#############################################################################################
+# Requester & Filter instances
+#############################################################################################
+
+requesters:
+  firco-req:
+    image: default
+    replicaCount: 1
+    verbose: 3
+    logInterface: ["q"]
+    persistentVolumeClaimName: firco-refdata-pvclaim  # Defines the name of the persitent volume claim to use for reference data
+    refDataFolder: version1                           # Defines the folder name where reference data are found (FOFDB.kz, fkof.res, fml.rul)
+    dapr:
+      pubsub: kafka-pubsub
+    input:
+      format: "native"
+      topic: "filter"
+    outputs:
+      stripping:
+        format: "native"
+        topic: "stripping"
+    filterConfiguration: |                           # Additional filter configuration provisioned in the config map
+      SEVERITY=MEDIUM2
+      MATCHING=WORD
+      FMLCASESENSITIVE=YES
+      LISTDAYLIMIT=9999
+
+
+#############################################################################################
+# Stripping instances
+#############################################################################################
+
+strippingCheckers:
+  firco-stripping:
+    image: default
+    replicaCount: 1
+    verbose: 3
+    logInterface: ["q"]
+    database: sqlserver               # Reference to the database set to used (must correspond to a sub key of the global 'databases:' key)
+    applyStrippingRule: true       # Maps to CoreEngine APPLY_STRIPPING_RULE? parameter
+    dapr:
+      pubsub: kafka-pubsub
+    input:
+      format: "native"
+      topic: "stripping"
+    outputs:
+      pairing:
+        format: "native"
+        topic: "pairing"
+
+
+
+#############################################################################################
+# Pairing Manager instances
+#############################################################################################
+
+pairingManagers:
+  firco-pair:
+    image: default
+    database: sqlserver
+    applyPairingRule: true          # Maps to CoreEngine APPLY_PAIRING_RULE? parameter
+    verbose: 3
+    logInterface: ["q"]
+    replicaCount:
+      checker: 1                    # Amount of pod replica for the checker job
+      assembler: 1                  # Amount of pod replica for the assemble job
+      releaser: 1                   # Amount of pod replica for the releaser job
+    dapr:                           # Reference to dapr.yml pubsub/state-store definitions
+      pubsub: kafka-pubsub
+      statestore: redis-statestore
+    assembleTopic: "assemble"       # Defines the pairing manager topic for CoreEngine QASSEMBLE
+    input:
+      format: "native"
+      topic: "pairing"
+    outputs:
+      inject:
+        format: "native"
+        topic: "inject"
+        isGroup: true              # For this output route, use the 'group' keyword in the routing rule
+        predicate: |               # [Optional] Define the routing rule body for this output
+          condition exists(msg in msgs such msg.status in (ST_HITS, ST_NONBLOCKING))
+          set msgs.comment = "GO TO FRONT-END"
+          set (a in msgs.actions such a.status = "NO HIT" | a.status = "NONCHECKING").comment = "GO TO FRONT-END"
+      ack:
+        format: "native"
+        topic: "status"
+
+
+#############################################################################################
+# Injector instances
+#############################################################################################
+
+injectors:
+  firco-inj:
+    image: default
+    replicaCount: 1
+    verbose: 3
+    logProfile: true
+    logInterface: ["q"]
+    database: sqlserver
+    applyInjectingRule: true       # Maps to CoreEngine APPLY_INJECTING_RULE? parameter
+    hitDetails: true               # Maps to CoreEngine HIT_DETAILS? parameter
+    dapr:
+      pubsub: kafka-pubsub
+    input:
+      format: "native"
+      topic: "inject"
+    outputs:
+      reapplied:
+        format: "native"
+        topic: "status"
+        predicate: |
+          condition msg.reapplied?
+      wfaFinal:
+        format: "native"
+        topic: "status"
+        predicate: |
+          condition msg.wfa_final_decision?
+
+#############################################################################################
+# Extractor instances
+#############################################################################################
+
+extractors:
+  firco-ext:
+    image: default
+    replicaCount: 1
+    verbose: 3
+    logInterface: ["q"]
+    database: sqlserver
+    dapr:
+      pubsub: kafka-pubsub
+    outputs:
+      recheck:
+        format: "native"
+        topic: "filter"
+        predicate: |
+          condition msg.status = ST_RECHECK
+          # reset the intervention string, hits and actions
+          set msg.intervention =  ""
+          set msg.actions = ()
+          set msg.hits = ()
+      decision:
+        format: "native"
+        topic: "status"
+        predicate: |
+          condition msg.status != ST_RECHECK
+
+
+#############################################################################################
+# Rule recorders jobs
+#############################################################################################
+
+# The below modules are started as Kubernetes Jobs
+
+ruleRecorders:
+  injecting:
+    firco-injecting-recorder:                          # Custom key that identifies an instance of injecting rule recorder
+      image: default
+      ttlSecondsAfterFinished: 100                     # FEATURE STATE: Kubernetes v1.21 [beta] - Defines the TTL Controller for Finished Resources
+      verbose: 3
+      logInterface: ["q"]
+      database: sqlserver
+      content: |                                       # Content of the rule
+        rule SAMPLE_ESCALATE inject msg as PENDING {
+          condition msg.sender = "TEST0001CH0"
+        }
+  stripping:
+    firco-stripping-recorder:                          # Custom key that identifies an instance of stripping rule recorder
+      image: default
+      ttlSecondsAfterFinished: 100
+      verbose: 3
+      logInterface: ["q"]
+      database: sqlserver
+      content: |
+        rule SWIFT_CANDIDATE stripping on msg {
+          condition msg.format = "SWF"
+          checksum msg["SWF_4_20"]
+          rate 20
+          expire 2d2h0m
+          status candidate
+        }
+  pairing:
+    firco-pairing-recorder:                            # Custom key that identifies an instance of pairing rule recorder
+      image: default
+      ttlSecondsAfterFinished: 100
+      verbose: 3
+      logInterface: ["q"]
+      database: sqlserver
+      content: |
+        applicable root {
+          on Monday    from 0000 to 2359
+          on Tuesday   from 0000 to 2359
+          on Wednesday from 0000 to 2359
+          on Thursday  from 0000 to 2359
+          on Friday    from 0000 to 2359
+          on Saturday  from 0000 to 2359
+          on Sunday    from 0000 to 2359
+        }
+
+        candidate mt103 {
+          condition mt103.format = "SWF"
+          condition mt103.type = "103"
+          applicable root
+          group_size 2
+          expire 5m
+          checksum mt103["SWF_4_20"]
+        }
+
+        candidate mt202 {
+          condition mt202.format = "SWF"
+          condition mt202.type = "202"
+          applicable root
+          group_size 2
+          expire 5m
+          checksum mt202["SWF_4_21"]
+        }

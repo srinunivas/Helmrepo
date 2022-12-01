@@ -1,0 +1,253 @@
+version: '3'
+services:
+  discovery.liveservice.fpa.rbxd.ds:
+    image: jenkins-deploy.fircosoft.net/liveservices-platform/ls-pfm-discovery:1.7.0.0
+    ports:
+     - "8051:8051"
+    healthcheck:
+      test: ["CMD","curl","-f", "https://localhost:8051/system/health","--insecure"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    volumes:
+     - ./config/ls-pfm-discovery/application.properties:/LiveServices/Discovery/conf/application.properties
+     - ./config/ls-pfm-discovery/env_customer.sh:/LiveServices/Discovery/conf/env_customer.sh
+     - ./certs/liveservice-inhouse-universal.keystore.p12:/LiveServices/Certs/liveservice-inhouse-universal.keystore.p12
+     - ./certs/cacerts.jks:/LiveServices/Certs/cacerts.jks
+     - ../dockerdb/discovery/work/db:/LiveServices/Discovery/work/db
+  audit.liveservice.fpa.rbxd.ds:
+    image: jenkins-deploy.fircosoft.net/liveservices-platform/ls-pfm-audit:1.7.0.0
+    ports:
+      - "8054:8054"
+    healthcheck:
+      test: ["CMD","curl","-f", "https://localhost:8054/system/health","--insecure"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    depends_on:
+      - discovery.liveservice.fpa.rbxd.ds
+    volumes:
+      - ./config/ls-pfm-audit/application.properties:/LiveServices/Audit/conf/application.properties
+      - ./config/ls-pfm-audit/env_customer.sh:/LiveServices/Audit/conf/env_customer.sh
+      - ./certs/liveservice-inhouse-universal.keystore.p12:/LiveServices/Certs/liveservice-inhouse-universal.keystore.p12
+      - ./certs/cacerts.jks:/LiveServices/Certs/cacerts.jks
+      - ../dockerdb/audit/work/db:/LiveServices/Audit/work/db
+  messaging.liveservice.fpa.rbxd.ds:
+    image: jenkins-deploy.fircosoft.net/liveservices-platform/ls-pfm-messaging:1.7.0.0
+    ports:
+      - "8052:8052"
+    healthcheck:
+      test: ["CMD","curl","-f", "https://localhost:8052/system/health","--insecure"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    depends_on:
+      - audit.liveservice.fpa.rbxd.ds
+    volumes:
+      - ./config/ls-pfm-messaging/application.properties:/LiveServices/Messaging/conf/application.properties
+      - ./config/ls-pfm-messaging/env_customer.sh:/LiveServices/Messaging/conf/env_customer.sh
+      - ./certs/liveservice-inhouse-universal.keystore.p12:/LiveServices/Certs/liveservice-inhouse-universal.keystore.p12
+      - ./certs/cacerts.jks:/LiveServices/Certs/cacerts.jks
+      - ../dockerdb/messaging/work/db:/LiveServices/Messaging/work/db
+  reporting.liveservice.fpa.rbxd.ds:
+    image: jenkins-deploy.fircosoft.net/liveservices-platform/ls-pfm-reporting:1.7.0.0
+    ports:
+      - "8055:8055"
+    healthcheck:
+      test: ["CMD","curl","-f", "https://localhost:8055/system/health","--insecure"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    depends_on:
+      - messaging.liveservice.fpa.rbxd.ds
+    volumes:
+      - ./config/ls-pfm-reporting/application.properties:/LiveServices/Reporting/conf/application.properties
+      - ./config/ls-pfm-reporting/env_customer.sh:/LiveServices/Reporting/conf/env_customer.sh
+      - ./certs/liveservice-inhouse-universal.keystore.p12:/LiveServices/Certs/liveservice-inhouse-universal.keystore.p12
+      - ./certs/cacerts.jks:/LiveServices/Certs/cacerts.jks
+      - ../dockerdb/reporting/work/db:/Reporting/Messaging/work/db
+  administration.liveservice.fpa.rbxd.ds:
+    image: jenkins-deploy.fircosoft.net/liveservices-platform/ls-pfm-administration:1.7.0.0
+    ports:
+      - "8053:8053"
+    healthcheck:
+      test: ["CMD","curl","-f", "https://localhost:8053/system/health","--insecure"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    depends_on:
+      - reporting.liveservice.fpa.rbxd.ds
+    volumes:
+      - ./config/ls-pfm-administration/application.properties:/LiveServices/Administration/conf/application.properties
+      - ./config/ls-pfm-administration/env_customer.sh:/LiveServices/Administration/conf/env_customer.sh
+      - ./config/ls-pfm-administration/users.json:/LiveServices/Administration/conf/users.json
+      - ./certs/liveservice-inhouse-universal.keystore.p12:/LiveServices/Certs/liveservice-inhouse-universal.keystore.p12
+      - ./certs/cacerts.jks:/LiveServices/Certs/cacerts.jks
+      - ../dockerdb/administration/work/db:/LiveServices/Administration/work/db
+  admin_web.liveservice.fpa.rbxd.ds:
+    image: jenkins-deploy.fircosoft.net/liveservices-platform/ls-pfm-administration-web:latest
+    ports:
+      - "8050:8050"
+    healthcheck:
+      test: ["CMD","curl","-f", "https://localhost:8050/system/health","--insecure"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    depends_on:
+      - administration.liveservice.fpa.rbxd.ds
+    volumes:
+      - ./config/ls-pfm-administration-web/application.properties:/LiveServices/AdministrationWeb/conf/application.properties
+      - ./config/ls-pfm-administration-web/env_customer.sh:/LiveServices/AdministrationWeb/conf/env_customer.sh
+      - ./certs/liveservice-inhouse-universal.keystore.p12:/LiveServices/Certs/liveservice-inhouse-universal.keystore.p12
+      - ./certs/cacerts.jks:/LiveServices/Certs/cacerts.jks
+  referential.liveservice.fpa.rbxd.ds:
+    image: jenkins-deploy.fircosoft.net/liveservices-platform/ls-pfm-referential:1.7.0.0
+    ports:
+      - "8056:8056"
+    healthcheck:
+      test: ["CMD","curl","-f", "https://localhost:8056/system/health","--insecure"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    depends_on:
+      - messaging.liveservice.fpa.rbxd.ds
+    volumes:
+      - ./config/ls-pfm-referential/application.properties:/LiveServices/Referential/conf/application.properties
+      - ./config/ls-pfm-referential/env_customer.sh:/LiveServices/Referential/conf/env_customer.sh
+      - ./certs/liveservice-inhouse-universal.keystore.p12:/LiveServices/Certs/liveservice-inhouse-universal.keystore.p12
+      - ./certs/cacerts.jks:/LiveServices/Certs/cacerts.jks
+      - ../dockerdb/referential/work/db:/LiveServices/Referential/work/db
+  soc_web.liveservice.fpa.rbxd.ds:
+    image: jenkins-deploy.fircosoft.net/liveservices-soc/ls-soc-web:1.7.0.0
+    ports:
+      - "8060:8060"
+    healthcheck:
+      test: ["CMD","curl","-f", "https://localhost:8060/system/health","--insecure"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    depends_on:
+      - administration.liveservice.fpa.rbxd.ds
+    volumes:
+      - ./config/ls-soc-web/application.properties:/LiveServices/LS-Web/conf/application.properties
+      - ./config/ls-soc-web/env_customer.sh:/LiveServices/LS-Web/conf/env_customer.sh
+      - ./certs/liveservice-inhouse-universal.keystore.p12:/LiveServices/Certs/liveservice-inhouse-universal.keystore.p12
+      - ./certs/cacerts.jks:/LiveServices/Certs/cacerts.jks
+  soc-api.liveservice.fpa.rbxd.ds:
+    image: jenkins-deploy.fircosoft.net/liveservices-soc/ls-soc-api:1.7.0.0
+    ports:
+      - "8061:8061"
+    healthcheck:
+      test: ["CMD","curl","-f", "https://localhost:8061/system/health","--insecure"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    depends_on:
+      - administration.liveservice.fpa.rbxd.ds
+    volumes:
+      - ./config/ls-soc-api/application.properties:/LiveServices/LS-API/conf/application.properties
+      - ./config/ls-soc-api/env_customer.sh:/LiveServices/LS-API/conf/env_customer.sh
+      - ./certs/liveservice-inhouse-universal.keystore.p12:/LiveServices/Certs/liveservice-inhouse-universal.keystore.p12
+      - ./certs/cacerts.jks:/LiveServices/Certs/cacerts.jks
+      - ../dockerdb/soc_api/work/db:/LiveServices/LS-API/work/db
+  soc-global-agent.liveservice.fpa.rbxd.ds:
+    image: jenkins-deploy.fircosoft.net/liveservices-soc/ls-soc-global-agent:1.7.0.0
+    ports:
+      - "8062:8062"
+    healthcheck:
+      test: ["CMD","curl","-f", "https://localhost:8062/system/health","--insecure"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    depends_on:
+      - soc-api.liveservice.fpa.rbxd.ds
+    volumes:
+      - ./config/ls-soc-global-agent/application.properties:/LiveServices/GlobalAgent/conf/application.properties
+      - ./config/ls-soc-global-agent/env_customer.sh:/LiveServices/GlobalAgent/conf/env_customer.sh
+      - ./certs/liveservice-inhouse-universal.keystore.p12:/LiveServices/Certs/liveservice-inhouse-universal.keystore.p12
+      - ./certs/cacerts.jks:/LiveServices/Certs/cacerts.jks
+      - ../dockerdb/soc_global_agent/work/db:/LiveServices/GlobalAgent/work/db
+  soc-local-agent.liveservice.fpa.rbxd.ds:
+    image: jenkins-deploy.fircosoft.net/liveservices-soc/ls-soc-local-agent:1.7.0.0
+    ports:
+      - "8064:8064"
+    healthcheck:
+      test: ["CMD","curl","-f", "https://localhost:8064/system/health","--insecure"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    depends_on:
+      - soc-global-agent.liveservice.fpa.rbxd.ds
+    volumes:
+      - ./config/ls-soc-local-agent/application.properties:/LiveServices/LocalAgent/conf/application.properties
+      - ./config/ls-soc-local-agent/env_customer.sh:/LiveServices/LocalAgent/conf/env_customer.sh
+      - ./certs/liveservice-inhouse-universal.keystore.p12:/LiveServices/Certs/liveservice-inhouse-universal.keystore.p12
+      - ./certs/cacerts.jks:/LiveServices/Certs/cacerts.jks
+      - ../dockerdb/soc_local_agent/work/db:/LiveServices/LocalAgent/work/db
+  soc-filter-controller.liveservice.fpa.rbxd.ds:
+    image: jenkins-deploy.fircosoft.net/liveservices-soc/ls-soc-filter-controller:1.7.0.0-filter-5.7.5.2
+    ports:
+      - "8065:8065"
+    healthcheck:
+      test: ["CMD","curl","-f", "http://localhost:8065/system/health","--insecure"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    depends_on:
+      - soc-local-agent.liveservice.fpa.rbxd.ds
+    volumes:
+      - ./config/ls-soc-filter-controller/application.properties:/LiveServices/FilterController/conf/application.properties
+      - ./config/ls-soc-filter-controller/env_customer.sh:/LiveServices/FilterController/conf/env_customer.sh
+      - ./certs/liveservice-inhouse-universal.keystore.p12:/LiveServices/Certs/liveservice-inhouse-universal.keystore.p12
+      - ./certs/cacerts.jks:/LiveServices/Certs/cacerts.jks
+      - ./filter/deployment/fof.cf:/LiveServices/FilterEngine/fof.cf
+      - ./filter/deployment/fof.cfg:/LiveServices/FilterEngine/fof.cfg
+      - ./filter/deployment/scoring-matrix-one.scd:/LiveServices/FilterEngine/scoring-matrix-one.scd
+      - ../dockerdb/soc_filter-controller/work/db:/LiveServices/FilterController/work/db
+  soc-ia-controller.liveservice.fpa.rbxd.ds:
+    image: jenkins-deploy.fircosoft.net/liveservices-soc/ls-soc-ia-controller:1.7.0.0-filter-5.7.5.2
+    ports:
+      - "8066:8066"
+    healthcheck:
+      test: ["CMD","curl","-f", "http://localhost:8066/system/health","--insecure"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    depends_on:
+      - soc-local-agent.liveservice.fpa.rbxd.ds
+    volumes:
+      - ./config/ls-soc-ia-controller/application.properties:/LiveServices/IAController/conf/application.properties
+      - ./config/ls-soc-ia-controller/env_customer.sh:/LiveServices/IAController/conf/env_customer.sh
+      - ./certs/liveservice-inhouse-universal.keystore.p12:/LiveServices/Certs/liveservice-inhouse-universal.keystore.p12
+      - ./filter/ia/fof-IA.cf:/LiveServices/FilterEngine/fof.cf
+      - ./certs/cacerts.jks:/LiveServices/Certs/cacerts.jks
+      - ../dockerdb/soc_ia-controller/work/db:/LiveServices/IAController/work/db
+  wlm-web.liveservice.fpa.rbxd.ds:
+    image: jenkins-deploy.fircosoft.net/liveservices-wlm/ls-wlm-web:latest
+    ports:
+      - "8070:8070"
+    healthcheck:
+      test: ["CMD","curl","-f", "https://localhost:8070/system/health","--insecure"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    volumes:
+      - ./config/ls-wlm-web/application.properties:/LiveServices/WLM-Web/conf/application.properties
+      - ./config/ls-wlm-web/env_customer.sh:/LiveServices/WLM-Web/conf/env_customer.sh
+      - ./certs/liveservice-inhouse-universal.keystore.p12:/LiveServices/Certs/liveservice-inhouse-universal.keystore.p12
+      - ./certs/cacerts.jks:/LiveServices/Certs/cacerts.jks
+  wlm-api.liveservice.fpa.rbxd.ds:
+    image: jenkins-deploy.fircosoft.net/liveservices-wlm/ls-wlm-api:latest
+    ports:
+      - "8071:8071"
+    healthcheck:
+      test: ["CMD","curl","-f", "https://localhost:8071/system/health","--insecure"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    volumes:
+      - ./config/ls-wlm-api/application.properties:/LiveServices/WLM-Api/conf/application.properties
+      - ./config/ls-wlm-api/env_customer.sh:/LiveServices/WLM-Api/conf/env_customer.sh
+      - ./certs/liveservice-inhouse-universal.keystore.p12:/LiveServices/Certs/liveservice-inhouse-universal.keystore.p12
+      - ./certs/cacerts.jks:/LiveServices/Certs/cacerts.jks
+      - ../dockerdb/soc_api/work/db:/LiveServices/WLM-API/work/db

@@ -1,0 +1,26 @@
+{
+    "artifact" : {
+        "name" : "utilities-database-fmm-4.12.4.0",
+        "buildDate" : "Fri Apr 2 09:14:58 2021",
+        "repository": {
+            "type": "git",
+            "url": "ssh://git@dev-bitbucket.fircosoft.net/utilities/fmm.git",
+            "commit": "75ddda47659d10be34f55761e5459563fead4104",
+            "date": "Fri Apr 2 09:14:58 2021",
+            "branch": "release/master"
+        },
+        "hash" : "sha1:e9171c87ee8466a75c9a106a6bc828c018c1db66",
+        "uri" : "http://bordeaux.fircosoft.net:8080/FMM/4-12-4/sql/SQL_FMM-4.12.4.0.p0.zip",
+        "sqlScripts": {
+            "creationScript": "SQL Server/FMM_Creation_Sql_Server.sql",
+            "batchScript": "SQL Server/batch-schema-sqlserver.sql"
+        },
+        "product": "utilities",
+        "asset": "database-fmm",
+        "component": "SQL scripts",
+        "version" : "4.12.4.0",
+        "env": "release",
+        "push" : "0",
+        "mutable": false
+    }
+}

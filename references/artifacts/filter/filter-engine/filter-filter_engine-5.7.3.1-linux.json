@@ -1,0 +1,22 @@
+{
+    "artifact" : {
+        "name" : "filter-filter_engine-5.7.3.1-linux",
+        "buildDate" : "29/04/2020",
+        "repository": {
+            "type": "git",
+            "url": "ssh://git@bitbucket.fpa.rbxd.ds/fil/filter.git",
+            "branch": "5.7.3",
+            "commit": "03cdc4e83",
+            "date": "20171201T145800Z"
+        },
+        "uri" : "http://dev-nexus.fircosoft.net/content/repositories/site-builds/filter/5.7.3.1p41/FOF_5.7.3.1_LINUX_64.tar.gz",
+        "product" : "filter",
+        "asset" : "filter_engine",
+        "version" : "5.7.3.1",
+        "push" : "p41",
+        "latest": true,
+        "mutable": true,
+        "platform": "linux",
+        "description": "Filter version 5.7.3.1"
+    }
+}

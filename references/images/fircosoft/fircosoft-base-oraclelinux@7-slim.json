@@ -1,0 +1,15 @@
+{
+  "image": {
+    "buildDate": "2020-03-02T21:08:06.686Z",
+    "commit": "0b7744cb9d6",
+    "name": "jenkins-deploy.fircosoft.net/shared/fircosoft-base-oraclelinux:7-slim",
+    "comment": "blablabla",
+    "product": "",
+    "asset": "",
+    "version": "",
+    "digest": "sha256:c7348a9c75b83f808c6303e161fab58ed0aa539dca2e4ed4ef420d3545f9cea5",
+    "labels": {
+      "maintainer": "Emmanuel MESSEGUE <emmanuel.messegue@fircosoft.com>"
+    }
+  }
+}

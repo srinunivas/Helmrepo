@@ -1,0 +1,31 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity6/orchestrator:master-UBUNTU18-OPENJDK8",
+    "product": "continuity6",
+    "asset": "oren",
+    "version": "1.0.0.0",
+    "digest": "sha256:ffd149e0ce627ed888f9628f922fc695994ad1c813ff8ede1eda3ec3c4f90221",
+    "buildDate": "2022-03-04T12:01:00.588Z",
+    "labels": {
+      "asset": "oren",
+      "com.accuity.asset": "oren",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "oren",
+      "com.accuity.product": "continuity6",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "1.0.0.0",
+      "maintainer": "RBI-DL Fircosoft Continuity Paris <FircosoftContinuityParis@reedbusiness.com>",
+      "org.label-schema.build-date": "2021-04-02T09:26:20Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "continuity6 oren oren 1.0.0.0",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "410ef92d4769481f11c3f33f5cbd2a3a46916018",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "1.0.0.0",
+      "product": "continuity6",
+      "push": "oren-0_ERF_ALPHA.0",
+      "version": "1.0.0.0"
+    }
+  }
+}

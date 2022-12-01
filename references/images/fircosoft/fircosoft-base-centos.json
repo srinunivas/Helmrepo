@@ -1,0 +1,23 @@
+{
+  "image": {
+    "buildDate": "2020-03-02T21:03:49.817Z",
+    "commit": "0b7744cb9d6",
+    "name": "jenkins-deploy.fircosoft.net/shared/fircosoft-base-centos:latest",
+    "product": "",
+    "asset": "",
+    "version": "",
+    "digest": "sha256:d51bbaed9503afd168e3ae128ea3ea8fa4462e8a3e16b5ee20567da2e4cc3efe",
+    "labels": {
+      "maintainer": "Emmanuel MESSEGUE <emmanuel.messegue@fircosoft.com>",
+      "org.label-schema.build-date": "20200114",
+      "org.label-schema.license": "GPLv2",
+      "org.label-schema.name": "CentOS Base Image",
+      "org.label-schema.schema-version": "1.0",
+      "org.label-schema.vendor": "CentOS",
+      "org.opencontainers.image.created": "2020-01-14 00:00:00-08:00",
+      "org.opencontainers.image.licenses": "GPL-2.0-only",
+      "org.opencontainers.image.title": "CentOS Base Image",
+      "org.opencontainers.image.vendor": "CentOS"
+    }
+  }
+}

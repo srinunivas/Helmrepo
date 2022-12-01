@@ -1,0 +1,17 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/filter/unifilter:6.0.0",
+    "product": "filter",
+    "asset": "unifilter",
+    "version": "6.0.0.0_PayPal",
+    "digest": "sha256:f1ec88ab16399ed058067436e60700f97d270b15a35c0cde19ebfd4838288c8e",
+    "buildDate": "2020-07-21T08:27:37.598Z",
+    "labels": {
+      "asset": "unifilter",
+      "maintainer": "DevOps <devops@accuity.com>",
+      "product": "filter",
+      "push": "p128",
+      "version": ""
+    }
+  }
+}

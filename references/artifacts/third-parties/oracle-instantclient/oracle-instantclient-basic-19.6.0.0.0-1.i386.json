@@ -1,0 +1,16 @@
+{
+    "artifact" : {
+        "name" : "oracle-instantclient-basic-19.6.0.0.0.i386",
+        "buildDate" : "2020-11-10T15:21:10.00Z",
+        "hash" : "sha256:33c36e138d9ac63b145c46ce0f866253759b558c69431a4105ddaabaa9fe7f17",
+        "uri" : "http://dev-nexus.fircosoft.net/content/repositories/site-3rd-parties/instantclient/19/Linux/i386/oracle-instantclient19.6-basic-19.6.0.0.0-1.i386.rpm",
+        "vendor": "oracle",
+        "product": "third-parties",
+        "asset": "oracle-instantclient",
+        "component": "basic",
+        "version" : "19.6",
+        "platform": "linux/i386",
+        "push" : "19.6.0.0.0",
+        "mutable": false
+    }
+}

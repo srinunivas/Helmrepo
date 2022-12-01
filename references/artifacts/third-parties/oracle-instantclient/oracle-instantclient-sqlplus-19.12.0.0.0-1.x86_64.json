@@ -1,0 +1,16 @@
+{
+    "artifact" : {
+        "name" : "oracle-instantclient-sqlplus-19.12.0.0.0-x86_64",
+        "buildDate" : "2020-11-10T15:33:21.00Z",
+        "hash" : "sha256:2742fa59fd66c61c14d55c7028ff3169089fd4f948f13ddad549f6170ae90769",
+        "uri" : "http://dev-nexus.fircosoft.net/content/repositories/site-3rd-parties/instantclient/19/Linux/x86_64/oracle-instantclient19.12-sqlplus-19.12.0.0.0-1.x86_64.rpm",
+        "vendor": "oracle",
+        "product": "third-parties",
+        "asset": "oracle-instantclient",
+        "component": "sqlplus",
+        "version" : "19.12",
+        "platform": "linux/x86_64",
+        "push" : "19.12.0.0.0",
+        "mutable": false
+    }
+}

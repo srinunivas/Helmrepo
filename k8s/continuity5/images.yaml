@@ -1,0 +1,9 @@
+# defines possible sets of images
+images:
+  default:
+    backend: "{{deps.backend.imageShortName}}"
+    filter: "{{deps.filter.imageShortName}}"
+    jdbcProxy: "{{deps.jdbcProxy.imageShortName}}"
+    frontend: "{{deps.frontend.imageShortName}}"
+    deploymentConsole: "{{deps.deploymentConsole.imageShortName}}"
+    pullPolicy: Always

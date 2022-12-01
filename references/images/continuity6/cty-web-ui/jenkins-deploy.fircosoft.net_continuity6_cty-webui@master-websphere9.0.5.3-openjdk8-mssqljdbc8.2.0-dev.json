@@ -1,0 +1,38 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity6/cty-webui:master-websphere9.0.5.3-openjdk8-mssqljdbc8.2.0-dev",
+    "product": "continuity6",
+    "asset": "verify-web",
+    "version": "master",
+    "digest": "sha256:9bd1d0622f6407994a073610693f845b7a7f00c8981f1ab52eeba559fe39ada0",
+    "buildDate": "2022-03-14T11:54:03.692Z",
+    "labels": {
+      "BuildLabel": "f5032008.04",
+      "asset": "verify-web",
+      "description": "This image contains the WebSphere Traditional runtime with Ubuntu Linux as the base OS.",
+      "maintainer": "RBI-DL Fircosoft Continuity Paris <FircosoftContinuityParis@reedbusiness.com>",
+      "name": "IBM WebSphere Traditional",
+      "product": "continuity6",
+      "push": "64",
+      "summary": "Image for WebSphere Traditional",
+      "vendor": "IBM",
+      "version": "6.8.0.0",
+      "com.accuity.asset": "verify-web",
+      "com.accuity.product": "continuity6",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "websphere-sql",
+      "com.accuity.product.vcs-ref": "a40611af3e9ad5343e6c29553ae243c8c542470c",
+      "com.accuity.product.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/cty/continuity.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "master",
+      "org.label-schema.build-date": "2021-06-07T14:51:02Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "continuity6 verify-web websphere-sql master",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "1fa8085038cb1078ea991405d189fddb1f56d69f",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "master"
+    }
+  }
+}

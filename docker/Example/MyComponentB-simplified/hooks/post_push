@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+echo Doing some post_push actions with Bash, and more specifically triggering a downstream job with the built Image
+echo IMAGE="$SHDKR_IMAGE_NAME"
+
+FORCE_BUILD=true
+
+BUILD_PARAMS='{"parameter": [{"name":"IMAGE_NAME", "value":"'"$SHDKR_IMAGE_NAME"'"}, {"name":"IMAGE_DIGEST", "value":"'"$SHDKR_IMAGE_DIGEST"'"}, {"name":"IMAGE_PUSH", "value":"'"$SHDKR_IMAGE_LABEL_PUSH"'"},{"name":"FORCE_BUILD", "value": '$FORCE_BUILD'}]}'
+echo "BUILD_PARAMS=$BUILD_PARAMS"
+
+curl -sf -X POST "${JENKINS_URL}job/Deployment/job/Example/job/Integration/build" \
+  --user dev-example:a933b45a1e0603583187bd02a77ae4dd \
+  --data-urlencode json="$BUILD_PARAMS"
+
+echo RESULT=$?
+exit 0

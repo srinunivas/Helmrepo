@@ -1,0 +1,51 @@
+version: '3'
+services:
+  multiplexer-file:
+    container_name: multiplexer-file
+    image : $multiplexerImage
+    volumes:
+      - /home/vagrant/work/repos/resources/resources:/home/continuity/resources:ro
+      - multiplexer:/home/continuity/backend
+
+  multiplexer:
+    container_name: multiplexer
+    image : $coreengineImage
+    depends_on :
+      - multiplexer-file
+    command : [ "./backend/startMultiplexer.sh" ]
+    volumes:
+      - multiplexer:/home/continuity/backend
+      - ./log:/home/continuity/backend/log
+
+  filterengine:
+    container_name: filterengine
+    image : $filterengineImage
+    volumes:
+      - filterengine:/home/filter/fof
+      - /home/vagrant/work/repos/resources/resources:/home/filter/resources:ro
+      - requester:/home/continuity/backend
+      - ./log:/home/continuity/backend/log
+
+  requester-file:
+    container_name: requester-file
+    image : $requesterImage
+    volumes:
+      - /home/vagrant/work/repos/resources/resources:/home/continuity/resources:ro
+      - requester:/home/continuity/backend
+
+  requester:
+    container_name: requester
+    image : $coreengineImage
+    depends_on :
+      - requester-file
+      - filterengine
+    command : [ "./backend/startRequester.sh" ]
+    volumes:
+      - filterengine:/home/continuity/backend/FilterEngine
+      - requester:/home/continuity/backend
+      - ./log:/home/continuity/backend/log
+
+volumes:
+  filterengine: {}
+  multiplexer: {}
+  requester: {}

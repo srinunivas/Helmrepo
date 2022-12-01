@@ -1,0 +1,35 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/liveservices-soc/ls-soc-filter-controller:1.5.0.1-filter-5.7.5.2",
+    "product": "liveservices-soc",
+    "asset": "soc-filter-controller",
+    "version": "1.0",
+    "digest": "sha256:68f49a943b966e0c6270ea345f2c7499b2c6cf2de582710297db34ee125d56aa",
+    "buildDate": "2021-07-09T13:51:33.693Z",
+    "labels": {
+      "asset": "soc-filter-controller",
+      "com.accuity.asset": "soc-filter-controller",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "filter-controller",
+      "com.accuity.dependencies.filter": "FILTER5.7.5.2",
+      "com.accuity.product": "liveservices-soc",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "1.0",
+      "maintainer": "Glauber ARAUJO <glauber.araujo@accuity.com>",
+      "org.label-schema.build-date": "20200809",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "liveservices-soc soc-filter-controller filter-controller 1.0",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "26210c93185ae89da7e4758e971a7fcf65267bbd",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "1.0",
+      "org.opencontainers.image.created": "2020-08-09 00:00:00+01:00",
+      "org.opencontainers.image.licenses": "GPL-2.0-only",
+      "org.opencontainers.image.title": "CentOS Base Image",
+      "org.opencontainers.image.vendor": "CentOS",
+      "product": "liveservices-soc",
+      "version": "1.5.0.1"
+    }
+  }
+}

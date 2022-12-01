@@ -1,0 +1,14 @@
+{
+    "artifact" : {
+        "name" : "CoreEngine-5.6.5.8-release-5.6.5.x-linux",
+        "buildDate" : "23/02/2020",
+        "commit" : "0b7744cb9d6",
+        "uri" : "http://dev-nexus.fircosoft.net/content/sites/site-builds/CoreEngine/5.6.5.8.p2-release-5.6.5.x/CoreEngine32-5.6.5.8.p2-linux.tar.gz",
+        "product" : "continuity5",
+        "asset" : "coreengine",
+        "prefix" : "release-5.6.5.x",
+        "version" : "5.6.5.8",
+        "push" : "p2",
+        "comment" : "blaffffffdbla"
+        }
+}

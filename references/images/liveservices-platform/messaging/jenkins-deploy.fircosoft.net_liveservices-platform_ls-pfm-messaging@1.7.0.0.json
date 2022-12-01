@@ -1,0 +1,35 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/liveservices-platform/ls-pfm-messaging:1.7.0.0",
+    "product": "liveservices-platform",
+    "asset": "messaging",
+    "version": "1.7.0.0",
+    "digest": "sha256:cbdd332f146355b9c92242f2fc682e457ae805afeabb1d5e45b31524d03115bc",
+    "buildDate": "2022-03-12T11:51:56.917Z",
+    "labels": {
+      "asset": "messaging",
+      "com.accuity.asset": "messaging",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "messaging",
+      "com.accuity.product": "liveservices-platform",
+      "com.accuity.product.vcs-url": "ssh://git@bitbucket.fpa.rbxd.ds/ls/messaging.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "1.7.0.0",
+      "maintainer": "Glauber ARAUJO <glauber.araujo@accuity.com>",
+      "org.label-schema.build-date": "20201113",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "liveservices-platform messaging messaging 1.7.0.0",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "1cb049a270f7170995baad74360b544e28f1a4e8",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "1.7.0.0",
+      "org.opencontainers.image.created": "2020-11-13 00:00:00+00:00",
+      "org.opencontainers.image.licenses": "GPL-2.0-only",
+      "org.opencontainers.image.title": "CentOS Base Image",
+      "org.opencontainers.image.vendor": "CentOS",
+      "product": "liveservices-platform",
+      "version": "1.7.0.0"
+    }
+  }
+}

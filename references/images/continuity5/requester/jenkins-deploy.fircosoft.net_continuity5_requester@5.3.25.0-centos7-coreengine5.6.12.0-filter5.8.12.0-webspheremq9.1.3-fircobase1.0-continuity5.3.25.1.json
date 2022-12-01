@@ -1,0 +1,41 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity5/requester:5.3.25.0-centos7-coreengine5.6.12.0-filter5.8.12.0-webspheremq9.1.3-fircobase1.0-continuity5.3.25.1",
+    "product": "continuity5",
+    "asset": "requester",
+    "version": "5.3.25.0",
+    "digest": "sha256:892bb710591b75c9ddd663f63eceb6318c77b3b4dbbfe6b416546c5a6e7e1dc3",
+    "buildDate": "2022-03-11T09:03:42.175Z",
+    "labels": {
+      "com.accuity.asset": "requester",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "requester",
+      "com.accuity.dependencies.coreengine": "COREENGINE5.6.12.0",
+      "com.accuity.dependencies.filter": "FILTER5.8.12.0",
+      "com.accuity.environment": "release",
+      "com.accuity.os": "centos7",
+      "com.accuity.product": "continuity5",
+      "com.accuity.product.vcs-branch": "release/5.6.x",
+      "com.accuity.product.vcs-ref": "72b309cb5255ded670da57282790c7c4a6000f05",
+      "com.accuity.product.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/cty/coreengine.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.third-parties.coreengine": "coreengine5.6.12.0",
+      "com.accuity.third-parties.filter": "filter5.8.12.0",
+      "com.accuity.third-parties.mq-client": "webspheremq9.1.3",
+      "com.accuity.version": "5.3.25.0",
+      "maintainer": "Emmanuel MESSEGUE <emmanuel.messegue@fircosoft.com>",
+      "org.label-schema.build-date": "2021-02-05T13:23:35Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "continuity5 requester requester 5.3.25.0",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "566ab166e770181fd7bb8a73b2a5c8c2e1a50d76",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "5.3.25.0",
+      "org.opencontainers.image.created": "2020-11-13 00:00:00+00:00",
+      "org.opencontainers.image.licenses": "GPL-2.0-only",
+      "org.opencontainers.image.title": "CentOS Base Image",
+      "org.opencontainers.image.vendor": "CentOS"
+    }
+  }
+}

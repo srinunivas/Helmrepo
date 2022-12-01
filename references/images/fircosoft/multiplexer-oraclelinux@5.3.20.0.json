@@ -1,0 +1,14 @@
+{
+  "image": {
+    "buildDate": "2020-05-26T11:12:14.112Z",
+    "commit": "0b7744cb9d6",
+    "name": "jenkins-deploy.fircosoft.net/continuity5/multiplexer-oraclelinux:5.3.20.0",
+    "product": "continuity5",
+    "asset": "multiplexer",
+    "version": "",
+    "digest": "sha256:aa5c49a7ef4664d35725050ab5c90c9a1d9de0152cc7a0661e133000cd16ad6d",
+    "labels": {
+      "maintainer": "Emmanuel MESSEGUE <emmanuel.messegue@fircosoft.com>"
+    }
+  }
+}

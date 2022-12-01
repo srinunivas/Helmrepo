@@ -1,0 +1,35 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/trust/database:5.2.0.0_alpha-oracle12cxe-develop",
+    "product": "Trust",
+    "asset": "Database",
+    "version": "5.2.0.0_ALPHA",
+    "digest": "sha256:236d43a95139bbad8823b033ab80bda5c1fd9736dea30ce372a8975032a2bd63",
+    "buildDate": "2021-02-17T17:11:32.665Z",
+    "labels": {
+      "com.accuity.asset": "Database",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "Oracle",
+      "com.accuity.environment": "develop",
+      "com.accuity.product": "Trust",
+      "com.accuity.product.vcs-branch": "develop/master",
+      "com.accuity.product.vcs-ref": "aa4c356eb41697c2dc7f96f064aa2a5483323f11",
+      "com.accuity.product.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/trustv4/database.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.third-parties.database": "oracle12cxe",
+      "com.accuity.version": "5.2.0.0_ALPHA",
+      "net.fircosoft.image.category": "Database",
+      "net.fircosoft.image.maintainer": "Sébastien Demanou <sebastien.demanou@accuity.com>",
+      "net.fircosoft.image.name": "Trust Database",
+      "net.fircosoft.image.version": "5.2.0.0_ALPHA",
+      "org.label-schema.build-date": "2021-02-17T15:23:35Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "Trust Database Oracle 5.2.0.0_ALPHA",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "3a1977878b1b1cc324fe76a1b7bd38716703f0e3",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "5.2.0.0_ALPHA"
+    }
+  }
+}

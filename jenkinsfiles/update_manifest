@@ -1,0 +1,113 @@
+#!groovy
+
+def getLastSuccessfulCommit() {
+  def lastSuccessfulHash = '4b825dc642cb6eb9a060e54bf8d69288fbee4904'
+  def lastSuccessfulBuild = currentBuild.rawBuild.getPreviousSuccessfulBuild()
+  if ( lastSuccessfulBuild ) {
+    lastSuccessfulHash = commitHashForBuild( lastSuccessfulBuild )
+  }
+  return lastSuccessfulHash
+}
+
+/**
+ * Gets the commit hash from a Jenkins build object, if any
+ */
+@NonCPS
+def commitHashForBuild( build ) {
+  //println build.getProperties().toString()
+  def scmAction = build?.actions.find { action -> action instanceof jenkins.scm.api.SCMRevisionAction }
+  if (scmAction) {
+    return scmAction?.revision?.hash
+  } else {
+    scmAction = build?.actions.find { action -> action instanceof hudson.plugins.git.util.BuildData  }
+    return scmAction?.lastBuild?.revision?.getSha1String()
+  }
+}
+
+properties([
+    parameters([
+      string(name: 'MANIFESTS', defaultValue: '', description: 'Manifest files, separated by comma. If empty only the changed manifests from last build will be processed.'),
+      string(name: 'BUILD_LABEL', defaultValue: '', description: 'Build label as provided by upstream job. Will be used to in the build label for this very hov.'),
+      string(name: 'ENV', defaultValue: '', description: 'Optional environment variables to be passed to the Docker run command for manifesto.'),
+      string(name: 'COMMIT', defaultValue: '', description: 'Commit all changes back to shadoker')
+    ]),
+    pipelineTriggers([pollSCM('')]),
+    disableConcurrentBuilds()
+])
+
+node('docker-build') {
+    stage('Get shadoker') {
+      step([$class: 'WsCleanup'])
+      /* WARNING: in Jenkins UI set SCM additional behaviour "Check out to specific local branch" = "**" */
+      checkout scm
+    }
+    stage('Prepare shadoker-cli tool') {
+        sh """pushd shadoker
+pip3 install --user \$USER -r requirements.txt
+popd"""
+    }
+    stage('Prepare shadoker-manifest tool') {
+        sh "docker pull jenkins-deploy.fircosoft.net/shadoker/manifesto"
+    }
+    try {
+        stage('Update from manifest') {
+          def updates = false
+          if (!params.MANIFESTS) {
+            if (params.BUILD_LABEL) {
+              currentBuild.description = "Change from <b>${params.BUILD_LABEL}</b><br/>\nIncremental build of modified manifests"
+              currentBuild.displayName = "${params.BUILD_LABEL} #${BUILD_NUMBER}"
+            } else {
+              currentBuild.description = "Incremental build of modified manifests"
+            }
+            echo "No manifest, processing changed manifests since last build"
+            def lastSuccessfulCommit = getLastSuccessfulCommit()
+            def currentCommit = commitHashForBuild( currentBuild.rawBuild )
+            if (lastSuccessfulCommit) {
+                cmd = './shadoker-cli.sh manifest update -s "' + lastSuccessfulCommit + '" -e "' + currentCommit + '" -b ${BUILD_NUMBER}'
+                sh "$cmd"
+                updates = true
+            } else {
+                echo 'ERROR CANNOT DETERMINE LAST COMMIT'
+            }
+          } else {
+            manifests = params.MANIFESTS.replace(",", " ")
+            if (params.BUILD_LABEL) {
+              currentBuild.description = "Change from <b>${params.BUILD_LABEL}</b><br/>\nShadoker manifesto executed with\n<ul>\n <li>" + params.MANIFESTS.replace(",", "</li>\n <li>") + "</li>\n</ul>"
+              currentBuild.displayName = "${params.BUILD_LABEL} #${BUILD_NUMBER}"
+            } else {
+              currentBuild.description = "Shadoker manifesto executed with\n<ul>\n <li>" + params.MANIFESTS.replace(",", "</li>\n <li>") + "</li>\n</ul>"
+            }
+            if (params.ENV) {
+              env = params.ENV
+            } else {
+              env = ""
+            }
+            cmd = "docker run --rm ${env} -v \$(pwd):/shadoker -w /shadoker jenkins-deploy.fircosoft.net/shadoker/manifesto --no-color --generate-metadata ${manifests}"
+            def statusCode = sh script:"$cmd", returnStatus:true
+            if (statusCode == 2) {
+              currentBuild.result = 'UNSTABLE'
+              echo "Issue while updating manifest"
+              return
+            } else if (statusCode != 0) {
+              error "Error while updating manifest"
+            } else {
+              echo "Stage any change to git repository"
+              sh "git add ."
+            }
+            sh "./shadoker-cli.sh change ls"
+            updates = true
+          }
+          if (params.COMMIT) {
+            if (!updates) {
+              sh "./shadoker-cli.sh change ls"
+            }
+            sh "./shadoker-cli.sh docker ls -w"
+            sh "./shadoker-cli.sh change commit"
+          }
+        }
+    } catch (e) {
+        throw e
+    } finally {
+        sh 'echo done'
+    }
+}

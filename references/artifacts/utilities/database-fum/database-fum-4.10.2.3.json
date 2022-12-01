@@ -1,0 +1,24 @@
+{
+    "artifact" : {
+        "name" : "utilities-database-fum-4.10.2.3",
+        "buildDate" : "2020-07-10T10:12:00.000Z",
+        "repository": {
+            "type": "git",
+            "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/utilities/firco-utilities-manager.git",
+            "commit": "cecee86bf65ae89f5abdacfccabc9b59a4ed6753",
+            "date": "2020-07-10T09:28:00.000Z"
+        },
+        "hash" : "sha256:c2cba8ae8f5757f3a596376a23f1003022ab366d0b6d012f9c1bb3dd56038609",
+        "uri" : "http://bordeaux.fircosoft.net:8080/FUM/4-10-2/sql/SQL_FUM-4.10.2.3.p0.zip",
+        "sqlScripts": {
+            "creationScript": "SQL-Server/SQLSERVER_FUM_TABLE_CREATION.sql"
+        },
+        "product": "utilities",
+        "asset": "database-fum",
+        "component": "oracle",
+        "version" : "4.10.2.3",
+        "env": "release",
+        "push" : "0",
+        "mutable": false
+    }
+}

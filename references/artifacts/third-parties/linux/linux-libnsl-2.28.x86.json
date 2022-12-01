@@ -1,0 +1,15 @@
+{
+    "artifact" : {
+        "name" : "linux-libnsl-2.28.x86",
+        "buildDate" : "2020-12-16T09:53:21.00Z",
+        "hash" : "sha256:cf0c2faab6e42508a8f3b3a63b31cfe66b334efd311fbe0e6aad8569ddb6e34d",
+        "uri" : "http://dev-nexus.fircosoft.net/content/repositories/site-3rd-parties/libnsl/2.28/Linux/x86/libnsl-2.28-127.el8.i686.rpm",
+        "product": "third-parties",
+        "asset": "linux-libnsl",
+        "component": "libnsl",
+        "version" : "2.28",
+        "platform": "linux/x86_64",
+        "push" : "2.28-127",
+        "mutable": false
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "artifact" : {
+        "name" : "easysoft-odbc-oracle-3.5.1-linux-x86-glibc",
+        "buildDate" : "2020-06-29T08:30:00.00Z",
+        "hash" : "sha256:883274e62fdd13d6e1a00036ee95691efe0720324bd9ee0e23b0b2d64d252c23",
+        "uri" : "http://dev-nexus.fircosoft.net/content/sites/external/release/Linux/i386/easysoft-odbc-oracle/3.5.1/odbc-oracle-3.5.1-linux-x86-glibc.tar",
+        "product": "third-parties",
+        "asset": "easysoft",
+        "component": "odbc-oracle",
+        "version" : "3.5.1",
+        "platform": "linux/x86",
+        "push" : "1",
+        "mutable": false
+    }
+}

@@ -1,0 +1,27 @@
+{
+  "artifact": {
+    "name": "trust-batch-5.0.0.0_beta_140-linux",
+    "buildDate": "2019/04/01 18:19:17",
+    "commit": "f17c8b9c9390a97b8543381d9bcc88b0c243b3b1",
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/TrustBatch/5.0.0.0_BETA_140.p4-release-master/TrustBatch-5.0.0.0_BETA_140.p4-Linux-i686.tar.gz",
+    "hash": "sha1:4af9190b5765daa00a4b49433ac1204d6a5bc3bc",
+    "product": "Trust",
+    "asset": "Batch",
+    "env": "release",
+    "prefix": "release-master",
+    "version": "5.0.0.0_BETA_140",
+    "push": "4",
+    "mutable": false,
+    "comment": "Trust Batch version 5.0.0.0_BETA_140 push 4 (release)",
+    "manifest": {
+      "entry": "docker/trust/batch/TrustBatchEasySoftManifest.mjs",
+      "commit": "c4b2bbbf315e1a3832039673829d079e1f4e0499"
+    },
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/trustv4/batch.git",
+      "branch": "release/master",
+      "commit": "f17c8b9c9390a97b8543381d9bcc88b0c243b3b1"
+    }
+  }
+}

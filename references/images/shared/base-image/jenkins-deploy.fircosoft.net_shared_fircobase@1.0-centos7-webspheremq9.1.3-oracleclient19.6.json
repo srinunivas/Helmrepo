@@ -1,0 +1,34 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/shared/fircobase:1.0-centos7-webspheremq9.1.3-oracleclient19.6",
+    "buildDate": "2021-09-10T14:10:34.237Z",
+    "product": "shared",
+    "asset": "fircobase",
+    "version": "1.0",
+    "digest": "sha256:b5d4f5e795c63fb76c72c296a3e7854a240790833f973770a1a13e1609c60b17",
+    "labels": {
+      "com.accuity.asset": "fircobase",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "client",
+      "com.accuity.os": "centos7",
+      "com.accuity.product": "shared",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "1.0",
+      "maintainer": "Emmanuel MESSEGUE <emmanuel.messegue@fircosoft.com>",
+      "org.label-schema.build-date": "2021-02-05T13:23:35Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "shared fircobase  1.0",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "75579a41b5dd3875fb10328475688e87cf791039",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "1.0",
+      "org.opencontainers.image.created": "2020-11-13 00:00:00+00:00",
+      "org.opencontainers.image.licenses": "GPL-2.0-only",
+      "org.opencontainers.image.title": "CentOS Base Image",
+      "org.opencontainers.image.vendor": "CentOS",
+      "com.accuity.third-parties.mq-client": "webspheremq9.1.3",
+      "com.accuity.third-parties.odbc-client": "oracleclient19.6"
+    }
+  }
+}

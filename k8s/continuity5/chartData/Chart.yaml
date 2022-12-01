@@ -1,0 +1,12 @@
+apiVersion: v2
+type: application
+
+name: {{name}}
+description: "Helm chart for {{name}}"
+version: "{{version}}"
+appVersion: "{{appVersion}}"
+maintainers:
+  - name: Fircosoft
+annotations:
+  vendor: Fircosoft
+  build: with shadoker

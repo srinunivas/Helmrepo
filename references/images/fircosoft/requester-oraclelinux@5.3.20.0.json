@@ -1,0 +1,14 @@
+{
+  "image": {
+    "buildDate": "2020-05-26T11:05:54.118Z",
+    "commit": "0b7744cb9d6",
+    "name": "jenkins-deploy.fircosoft.net/continuity5/requester-oraclelinux:5.3.20.0",
+    "product": "continuity5",
+    "asset": "requester",
+    "version": "",
+    "digest": "sha256:8ae78d3790c4e606f5b03cec6423ae317da0c86b52ff2ec844dad2ffa71f7534",
+    "labels": {
+      "maintainer": "Emmanuel MESSEGUE <emmanuel.messegue@fircosoft.com>"
+    }
+  }
+}

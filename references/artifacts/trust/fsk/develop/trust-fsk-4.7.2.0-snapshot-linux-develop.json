@@ -1,0 +1,27 @@
+{
+  "artifact": {
+    "name": "trust-fsk-4.7.2.0-snapshot-linux-develop",
+    "buildDate": "2021/05/25 17:14:08",
+    "commit": "4740bb16829da93a8721c033c6c24df1060175ad",
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/TrustFSK/4.7.2.0-SNAPSHOT.p2-develop-4.7.x/TrustFSK-4.7.2.0-SNAPSHOT.p2-Linux-i686.tar.gz",
+    "hash": "sha1:2e8b21fdb13e2bfa01bab955a6b0517944a7306c",
+    "product": "Trust",
+    "asset": "FSK",
+    "env": "develop",
+    "prefix": "develop-4.7.x",
+    "version": "4.7.2.0-SNAPSHOT",
+    "push": "2",
+    "mutable": false,
+    "comment": "Trust FSK version 4.7.2.0-SNAPSHOT push 2 (develop)",
+    "manifest": {
+      "entry": "docker/trust/fsk/TrustFSKMQ9Manifest.mjs",
+      "commit": "b21289135127b2509dbed863040c639843e8701b"
+    },
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/trustv4/firco-screen-keep.git",
+      "branch": "develop/4.7.x",
+      "commit": "4740bb16829da93a8721c033c6c24df1060175ad"
+    }
+  }
+}

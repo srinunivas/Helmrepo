@@ -1,0 +1,26 @@
+{
+  "artifact": {
+    "name": "third-parties-coreengine-5.6.1.2_trace-linux",
+    "buildDate": "2019/07/22 17:58:51",
+    "commit": "66b8376b36f8ab1e9a12ef2ab1e3b834d57d4224",
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/CoreEngine/5.6.1.2_TRACE.p3-release-5.6.1.2_TRACE/CoreEngine32-5.6.1.2_TRACE.p3-linux.tar.gz",
+    "hash": "sha1:f592b5b7e0edcfb9d11109507214aa839fd8aa7d",
+    "product": "Third Parties",
+    "asset": "CoreEngine",
+    "env": "release",
+    "prefix": "release-5.6.1.2_TRACE",
+    "version": "5.6.1.2_TRACE",
+    "push": "3",
+    "mutable": false,
+    "comment": "Third Parties CoreEngine version 5.6.1.2_TRACE push 3 (release)",
+    "manifest": {
+      "entry": "docker/third-parties/coreengine/CoreEngineManifest.yaml"
+    },
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/cty/coreengine.git",
+      "branch": "release/5.6.1.2_TRACE",
+      "commit": "66b8376b36f8ab1e9a12ef2ab1e3b834d57d4224"
+    }
+  }
+}

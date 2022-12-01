@@ -1,0 +1,26 @@
+{
+  "artifact": {
+    "name": "third-parties-coreengine-5.6.5.2-linux",
+    "buildDate": "2018/03/20 15:48:33",
+    "commit": "2ba791f5eb794f4ce4fdac1dd76cb0de147da1b3",
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/CoreEngine/5.6.5.2.p0-release-5.6.5.x/CoreEngine32-5.6.5.2.p0-linux.tar.gz",
+    "hash": "sha1:1f4b607936445175187861fd15c386811f48c6a1",
+    "product": "Third Parties",
+    "asset": "CoreEngine",
+    "env": "release",
+    "prefix": "release-5.6.5.x",
+    "version": "5.6.5.2",
+    "push": "0",
+    "mutable": false,
+    "comment": "Third Parties CoreEngine version 5.6.5.2 push 0 (release)",
+    "manifest": {
+      "entry": "docker/third-parties/coreengine/CoreEngineManifest.yaml"
+    },
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/cty/coreengine.git",
+      "branch": "release/5.6.5.x",
+      "commit": "2ba791f5eb794f4ce4fdac1dd76cb0de147da1b3"
+    }
+  }
+}

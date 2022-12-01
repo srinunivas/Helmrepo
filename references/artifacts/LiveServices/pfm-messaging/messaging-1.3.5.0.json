@@ -1,0 +1,19 @@
+{
+  "artifact": {
+    "name": "messaging-1.3.5.0",
+    "buildDate": "2020-09-30T11:57:40.3NZ",
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@bitbucket.fpa.rbxd.ds/ls/messaging.git",
+      "commit": "",
+      "date": ""
+    },
+    "uri": "http://nexus.fpa.rbxd.ds/content/repositories/snapshots/com/accuity/sirius/services/messaging/1.3.5.0.44/messaging-1.3.5.0.44.zip",
+    "product": "liveservices-platform",
+    "asset": "messaging",
+    "component": "messaging",
+    "version": "1.3.5.0",
+    "push": "44",
+    "latest": true
+  }
+}

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+git clone ssh://git@dev-bitbucket.fircosoft.net/ex/docker-selenium.git --depth 1
+cd docker-selenium
+git apply remove-date-on-tag.patch
+
+export NAME=jenkins-deploy.fircosoft.net/third-parties/selenium
+export VERSION=$SHDKR_IMAGE_VERSION
+
+make standalone_firefox

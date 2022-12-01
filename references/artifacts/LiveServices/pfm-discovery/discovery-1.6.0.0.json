@@ -1,0 +1,19 @@
+{
+  "artifact": {
+    "name": "discovery-1.6.0.0",
+    "buildDate": "2021-11-03T07:54:00.3NZ",
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@bitbucket.fpa.rbxd.ds/ls/discovery.git",
+      "commit": "",
+      "date": ""
+    },
+    "uri": "http://nexus.fpa.rbxd.ds/content/repositories/snapshots/com/accuity/sirius/services/discovery/1.6.0.0.108/discovery-1.6.0.0.108.zip",
+    "product": "liveservices-platform",
+    "asset": "discovery",
+    "component": "discovery",
+    "version": "1.6.0.0",
+    "push": "108",
+    "latest": true
+  }
+}

@@ -1,0 +1,25 @@
+{
+    "artifact" : {
+        "name" : "utilities-database-fmm-4.10.2.5",
+        "buildDate" : " Wed Sep 23 08:54:03 2020 +0000",
+        "repository": {
+            "type": "git",
+            "url": "ssh://git@dev-bitbucket.fircosoft.net/utilities/fmm.git",
+            "commit": "84cc6f8f3bf5263f363cdf92d81b8e0f7c903f5f",
+            "date": " Wed Sep 23 08:54:03 2020 +0000"
+        },
+        "hash" : "sha1:29324849f9c275374867e8ddbce74363e50dd31e",
+        "uri" : "http://bordeaux.fircosoft.net:8080/FMM/4-10-2/sql/SQL_FMM-4.10.2.5.p0.zip",
+        "sqlScripts": {
+            "creationScript": "SQL-Server/SQLSERVER_FMM_TABLE_CREATION.sql",
+            "batchScript": "SQL-Server/SQLSERVER_FMM_TABLE_INSERT.sql"
+        },
+        "product": "utilities",
+        "asset": "database-fmm",
+        "component": "oracle",
+        "version" : "4.10.2.5",
+        "env": "release",
+        "push" : "0",
+        "mutable": false
+    }
+}

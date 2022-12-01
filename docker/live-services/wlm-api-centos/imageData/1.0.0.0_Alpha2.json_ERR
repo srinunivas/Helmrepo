@@ -1,0 +1,22 @@
+{
+    "imageData" : { 
+        "name" : "jenkins-deploy.fircosoft.net/liveservices-wlm/ls-wlm-api:1.0.0.0_alpha2",
+        "dependencies" : [
+            {
+                "type"      : "artifact",
+                "name"      : "ls-wlm-api",
+                "reference" : "wlm-api-1.0.0.1397_alpha2",
+                "expand"    : true
+            },
+            {
+                "type"      : "artifact",
+                "name"      : "ls-wlm-config",
+                "reference" : "wlm-config-1.0.0.1397_alpha2",
+                "expand"    : true
+            }
+        ],
+        "autoBuild": true,
+        "autoPush": true,
+        "tags": ["latest", "1.0.0.{{deps.ls-wlm-api.push}}"]
+    }
+}

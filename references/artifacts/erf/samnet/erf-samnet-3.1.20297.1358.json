@@ -1,0 +1,14 @@
+{
+    "artifact": {
+      "name": "erf-samnet-3.1.20297.1358",
+      "buildDate": "2020-10-23T23:24:00.000Z",
+      "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/erf/samnet/3.1.20297.1358/ERFMQ.3.1.20297.1358-production-linux-x64.zip",
+      "hash": "sha1:9873ad43403744368aba21f0deb6fe7beb101d51",
+      "product": "erf",
+      "asset": "samnet",
+      "component": "erfmq",
+      "version": "3.1.20297.1358",
+      "env": "release",
+      "mutable": false
+    }
+}

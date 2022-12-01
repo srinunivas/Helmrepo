@@ -1,0 +1,7 @@
+{
+    "image": {
+        "buildDate" :  "23/02/2020",
+        "commit" : "5c624e092154",
+        "name" : "oraclelinux:latest"
+    }
+}

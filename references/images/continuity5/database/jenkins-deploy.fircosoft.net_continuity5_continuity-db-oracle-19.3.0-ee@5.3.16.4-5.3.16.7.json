@@ -1,0 +1,13 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity5/continuity-db-oracle-19.3.0-ee:5.3.16.4-5.3.16.7",
+    "product": "continuity5",
+    "asset": "database",
+    "version": "5.3.16.4",
+    "digest": "sha256:0fc86b1f2120eb39a188d7b9f1964b9e033bd12b7499ff2b28cd350c8df70c47",
+    "buildDate": "2020-09-07T16:16:39.145Z",
+    "labels": {
+      "maintainer": "Emmanuel MESSEGUE <emmanuel.messegue@fircosoft.com>"
+    }
+  }
+}

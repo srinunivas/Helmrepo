@@ -1,0 +1,26 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/third-parties/openldap:2.4.57",
+    "product": "third-parties",
+    "asset": "OpenLDAP",
+    "version": "1.5.0",
+    "digest": "sha256:a0361ddfc420ed3e4c909a60e75b8b1bce079c5b471e5f6fb68850b11fbbae7c",
+    "buildDate": "2021-02-19T12:55:05.608Z",
+    "labels": {
+      "com.accuity.asset": "OpenLDAP",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "server",
+      "com.accuity.environment": "release",
+      "com.accuity.product": "third-parties",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "1.5.0",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "third-parties OpenLDAP server 1.5.0",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "dbee3cc8ce76bbfffd42a5dcc05e384ab38867f2",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "1.5.0"
+    }
+  }
+}

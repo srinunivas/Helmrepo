@@ -1,0 +1,17 @@
+{
+    "imageData" : { 
+        "name" : "jenkins-deploy.fircosoft.net/continuity5/requester-oraclelinux:5.3.20.0",
+        "dependencies" : [
+            {
+                "type"      : "image",
+                "name"      : "fircosoftBase",
+                "reference" : "jenkins-deploy.fircosoft.net/shared/fircosoft-base-oraclelinux:7-slim"
+            },
+            {
+                "type"      : "artifact",
+                "name"      : "requester",
+                "reference" : "Continuity-5.3.20.0-release-5.3.x-ContinuityRequester-linux"
+            }
+        ]
+    }
+}

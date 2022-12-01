@@ -1,0 +1,39 @@
+{
+  "imageData": {
+    "name": "jenkins-deploy.fircosoft.net/continuity6/decisionreapplication:6.4.0.0_alpha-centos7-coreengine6.0.0.0",
+    "product": "continuity6",
+    "asset": "decisionreapplication",
+    "component": "Linux",
+    "version": "6.4.0.0_ALPHA",
+    "env": "release",
+    "manifest": {
+      "entry": "docker/continuity6/CEBACK/DecisionReapplication/DecisionReapplicationManifest.mjs"
+    },
+    "autoBuild": true,
+    "autoPush": true,
+    "tags": [
+      "6.4.0.latest-centos7-coreengine6.0.0.0",
+      "6.4.latest-centos7-coreengine6.0.0.0",
+      "6.latest-centos7-coreengine6.0.0.0"
+    ],
+    "dependencies": [
+      {
+        "type": "artifact",
+        "name": "coreengine",
+        "reference": "third-parties-coreengine-6.0.0.0-linux",
+        "expand": false
+      },
+      {
+        "type": "artifact",
+        "name": "decisionreapplication",
+        "reference": "continuity6-decisionreapplication-6.4.0.0_alpha-linux",
+        "expand": false
+      }
+    ],
+    "schemas": "e2e-121",
+    "thirdParties": {
+      "coreengine": "coreengine6.0.0.0"
+    },
+    "os": "centos7"
+  }
+}

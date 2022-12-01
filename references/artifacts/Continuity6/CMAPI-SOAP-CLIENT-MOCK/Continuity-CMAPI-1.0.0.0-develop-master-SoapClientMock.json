@@ -1,0 +1,20 @@
+{
+  "artifact": {
+    "name": "Continuity-CMAPI-master-CMAPISoapClientMock",
+    "buildDate": "20220302T105257Z",
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/cty/continuity.git",
+      "commit": "391319581b7d1b15be6f585602c4a0e6c1065ff8",
+      "date": "20220302T105257Z"
+    },
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/Continuity-CMAPISoapClientMock/1.0.0.0.p64-develop-master/CMAPISoapClientMock-1.0.0.0.p64.zip",
+    "product": "continuity6",
+    "asset": "CMAPISoapClientMock",
+    "component": "CMAPISoapClientMock",
+    "version": "1.0.0.0",
+    "push": "64",
+    "latest": true,
+    "comment": "Continuity Case Manager API's SOAP Client Mock"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "imageData": {
+    "name": "jenkins-deploy.fircosoft.net/third-parties/sqlserver:2017-GA-ubuntu",
+    "product": "third-parties",
+    "asset": "sqlserver",
+    "component": "Database",
+    "version": "2017-GA-ubuntu",
+    "env": "release",
+    "autoBuild": true,
+    "autoPush": true,
+    "tags": [],
+    "dependencies": []
+  }
+}

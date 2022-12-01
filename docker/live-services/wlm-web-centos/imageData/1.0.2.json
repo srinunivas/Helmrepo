@@ -1,0 +1,21 @@
+{
+    "imageData" : {
+        "name" : "jenkins-deploy.fircosoft.net/liveservices-wlm/ls-wlm-web:1.0.2",
+        "product": "wlm",
+        "asset": "wlm-web",
+        "component": "Web",
+        "version": "1.0.2",
+        "dependencies" : [
+            {
+                "type"      : "artifact",
+                "name"      : "ls-wlm-web",
+                "reference" : "wlm-web-1.0.2",
+                "expand"    : true
+            }
+        ],
+        "autoBuild" : true,
+        "autoPush" : true,
+        "tags" : ["latest", "1.0.2.{{deps.ls-wlm-web.push}}"]
+    }
+}
+

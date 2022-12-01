@@ -1,0 +1,11 @@
+<browserTypes>
+   <browserType>
+      <name>firefoxHL</name>
+      <displayName>firefoxHL</displayName>
+      <icon>firefox.png</icon>
+      <path>/usr/bin/firefox-esr</path>
+      <options>-profile "$userDir/browser/ff/profiles/sahi$threadNo" -no-remote -headless</options>
+      <processName>firefox-esr</processName>
+      <capacity>5</capacity>
+   </browserType>
+</browserTypes>

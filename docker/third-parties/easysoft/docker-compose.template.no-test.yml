@@ -1,0 +1,25 @@
+---
+version: "3.7"
+volumes:
+  licenses:
+services:
+    licenses:
+        image: "jenkins-deploy.fircosoft.net/third-parties/easysoft-licenses:1.0"
+        volumes:
+            - "licenses:/opt/third-parties/easysoft/licenses"
+    sut:
+        image: {{name}}
+        environment:
+            ODBC_DATASOURCE: "trust-database-oracle"
+            TNSNAME_SERVICE_NAME: "oraqadev"
+            TNSNAME_ADDRESS_NAME: "oraqadev"
+            TNSNAME_HOSTNAME: "bonaventure.fircosoft.net"
+            TNSNAME_PORT: "1521"
+            DB_NAME: "D_TRUST_V5_01"
+            DB_USERNAME: "D_TRUST_V5_01"
+            DB_PASSWORD: "hello00"
+        volumes:
+            - "licenses:/opt/third-parties/easysoft/licenses"
+        depends_on:
+            - licenses
+        command: /usr/bin/bash

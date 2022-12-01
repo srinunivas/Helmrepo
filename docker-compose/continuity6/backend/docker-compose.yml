@@ -1,0 +1,33 @@
+version: '3'
+services:
+  ibm-mq:
+    container_name: ibm-mq-server
+    image: jenkins-deploy.fircosoft.net/continuity6/mq-cty:9.1.2.0
+    ports:
+      - 1414:1414
+      - 9443:9443
+      - 9157:9157
+    environment:
+      - LICENSE=accept
+      - MQ_QMGR_NAME=QM1
+  acquisition:
+    container_name: acquisition
+    depends_on: 
+      - ibm-mq
+    image: jenkins-deploy.fircosoft.net/continuity6/acquisition:6.4.0.0-centos7-coreengine6.2.1.0
+    volumes: 
+      - "./resources:/opt/fircosoft/continuity/resources"
+  requester:
+    container_name: requester
+    depends_on: 
+      - ibm-mq
+    image: jenkins-deploy.fircosoft.net/continuity6/requester:6.4.0.0-centos7-coreengine6.2.1.0-filter5.8.3.1
+    volumes: 
+      - "./resources:/opt/fircosoft/continuity/resources"
+  dbclient:
+    container_name: dbclient
+    image: jenkins-deploy.fircosoft.net/continuity6/dbclient:6.4.0.0-centos7-coreengine6.2.1.0
+    depends_on: 
+      - ibm-mq
+    volumes: 
+      - "./resources:/opt/fircosoft/continuity/resources"

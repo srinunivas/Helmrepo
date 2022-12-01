@@ -1,0 +1,31 @@
+{
+    "imageData" : {       
+        "name" : "jenkins-deploy.fircosoft.net/continuity6/hpr-uf:hpr-6.3.0.0_HPR-uf-6.0.0-oel7-openjdk8",
+        "product": "continuity6",
+        "asset": "hpr-uf",
+        "version": "hpr-6.3.0.0_HPR-uf-6.0.0",
+        "component": "hpr-uf",
+        "dependencies" : [
+            {
+                "type"      : "image",
+                "name"      : "fircosoftBase",
+                "reference" : "jenkins-deploy.fircosoft.net/shared/fircosoft-base-oraclelinux:7-slim"
+            },
+            {
+                "type"      : "artifact",
+                "name"      : "hpr",
+                "reference" : "Continuity-HPR-6.3.0.0_HPR-HighPerformanceRequester",
+                "expand" : true
+            },
+            {
+                "type"      : "artifact",
+                "name"      : "uf",
+                "reference" : "filter-unifilter-6.0.0.0-linux",
+                "expand" : true
+            }
+        ],
+        "autoBuild": true,
+        "autoPush": true,
+        "tags": ["hpr-master-uf-6.0.0-oel7-openjdk8", "hpr-{{deps.hpr.version}}-uf-{{deps.uf.version}}-oel7-openjdk8", "hpr-{{deps.hpr.version}}-uf-{{deps.uf.version}}-oel7-openjdk8-b{{BUILD_INDEX}}"]
+    }
+}

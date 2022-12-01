@@ -1,0 +1,23 @@
+# Images for Fircosoft CoreEngine
+These images contain a CoreEngine of a specific version.
+
+## How to build an image for a specific version of the CoreEngine
+To assist in building the images, you can use the [shadoker-cli.sh](shadoker-cli.sh) script. See below for instructions and usage.
+
+    $ ./shadoker-cli.sh ./shadoker-cli.sh docker build -d <my_image_name:my_tag>
+
+See confluence page for more information : http://confluence.fircosoft.net/pages/viewpage.action?spaceKey=DTP&title=Shadoker+usage+for+development+teams
+
+Or 
+
+    $ ./shadoker-cli.sh -help
+
+Ex:
+
+    $ ./shadoker-cli.sh ./shadoker-cli.sh docker build -d jenkins-deploy.fircosoft.net/continuity5/coreengine:5.6.5.9-fircobase1-centos7
+
+## How to run the image
+To run an image use the docker run command as follows:
+Ex:
+    $ docker run --rm -it --name coreengine-5.6.5.9-fircobase1-centos7 jenkins-deploy.fircosoft.net/continuity5/coreengine:5.6.5.9-fircobase1-centos7 /bin/bash
+    $ docker run --rm -it --name coreengine-5.6.5.9-fircobase1-centos7 jenkins-deploy.fircosoft.net/continuity5/coreengine:5.6.5.9-fircobase1-centos7 /home/continuity/backend/bin32/linux/FKRUN -help

@@ -1,0 +1,13 @@
+{
+    "artifact" : {
+        "name" : "sahi-engine-installer-911",
+        "uri" : "http://dev-nexus.fircosoft.net/content/sites/site-3rd-parties/sahi/install_sahi_pro_v911_20201126.jar",
+        "vendor": "sahi",
+        "product": "third-parties",
+        "asset": "sahi-installer",
+        "component": "basic",
+        "version" : "9.1.1",
+        "push" : "911_20201126",
+        "mutable": false
+    }
+}

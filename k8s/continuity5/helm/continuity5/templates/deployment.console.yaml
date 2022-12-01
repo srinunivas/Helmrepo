@@ -1,0 +1,85 @@
+{{- range $key, $value := .Values.frontends.deploymentConsole }}
+---
+# mount this configmap in /opt/continuity/sql_scripts
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $key }}-cfg
+  labels:
+    {{- include "continuity5.frontend.labels" $ | nindent 4 }}
+data:
+  frontend-licence.sql:
+    {{- with index $.Values.license.frontend $value.database }}
+    {{- toYaml .license | indent 2 }}
+    {{- end }}
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ $key }}
+  labels:
+    {{- include "continuity5.frontend.labels" $ | nindent 4 }}
+    app.kubernetes.io/component: "deployment-console"
+spec:
+  ttlSecondsAfterFinished: {{ $value.ttlSecondsAfterFinished }}
+  template:
+    metadata:
+      annotations:
+      {{- with $.Values.podAnnotations }}
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "continuity5.frontend.selectorLabels" $ | nindent 8 }}
+    spec:
+      {{- with $.Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "continuity5.serviceAccountName" $ }}
+      securityContext:
+        {{- toYaml $.Values.podSecurityContext | nindent 8 }}
+      restartPolicy: Never
+      volumes:
+        - name: {{ $key }}-cfg
+          configMap:
+            name: {{ $key }}-cfg
+      containers:
+        - name: "deployment-console"
+          securityContext:
+            {{- toYaml $.Values.securityContext | nindent 12 }}
+          {{- with index $.Values.images $value.image }}
+          image: "{{ .deploymentConsole }}"
+          imagePullPolicy: {{ .pullPolicy }}
+          {{- end }}
+          env:
+          {{- with index $.Values.databases $value.database }}
+          - name: DB_HOST
+            value: "{{ .host }}"
+          - name: DB_PORT
+            value: "{{ .port }}"
+          - name: DB_NAME
+            value: {{ .name }}
+          - name: DB_USER
+            value: {{ .user }}
+          - name: DB_PASSWORD
+            value: {{ .password }}
+          {{- end }}
+          args: []
+          volumeMounts:
+            - name: {{ $key }}-cfg
+              mountPath: "/opt/continuity/sql_scripts"
+          resources:
+            {{- toYaml $.Values.resources | nindent 12 }}
+      {{- with $.Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with $.Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with $.Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+{{- end }}

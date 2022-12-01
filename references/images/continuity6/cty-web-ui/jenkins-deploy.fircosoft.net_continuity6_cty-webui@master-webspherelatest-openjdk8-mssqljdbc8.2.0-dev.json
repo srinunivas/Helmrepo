@@ -1,0 +1,38 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity6/cty-webui:master-webspherelatest-openjdk8-mssqljdbc8.2.0-dev",
+    "product": "continuity6",
+    "asset": "cty-web-ui",
+    "version": "master",
+    "digest": "sha256:ce2659b3aa34da1a983cb834ad9100f47d5e492fa224e27be6f19de047b230b2",
+    "buildDate": "2021-04-26T10:38:33.026Z",
+    "labels": {
+      "BuildLabel": "f5032008.04",
+      "asset": "cty-web-ui",
+      "description": "This image contains the WebSphere Traditional runtime with Ubuntu Linux as the base OS.",
+      "maintainer": "RBI-DL Fircosoft Continuity Paris <FircosoftContinuityParis@reedbusiness.com>",
+      "name": "IBM WebSphere Traditional",
+      "product": "continuity6",
+      "push": "99",
+      "summary": "Image for WebSphere Traditional",
+      "vendor": "IBM",
+      "version": "6.5.0.0",
+      "com.accuity.asset": "cty-web-ui",
+      "com.accuity.product": "continuity6",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "verifyWeb",
+      "com.accuity.product.vcs-ref": "06d4dd063c01d7fa70fe51953cb8038f8a4b22f8",
+      "com.accuity.product.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/cty/continuity.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "master",
+      "org.label-schema.build-date": "2021-04-26T10:21:38Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "continuity6 cty-web-ui verifyWeb master",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "40492755f87baab872b0f36530dbb79d0a6cdf72",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "master"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/devops/jenkins-agent-dod:1.0",
+    "product": "devops",
+    "asset": "jenkins",
+    "version": "1.0",
+    "digest": "sha256:2203a3b730a69b95fcc1a16e8eafe2e8bd4e472e3849ca74cfde8d573ed115bb",
+    "buildDate": "2021-01-11T13:10:13.415Z",
+    "labels": {
+      "com.accuity.asset": "jenkins",
+      "com.accuity.product": "devops",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "agent-docker-on-docker",
+      "com.accuity.product.vcs-ref": "0b7744cb9d6",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "1.0",
+      "org.label-schema.build-date": "2021-01-11T13:08:22Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "devops jenkins agent-docker-on-docker 1.0",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "3d16c054fb1486aa97358482eaae39801018ec66",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "1.0"
+    }
+  }
+}

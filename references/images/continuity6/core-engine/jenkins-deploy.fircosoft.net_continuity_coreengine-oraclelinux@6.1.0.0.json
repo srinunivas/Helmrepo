@@ -1,0 +1,13 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity/coreengine-oraclelinux:6.1.0.0",
+    "product": "continuity6",
+    "asset": "coreengine",
+    "version": "",
+    "digest": "sha256:0770872ab0f4bf7810f71f54a206b3cff9cb511e2fa6497b988cddd3d9a1e102",
+    "buildDate": "2020-05-19T14:22:36.498Z",
+    "labels": {
+      "maintainer": "Emmanuel MESSEGUE <emmanuel.messegue@fircosoft.com>"
+    }
+  }
+}

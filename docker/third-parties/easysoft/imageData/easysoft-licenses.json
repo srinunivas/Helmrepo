@@ -1,0 +1,14 @@
+{
+    "imageData" : {
+        "name" : "jenkins-deploy.fircosoft.net/third-parties/easysoft-licenses:1.0",
+        "buildOptions": ["--no-cache"],
+        "product": "third-parties",
+        "asset": "easysoft",
+        "component": "licenses",
+        "version": "1.0",
+        "dockerfile": "licenses.dockerfile",
+        "autoBuild": true,
+        "autoTest": false,
+        "autoPush": true
+    }
+}

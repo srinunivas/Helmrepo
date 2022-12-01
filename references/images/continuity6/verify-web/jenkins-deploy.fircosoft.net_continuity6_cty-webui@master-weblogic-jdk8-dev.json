@@ -1,0 +1,33 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity6/cty-webui:master-weblogic-jdk8-dev",
+    "product": "continuity6",
+    "asset": "verify-web",
+    "version": "master",
+    "digest": "sha256:8fb73ddd355cbe4343f223cd8f56ac7802943e22c9b4753a7ffb8866df5810d0",
+    "buildDate": "2022-03-14T11:56:56.901Z",
+    "labels": {
+      "asset": "verify-web",
+      "com.accuity.asset": "verify-web",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "weblogic",
+      "com.accuity.environment": "release",
+      "com.accuity.product": "continuity6",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "master",
+      "com.oracle.weblogic.imagetool.buildid": "5128f3c0-2d0a-43aa-b2de-07b3a1245b1f",
+      "maintainer": "RBI-DL Fircosoft Continuity Paris <FircosoftContinuityParis@reedbusiness.com>",
+      "org.label-schema.build-date": "2021-03-02T19:53:49Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "continuity6 verify-web weblogic master",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "1fa8085038cb1078ea991405d189fddb1f56d69f",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "master",
+      "product": "continuity6",
+      "push": "64",
+      "version": "6.8.0.0"
+    }
+  }
+}

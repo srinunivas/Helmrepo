@@ -1,0 +1,14 @@
+{
+  "imageData" : {
+    "name" : "jenkins-deploy.fircosoft.net/third-parties/selenium/standalone-firefox:78.15.0esr",
+    "product": "third-parties",
+    "asset": "selenium",
+    "component": "standalone-firefox",
+    "version": "78.15.0esr",
+    "env": "release",
+    "autoBuild": true,
+    "autoPush": true,
+    "tags": [],
+    "dependencies": []
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity6/cty-cmapi-rest-client-mock:master",
+    "product": "continuity6",
+    "asset": "cty-cmapi",
+    "version": "master",
+    "digest": "sha256:350e09efcb36e6410bee4d334def8af0a5495fc7a7324731302ff10408154087",
+    "buildDate": "2020-09-21T09:03:10.454Z",
+    "labels": {
+      "asset": "cty-cmapi",
+      "component": "cmapi-rest-client-mock",
+      "maintainer": "RBI-DL Fircosoft Continuity Paris <FircosoftContinuityParis@reedbusiness.com>",
+      "product": "continuity6",
+      "version": "master"
+    }
+  }
+}

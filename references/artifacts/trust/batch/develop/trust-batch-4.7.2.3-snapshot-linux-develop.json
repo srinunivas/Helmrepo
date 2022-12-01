@@ -1,0 +1,27 @@
+{
+  "artifact": {
+    "name": "trust-batch-4.7.2.3-snapshot-linux-develop",
+    "buildDate": "2021/11/19 13:33:23",
+    "commit": "dc34e517b069053703f0715df19a0b09ec36fa63",
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/TrustBatch/4.7.2.3-SNAPSHOT.p5-develop-4.7.x/TrustBatch-4.7.2.3-SNAPSHOT.p5-Linux-i686.tar.gz",
+    "hash": "sha1:28e7952eeceb4bd5d5f6e0b5892892282992a86e",
+    "product": "Trust",
+    "asset": "Batch",
+    "env": "develop",
+    "prefix": "develop-4.7.x",
+    "version": "4.7.2.3-SNAPSHOT",
+    "push": "5",
+    "mutable": false,
+    "comment": "Trust Batch version 4.7.2.3-SNAPSHOT push 5 (develop)",
+    "manifest": {
+      "entry": "docker/trust/batch/TrustBatchUnixODBCManifest.mjs",
+      "commit": "c4b2bbbf315e1a3832039673829d079e1f4e0499"
+    },
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/trustv4/batch.git",
+      "branch": "develop/4.7.x",
+      "commit": "dc34e517b069053703f0715df19a0b09ec36fa63"
+    }
+  }
+}

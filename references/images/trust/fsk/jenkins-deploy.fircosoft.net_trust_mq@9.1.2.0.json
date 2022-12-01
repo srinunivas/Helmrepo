@@ -1,0 +1,15 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/trust/mq:9.1.2.0",
+    "product": "Trust",
+    "asset": "FSK",
+    "version": "9.1.2.0",
+    "digest": "sha256:43bca784cf194ea28718d9095e46fa5972c538220be4334863b89c7026b8c527",
+    "buildDate": "2020-09-18T12:33:21.546Z",
+    "labels": {
+      "IBM_PRODUCT_ID": "98102d16795c4263ad9ca075190a2d4d",
+      "IBM_PRODUCT_NAME": "IBM MQ Advanced for Developers (Non-Warranted)",
+      "IBM_PRODUCT_VERSION": "9.1.2.0"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity5/deployment-console:5.3.27.0-centos7-sqlserverclient17.8.1.1-1-openjdk11-continuity-develop",
+    "product": "continuity5",
+    "asset": "deployment-console",
+    "version": "5.3.27.0",
+    "digest": "sha256:25388ad65d8799515b86a9de016765b6c14dbe927be847426cbe82ea1b6d3481",
+    "buildDate": "2022-02-13T21:21:02.483Z",
+    "labels": {
+      "com.accuity.asset": "deployment-console",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "deployment-console",
+      "com.accuity.environment": "develop",
+      "com.accuity.os": "centos7",
+      "com.accuity.product": "continuity5",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.third-parties.java": "openjdk11",
+      "com.accuity.third-parties.odbc-client": "sqlserverclient17.8.1.1-1",
+      "com.accuity.version": "5.3.27.0",
+      "maintainer": "Emmanuel MESSEGUE <emmanuel.messegue@fircosoft.com>",
+      "org.label-schema.build-date": "20201113",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "continuity5 deployment-console deployment-console 5.3.27.0",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "30ed3b049178e902ba43ad3323e3ecab27fab476",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "5.3.27.0",
+      "org.opencontainers.image.created": "2020-11-13 00:00:00+00:00",
+      "org.opencontainers.image.licenses": "GPL-2.0-only",
+      "org.opencontainers.image.title": "CentOS Base Image",
+      "org.opencontainers.image.vendor": "CentOS"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "artifact": {
+    "name": "soc-filter-controller-1.5.0.1",
+    "buildDate": "2021-07-09T13:47:31.023Z",
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@bitbucket.fpa.rbxd.ds/ls/filter-connector.git",
+      "commit": "",
+      "date": ""
+    },
+    "uri": "http://nexus.fpa.rbxd.ds/content/repositories/snapshots/com/accuity/liveservices/ls-filtercontroller/1.5.0.1.36/ls-filtercontroller-1.5.0.1.36-filter.zip",
+    "product": "liveservices-soc",
+    "asset": "soc-filter-controller",
+    "component": "filter-controller",
+    "version": "1.5.0.1",
+    "push": "36",
+    "latest": true,
+    "buildUrl": "http://jenkins.fpa.rbxd.ds/job/LiveServices/job/Pilot%20Dev/job/Filter%20Connector%20Docker/1/"
+  }
+}

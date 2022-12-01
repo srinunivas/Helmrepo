@@ -1,0 +1,29 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity6/mq-oren-mtls:9.1.2.0",
+    "product": "continuity6",
+    "asset": "mq-oren-mtls",
+    "version": "9.1.2.0",
+    "digest": "sha256:f59251c968eec7ca23981016fb75848daccf939e981dcfdf16e46f364104cbec",
+    "buildDate": "2021-01-29T08:10:26.075Z",
+    "labels": {
+      "IBM_PRODUCT_ID": "98102d16795c4263ad9ca075190a2d4d",
+      "IBM_PRODUCT_NAME": "IBM MQ Advanced for Developers (Non-Warranted)",
+      "IBM_PRODUCT_VERSION": "9.1.2.0",
+      "com.accuity.asset": "mq-oren-mtls",
+      "com.accuity.product": "continuity6",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "mq",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "9.1.2.0",
+      "org.label-schema.build-date": "2021-01-29T08:09:21Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "continuity6 mq-oren-mtls mq 9.1.2.0",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "edead035d67ebb2bab9d8f2cb01605a939d52303",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "9.1.2.0"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+version: '3'
+services: 
+  database:
+    container_name: cty-database
+    image: jenkins-deploy.fircosoft.net/continuity6/cty-db-oracle:6.6.0.0-oracle19cee-dev-b7124
+    ports:
+      - 1521:1521
+  keycloak:
+    container_name: keycloak
+    image: jboss/keycloak
+    ports:
+      - 8443:8443
+    environment:
+      - KEYCLOAK_USER=admin
+      - KEYCLOAK_PASSWORD=#adminadmin1
+      - KEYCLOAK_IMPORT=/tmp/continuity.json
+    volumes:
+      - ./continuity.json:/tmp/continuity.json
+  webui:
+    container_name: cty-webui
+    build:
+      context: ./WebUI
+      args:
+        WEBUI_NEXUS_PATH: http://dev-nexus.fircosoft.net/content/sites/site-builds/Continuity-WEBUI/6.6.0.0.p10-release-6.6.x/cty-web-application-6.6.0.0.p10.zip
+    depends_on:
+      database:
+        condition: service_healthy
+    ports:
+      - 8101:8443
+    environment:
+      - DB_USER=CTY_DOCKER
+      - DB_PASSWORD=hello00
+      - DB_URL=jdbc:oracle:thin:@database:1521/orclpdb1
+
+

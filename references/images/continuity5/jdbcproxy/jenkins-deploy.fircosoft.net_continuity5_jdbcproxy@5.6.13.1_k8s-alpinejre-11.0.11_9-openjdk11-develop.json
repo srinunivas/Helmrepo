@@ -1,0 +1,30 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity5/jdbcproxy:5.6.13.1_k8s-alpinejre-11.0.11_9-openjdk11-develop",
+    "product": "continuity5",
+    "asset": "jdbcproxy",
+    "version": "5.6.13.1_k8s",
+    "digest": "sha256:3100ac899d402e7aacc9d5bc043637cd360820a06a52250efed1b8e51285fa2d",
+    "buildDate": "2021-11-02T14:29:02.980Z",
+    "labels": {
+      "com.accuity.asset": "jdbcproxy",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "jdbcproxy",
+      "com.accuity.environment": "develop",
+      "com.accuity.os": "alpinejre-11.0.11_9",
+      "com.accuity.product": "continuity5",
+      "com.accuity.product.vcs-ref": "3b175faeae88d6cfff7574c695ae706e2261bc3e",
+      "com.accuity.product.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/cty/coreengine.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.third-parties.java": "openjdk11",
+      "com.accuity.version": "5.6.13.1_k8s",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "continuity5 jdbcproxy jdbcproxy 5.6.13.1_k8s",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "0bff39d5559161a19ba113370e8ac5fb740c87a6",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "5.6.13.1_k8s"
+    }
+  }
+}

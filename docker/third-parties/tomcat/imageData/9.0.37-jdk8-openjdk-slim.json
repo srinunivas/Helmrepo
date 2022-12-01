@@ -1,0 +1,14 @@
+{
+  "imageData": {
+    "name": "jenkins-deploy.fircosoft.net/third-parties/tomcat:9.0.37-jdk8-openjdk-slim",
+    "product": "third-parties",
+    "asset": "tomcat",
+    "component": "WAS",
+    "version": "9.0.37-jdk8-openjdk-slim",
+    "env": "release",
+    "autoBuild": true,
+    "autoPush": true,
+    "tags": [],
+    "dependencies": []
+  }
+}

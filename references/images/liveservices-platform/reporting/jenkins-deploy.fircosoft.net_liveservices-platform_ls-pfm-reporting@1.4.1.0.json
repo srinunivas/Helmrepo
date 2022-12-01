@@ -1,0 +1,35 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/liveservices-platform/ls-pfm-reporting:1.4.1.0",
+    "product": "liveservices-platform",
+    "asset": "reporting",
+    "version": "1.4.1.0",
+    "digest": "sha256:978cc48a84fe26a29b821e4f360ca5714bf5ba99f1338164da535dfae09624af",
+    "buildDate": "2021-03-02T18:55:25.813Z",
+    "labels": {
+      "asset": "reporting",
+      "com.accuity.asset": "reporting",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "reporting",
+      "com.accuity.product": "liveservices-platform",
+      "com.accuity.product.vcs-url": "ssh://git@bitbucket.fpa.rbxd.ds/ls/reporting.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "1.4.1.0",
+      "maintainer": "Glauber ARAUJO <glauber.araujo@accuity.com>",
+      "org.label-schema.build-date": "2021-03-02T18:42:20Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "liveservices-platform reporting reporting 1.4.1.0",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "f589468a27ec217ea591c3954877e61fe8797a4f",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "1.4.1.0",
+      "org.opencontainers.image.created": "2020-08-09 00:00:00+01:00",
+      "org.opencontainers.image.licenses": "GPL-2.0-only",
+      "org.opencontainers.image.title": "CentOS Base Image",
+      "org.opencontainers.image.vendor": "CentOS",
+      "product": "liveservices-platform",
+      "version": "1.4.1.0"
+    }
+  }
+}

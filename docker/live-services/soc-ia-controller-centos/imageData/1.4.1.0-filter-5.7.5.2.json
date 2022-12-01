@@ -1,0 +1,26 @@
+{
+  "imageData" : {
+    "name" : "jenkins-deploy.fircosoft.net/liveservices-soc/ls-soc-ia-controller:1.4.1.0-filter-5.7.5.2",
+    "dependencies" : [
+      {
+        "type" : "artifact",
+        "name" : "ls-ia-controller",
+        "reference" : "soc-ia-controller-1.4.1.0",
+        "expand"    : true
+      },
+      {
+        "type" : "artifact",
+        "name" : "filter",
+        "reference" : "filter-filter_engine-5.7.5.2-linux",
+        "expand"    : true
+      }
+    ],
+    "product" : "liveservices-soc",
+    "asset" : "soc-filter-controller",
+    "component" : "filter-controller",
+    "version" : "1.0",
+    "autoBuild" : true,
+    "autoPush" : true,
+    "tags" : ["latest", "1.4.1.0.{{deps.ls-ia-controller.push}}"]
+  }
+}

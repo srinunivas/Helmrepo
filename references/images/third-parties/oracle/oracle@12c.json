@@ -1,0 +1,11 @@
+{
+    "image": {
+      "name": "jenkins-deploy.fircosoft.net/third-parties/oracle:12c",
+      "product": "third-parties",
+      "asset": "oracle",
+      "component": "database",
+      "version": "12c",
+      "digest": "sha256:f84f44eacb6c6e5f013b2cf52792e77f1168e2be850fe8c4904a56fb9ba6dbfa",
+      "buildDate": "2018-09-08T17:17:54.487150175Z"
+    }
+  }

@@ -1,0 +1,27 @@
+properties([
+    pipelineTriggers([cron('H H(2-4) * * *')])
+])
+
+node('docker-build') {
+    stage('Install/Update syft') {
+        sh """mkdir -p ~/bin 2>/dev/null || true
+curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b ~/bin"""
+    }
+    stage('Install/Update grype') {
+        sh """curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b ~/bin latest
+mkdir -p ~/.config/grype 2>/dev/null || true
+cat << EOF > ~/.config/grype/config.yaml
+# enable/disable checking for application updates on startup
+check-for-app-update: false
+db:
+  auto-update: false
+registry:
+  insecure-skip-tls-verify: true
+EOF
+"""
+    }
+    stage('Update grype DB') {
+        sh """~/bin/grype db update
+~/bin/grype db status"""
+    }
+}

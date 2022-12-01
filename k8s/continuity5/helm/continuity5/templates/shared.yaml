@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: firco-shared
+  labels:
+    {{- include "continuity5.labels" $ | nindent 4 }}
+data:
+  fbe.cf: {{ toYaml .Values.license.fbe  | indent 2 }}
+  fof.cf: {{ toYaml .Values.license.fof  | indent 2 }}

@@ -1,0 +1,43 @@
+{
+  "imageData": {
+    "name": "jenkins-deploy.fircosoft.net/utilities/database-fmm:4.11.1.2-oracle12",
+    "product": "utilities",
+    "asset": "database-fmm",
+    "component": "oracle",
+    "version": "4.11.1.2",
+    "env": "release",
+    "manifest": {
+      "entry": "docker/utilities/database-fmm/UtilitiesFmmDatabaseOracle12Manifest.yaml",
+      "commit": "ee244621d34e0ff56745653d8abd77bdbe7dec4a"
+    },
+    "dockerfile": "Template.dockerfile",
+    "autoBuild": true,
+    "autoPush": true,
+    "tags": [
+      "4.11.1.latest-oracle12"
+    ],
+    "labels": {
+      "maintainer": "David Thomé <david.thome@accuity.com>",
+      "com.accuity.team": "Utilities",
+      "com.accuity.project-name": "UTILITIES",
+      "com.accuity.project-url": "http://jira.fircosoft.net/projects/UTILITIES"
+    },
+    "dependencies": [
+      {
+        "type": "image",
+        "name": "oracle",
+        "reference": "jenkins-deploy.fircosoft.net/third-parties/oracle:12c"
+      },
+      {
+        "type": "artifact",
+        "name": "database",
+        "reference": "utilities-database-fmm-4.11.1.2-oracle",
+        "expand": true
+      }
+    ],
+    "schemas": "e2e-121",
+    "thirdParties": {
+      "database": "oracle12"
+    }
+  }
+}

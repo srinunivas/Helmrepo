@@ -1,0 +1,24 @@
+{
+    "imageData" : {       
+        "name" : "jenkins-deploy.fircosoft.net/continuity5/continuity-db-oracle-19.3.0-ee:5.3.19.0-5.3.16.7",
+        "dependencies" : [
+            {
+                "type"      : "image",
+                "name"      : "database",
+                "reference" : "jenkins-deploy.fircosoft.net/continuity/oracle/database-prebuilt:19.3.0-ee"
+            },
+            {
+                "type"      : "artifact",
+                "name"      : "Sql-BusinessObjects",
+                "comment"   : "should be Continuity-5.3.16.7-develop-5.3.16.x-Sql-BusinessObjects-Oracle but it does not exit anymore on nexus",
+                "reference" : "Continuity-5.3.16-develop-5.3.16.x-Sql-BusinessObjects-Oracle"
+            },
+            {
+                "type"      : "artifact",
+                "name"      : "Sql-Main",
+                "reference" : "Continuity-5.3.19.0-release-5.3.x-Sql-Main-Oracle",
+                "main"      : true
+            }
+        ]
+    }
+}

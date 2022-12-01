@@ -1,0 +1,14 @@
+{
+    "image": {
+      "name": "jenkins-deploy.fircosoft.net/third-parties/tomcat:8.5.57-jdk8-openjdk-slim",
+      "product": "third-parties",
+      "asset": "tomcat",
+      "version": "8.5.57-jdk8-openjdk-slim",
+      "digest": "sha256:5f2dbbb0858a63575f8831e279c49606bd7ab78372b82e8c550196cacba1dcae",
+      "buildDate": "2020-10-07T10:15:38.466Z",
+      "labels": {
+        "com.accuity.asset": "tomcat",
+        "com.accuity.product": "third-parties"
+      }
+    }
+  }

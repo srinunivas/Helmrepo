@@ -1,0 +1,4 @@
+DBTYPE=Oracle
+DBURL=jdbc:oracle:thin:@10.0.2.15:1521/pdb
+DBUSERNAME=D_CTY_6300_6_5_MTU
+DBPASSWORD=hello00

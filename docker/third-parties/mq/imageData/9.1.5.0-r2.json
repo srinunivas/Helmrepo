@@ -1,0 +1,14 @@
+{
+  "imageData" : {
+    "name" : "jenkins-deploy.fircosoft.net/third-parties/ibmcom/mq:9.1.5.0-r2",
+    "product": "third-parties",
+    "asset": "ibmcom/mq",
+    "component": "mq-server",
+    "version": "9.1.5.0-r2",
+    "env": "release",
+    "autoBuild": true,
+    "autoPush": true,
+    "tags": ["9.1.5.0"],
+    "dependencies": []
+  }
+}

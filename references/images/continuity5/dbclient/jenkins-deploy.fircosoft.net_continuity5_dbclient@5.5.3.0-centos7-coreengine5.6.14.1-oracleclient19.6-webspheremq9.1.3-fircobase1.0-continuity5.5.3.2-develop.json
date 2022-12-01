@@ -1,0 +1,40 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity5/dbclient:5.5.3.0-centos7-coreengine5.6.14.1-oracleclient19.6-webspheremq9.1.3-fircobase1.0-continuity5.5.3.2-develop",
+    "product": "continuity5",
+    "asset": "dbclient",
+    "version": "5.5.3.0",
+    "digest": "sha256:3aa3a016a42c5b9b2f7f0d339d2b97e1b58c8de519a14842c7ea6def9abeb971",
+    "buildDate": "2022-02-25T17:30:36.222Z",
+    "labels": {
+      "com.accuity.asset": "dbclient",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "dbclient",
+      "com.accuity.dependencies.coreengine": "COREENGINE5.6.14.1",
+      "com.accuity.environment": "develop",
+      "com.accuity.os": "centos7",
+      "com.accuity.product": "continuity5",
+      "com.accuity.product.vcs-branch": "release/5.6.x",
+      "com.accuity.product.vcs-ref": "36b3e70e6785523cb3f4473aa57a5bb7b31233cf",
+      "com.accuity.product.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/cty/coreengine.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.third-parties.coreengine": "coreengine5.6.14.1",
+      "com.accuity.third-parties.mq-client": "webspheremq9.1.3",
+      "com.accuity.third-parties.odbc-client": "oracleclient19.6",
+      "com.accuity.version": "5.5.3.0",
+      "maintainer": "Emmanuel MESSEGUE <emmanuel.messegue@fircosoft.com>",
+      "org.label-schema.build-date": "2021-02-05T13:23:35Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "continuity5 dbclient dbclient 5.5.3.0",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "8de19227f04e8794f47824c930853090a35e0534",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "5.5.3.0",
+      "org.opencontainers.image.created": "2020-11-13 00:00:00+00:00",
+      "org.opencontainers.image.licenses": "GPL-2.0-only",
+      "org.opencontainers.image.title": "CentOS Base Image",
+      "org.opencontainers.image.vendor": "CentOS"
+    }
+  }
+}

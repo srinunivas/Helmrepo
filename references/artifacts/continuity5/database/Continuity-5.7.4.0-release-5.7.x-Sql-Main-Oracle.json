@@ -1,0 +1,21 @@
+{
+    "artifact" : {
+        "name" : "Continuity-5.7.4.0-release-5.7.x-Sql-Main-Oracle",
+        "buildDate" : "20200618T134616Z",
+        "repository": {
+            "type": "git",
+            "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/cty/continuity.git",
+            "commit": "3bbb72f19a3992dfbe4e5646e23e5ad180995995",
+            "branch": "release/5.7.x",
+            "date": "20200618T132900Z"
+        },
+        "uri" : "http://dev-nexus.fircosoft.net/content/sites/site-builds/Continuity/5.7.4.0.p0-release-5.7.x/Continuity-5.7.4.0.p0-Sql-Main-Oracle.tar.gz",
+        "product" : "continuity5",
+        "asset": "database",
+        "component": "businessobjects-oracle",
+        "prefix" : "release-5.3.16.x",
+        "comment" : "Artefact 5.7.2.0 are not available in Nexus. So we use 5.7.4.0 to get sql scripts corresponding to 5.7.2.0",
+        "version" : "5.7.2.0",
+        "push" : "p0"
+    }
+}

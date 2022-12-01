@@ -1,0 +1,4 @@
+CMAPI_KEY=file:/opt/cty-backend/cmapikeystore.p12
+MOCK_SERVER_KEY=file:/opt/cty-backend/mockserverkeystore.p12
+MOCK_CLIENT_KEY=file:/opt/cty-backend/mockclientkeystore.p12
+TRUST_STORE=file:/opt/cty-backend/truststore

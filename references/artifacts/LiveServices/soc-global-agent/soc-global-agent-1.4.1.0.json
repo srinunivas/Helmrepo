@@ -1,0 +1,19 @@
+{
+  "artifact": {
+    "name": "soc-global-agent-1.4.1.0",
+    "buildDate": "2021-02-25T15:47:08.3NZ",
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@bitbucket.fpa.rbxd.ds/ls/agent.git",
+      "commit": "",
+      "date": ""
+    },
+    "uri": "http://nexus.fpa.rbxd.ds/content/repositories/snapshots/com/accuity/liveservices/ls-agent/1.4.1.0.71/ls-agent-1.4.1.0.71-global.zip",
+    "product": "liveservices-soc",
+    "asset": "soc-global-agent",
+    "component": "agent",
+    "version": "1.4.1.0",
+    "push": "71",
+    "latest": true
+  }
+}

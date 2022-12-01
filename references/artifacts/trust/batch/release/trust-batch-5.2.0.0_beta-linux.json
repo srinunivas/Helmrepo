@@ -1,0 +1,27 @@
+{
+  "artifact": {
+    "name": "trust-batch-5.2.0.0_beta-linux",
+    "buildDate": "2021/03/30 11:03:34",
+    "commit": "a3f38a012b1b8e709f3ab8241892d1afe8ce0071",
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/TrustBatch/5.2.0.0_BETA.p1-release-5.2.0.0/TrustBatch-5.2.0.0_BETA.p1-Linux-i686.tar.gz",
+    "hash": "sha1:92dbc0232a1e3107f22ce295e417d0ee9c7f1bef",
+    "product": "Trust",
+    "asset": "Batch",
+    "env": "release",
+    "prefix": "release-5.2.0.0",
+    "version": "5.2.0.0_BETA",
+    "push": "1",
+    "mutable": false,
+    "comment": "Trust Batch version 5.2.0.0_BETA push 1 (release)",
+    "manifest": {
+      "entry": "docker/trust/batch/TrustBatchManifest.yaml",
+      "commit": "e07155bbdae6bd6cd6fdd8c2783d0fc30087caee"
+    },
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/trustv4/batch.git",
+      "branch": "release/5.2.0.0",
+      "commit": "a3f38a012b1b8e709f3ab8241892d1afe8ce0071"
+    }
+  }
+}

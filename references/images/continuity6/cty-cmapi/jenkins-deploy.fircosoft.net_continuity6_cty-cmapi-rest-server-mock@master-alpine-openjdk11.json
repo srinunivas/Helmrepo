@@ -1,0 +1,33 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity6/cty-cmapi-rest-server-mock:master-alpine-openjdk11",
+    "product": "continuity6",
+    "asset": "cty-cmapi",
+    "version": "master",
+    "digest": "sha256:47fd1d14c5a6985780c08005d1372f632955798d9724e1976fecef687ccad87f",
+    "buildDate": "2022-03-02T12:54:48.291Z",
+    "labels": {
+      "asset": "cty-cmapi",
+      "component": "cmapi-rest-server-mock",
+      "maintainer": "RBI-DL Fircosoft Continuity Paris <FircosoftContinuityParis@reedbusiness.com>",
+      "product": "continuity6",
+      "version": "master",
+      "com.accuity.asset": "cty-cmapi",
+      "com.accuity.product": "continuity6",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "cmapi-rest-server-mock",
+      "com.accuity.product.vcs-ref": "e65a6530f087be9f675c97438414321e431be1cb",
+      "com.accuity.product.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/cty/continuity.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "master",
+      "org.label-schema.build-date": "2021-04-29T07:19:50Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "continuity6 cty-cmapi cmapi-rest-server-mock master",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "4c28b7c2b857bc43932588e75aed9aa38df42c4e",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "master"
+    }
+  }
+}

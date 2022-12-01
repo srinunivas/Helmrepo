@@ -1,0 +1,19 @@
+{
+  "artifact": {
+    "name": "soc-web-1.3.5.0",
+    "buildDate": "2020-09-30T15:15:16.3NZ",
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@bitbucket.fpa.rbxd.ds/ls/ls-webapp.git",
+      "commit": "",
+      "date": ""
+    },
+    "uri": "http://nexus.fpa.rbxd.ds/content/repositories/snapshots/com/accuity/liveservices/ls-web/1.3.5.0.165/ls-web-1.3.5.0.165.zip",
+    "product": "liveservices-soc",
+    "asset": "soc-web",
+    "component": "soc-web",
+    "version": "1.3.5.0",
+    "push": "165",
+    "latest": true
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity6-dev/cty-webui:feature-tomcat8.5-openjdk8-ojdbc8-dev",
+    "product": "continuity6",
+    "asset": "cty-db-oracle",
+    "version": "master",
+    "digest": "sha256:8ecba71671cb9df5cecb1dbb11381d584a1751b361b5281b4f37d431f040afb7",
+    "buildDate": "2021-06-17T12:52:26.830Z",
+    "labels": {
+      "asset": "verify-web",
+      "com.accuity.asset": "verify-web",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "tomcat",
+      "com.accuity.product": "continuity6",
+      "com.accuity.product.vcs-branch": "peek/CONTINUITY-35756-spike-useless-queries",
+      "com.accuity.product.vcs-ref": "878675c412a",
+      "com.accuity.product.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/cty/continuity.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.third-parties.web-server": "tomcat8.5",
+      "com.accuity.version": "master",
+      "maintainer": "RBI-DL Fircosoft Continuity Paris <FircosoftContinuityParis@reedbusiness.com>",
+      "org.label-schema.build-date": "2021-06-17T12:51:40Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "continuity6 verify-web tomcat master",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "7cef2d1f0cbfee6c322d4770da5a9247b1a30036",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "master",
+      "product": "continuity6",
+      "push": "0_DEV.2",
+      "version": "6.5.0.0_DEV"
+    }
+  }
+}

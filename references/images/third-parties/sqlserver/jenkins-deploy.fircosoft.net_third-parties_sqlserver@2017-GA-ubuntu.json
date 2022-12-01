@@ -1,0 +1,22 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/third-parties/sqlserver:2017-GA-ubuntu",
+    "product": "third-parties",
+    "asset": "sqlserver",
+    "version": "2017-GA-ubuntu",
+    "digest": "sha256:7ba6b40ec2b721ed3f6bc2da83001c06057c2d98fa54301afa8126f577642ae1",
+    "buildDate": "2020-11-03T15:16:49.486Z",
+    "labels": {
+      "com.accuity.asset": "sqlserver",
+      "com.accuity.product": "third-parties",
+      "com.microsoft.product": "Microsoft SQL Server",
+      "com.microsoft.version": "14.0.1000.169",
+      "vendor": "Microsoft",
+      "net.fircosoft.image.asset": "sqlserver",
+      "net.fircosoft.image.component": "Database",
+      "net.fircosoft.image.name": "SQL Server",
+      "net.fircosoft.image.product": "third-parties",
+      "net.fircosoft.image.version": "2017-GA-ubuntu"
+    }
+  }
+}

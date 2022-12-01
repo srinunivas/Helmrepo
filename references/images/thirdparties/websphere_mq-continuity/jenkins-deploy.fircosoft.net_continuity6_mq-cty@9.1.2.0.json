@@ -1,0 +1,17 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity6/mq-cty:9.1.2.0",
+    "product": "thirdparties",
+    "asset": "websphere_mq-continuity",
+    "version": "9.1.2-1.0",
+    "digest": "sha256:cf448c583c31266238c7493adf09a06fd9eccbd2ad89e0dc6f719151a831be9a",
+    "buildDate": "2020-10-20T08:46:21.477Z",
+    "labels": {
+      "IBM_PRODUCT_ID": "98102d16795c4263ad9ca075190a2d4d",
+      "IBM_PRODUCT_NAME": "IBM MQ Advanced for Developers (Non-Warranted)",
+      "IBM_PRODUCT_VERSION": "9.1.2.0",
+      "com.accuity.asset": "websphere_mq-continuity",
+      "com.accuity.product": "thirdparties"
+    }
+  }
+}

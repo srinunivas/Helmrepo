@@ -1,0 +1,27 @@
+{
+  "artifact": {
+    "name": "trust-verify-5.2.0.1-war",
+    "buildDate": "2022/03/06 20:27:11",
+    "commit": "1f0a11479cfe19b776591c1157abf8d0cc58489d",
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/TrustFrontV5/5.2.0.1.p0-release-master/FircoTrust-5.2.0.1.p0.war",
+    "hash": "sha1:dfb4c91cced0d946c3ce76ad5ddeaa72bb95de6d",
+    "product": "Trust",
+    "asset": "Verify",
+    "env": "release",
+    "prefix": "release-master",
+    "version": "5.2.0.1",
+    "push": "0",
+    "mutable": false,
+    "comment": "Trust Verify version 5.2.0.1 push 0 (release)",
+    "manifest": {
+      "entry": "docker/trust/verify/websphere/TrustVerify5WebsphereManifest.mjs",
+      "commit": "ffeff6a8ab8a5d66a53b6f02ac8bd501996da6b5"
+    },
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/trustv4/frontv5.git",
+      "branch": "release/master",
+      "commit": "1f0a11479cfe19b776591c1157abf8d0cc58489d"
+    }
+  }
+}

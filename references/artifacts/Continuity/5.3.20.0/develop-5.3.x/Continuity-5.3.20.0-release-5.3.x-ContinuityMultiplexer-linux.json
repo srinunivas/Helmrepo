@@ -1,0 +1,13 @@
+{
+    "artifact" : {
+        "name" : "Continuity-5.3.20.0-release-5.3.x-ContinuityMultiplexer-linux",
+        "buildDate" : "23/02/2020",
+        "commit" : "0b7744cb9d6",
+        "uri" : "http://dev-nexus.fircosoft.net/content/sites/site-builds/Continuity/5.3.20.0.p2-release-5.3.x/ContinuityMultiplexer-5.3.20.0.p2-linux.tar.gz",
+        "product" : "continuity5",
+        "asset": "multiplexer",
+        "prefix" : "release-5.3.x",
+        "version" : "5.3.20.0",
+        "push" : "p2" 
+        }
+}

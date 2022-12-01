@@ -1,0 +1,17 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity6/cty-cmapi-soap-server-mock:master",
+    "product": "continuity6",
+    "asset": "cty-cmapi",
+    "version": "master",
+    "digest": "sha256:fbb29d198ed1e3480cf392176a4e28264d80961aa0e686fec0159d93d1a9d551",
+    "buildDate": "2020-09-21T09:04:39.416Z",
+    "labels": {
+      "asset": "cty-cmapi",
+      "component": "cmapi-soap-server-mock",
+      "maintainer": "RBI-DL Fircosoft Continuity Paris <FircosoftContinuityParis@reedbusiness.com>",
+      "product": "continuity6",
+      "version": "master"
+    }
+  }
+}

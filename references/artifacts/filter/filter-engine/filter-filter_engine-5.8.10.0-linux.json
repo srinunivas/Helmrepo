@@ -1,0 +1,21 @@
+{
+  "artifact": {
+    "name": "filter-filter_engine-5.8.10.0-linux",
+    "buildDate": "07/12/2020",
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@bitbucket.fpa.rbxd.ds/fil/filter.git",
+      "branch": "5.8.10",
+      "commit": "947999af8",
+      "date": "20201207T124632Z"
+    },
+    "uri": "http://dev-nexus.fircosoft.net/content/repositories/site-builds/filter/5.8.10.0p4035/FOF_5.8.10.0_LINUX_64.tar.gz",
+    "product": "filter",
+    "asset": "filter_engine",
+    "version": "5.8.10.0",
+    "push": "p4035",
+    "latest": true,
+    "platform": "linux",
+    "description": "filter version 5.8.10.0"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity6/advr-db-oracle:master-oracle19cee-dev",
+    "product": "continuity6",
+    "asset": "advr-db-oracle",
+    "version": "master",
+    "digest": "sha256:fa3d766909f6bec8a1f4111ba30d06e7b020fc0666b004c3bc6ece234daae574",
+    "buildDate": "2022-03-09T16:43:44.849Z",
+    "labels": {
+      "asset": "advr-db-oracle",
+      "maintainer": "RBI-DL Fircosoft Continuity Paris <FircosoftContinuityParis@reedbusiness.com>",
+      "product": "continuity6",
+      "push": "4",
+      "version": "master",
+      "com.accuity.asset": "advr-db-oracle",
+      "com.accuity.product": "continuity6",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "database",
+      "com.accuity.product.vcs-ref": "4125f4ed337089b81c7c42f336e865481f1a5fb4",
+      "com.accuity.product.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/cty/continuity.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "master",
+      "org.label-schema.build-date": "2021-06-03T09:11:11Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "continuity6 advr-db-oracle database master",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "037593c667ff2b19ba87ac81c4cd0fd220989b6d",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "master"
+    }
+  }
+}

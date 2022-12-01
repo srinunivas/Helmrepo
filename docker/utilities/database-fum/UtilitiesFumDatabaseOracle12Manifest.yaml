@@ -1,0 +1,33 @@
+---
+project: Utilities-FUM
+product: utilities
+asset: database-fum
+component: oracle
+dockerfile: Template.dockerfile
+buildDescFilenameFilterRegex: buildDesc-Windows-win32\.json$
+environments:
+  release: &release-environment
+    generateLatestTags: true
+    branchPrefixFilter: release
+    artifacts: &artifacts
+      - name: database
+        filter: UTILITIES-FUM-.*.-scripts.zip$
+        expand: true
+        more:
+          sqlScripts:
+            creationScript: "SQL-Server/FUM_Creation_Sql_Server.sql"
+    image: &image
+      type: db
+      db:
+        name: oracle
+        versions:
+          - '12'
+      labels:
+        maintainer: David Thomé <david.thome@accuity.com>
+        com.accuity.team: Utilities
+        com.accuity.project-name: UTILITIES
+        com.accuity.project-url: http://jira.fircosoft.net/projects/UTILITIES
+    dependencies:
+      - type: image
+        name: oracle
+        reference: jenkins-deploy.fircosoft.net/oracle12c

@@ -1,0 +1,22 @@
+{
+    "imageData" : { 
+        "name" : "jenkins-deploy.fircosoft.net/filter/filter-engine:5.7.2.0",
+        "product": "filter",
+        "asset": "filter-engine",
+        "dependencies" : [
+            {
+                "type"      : "artifact",
+                "name"      : "filter-engine",
+                "reference" : "filter-filter_engine-5.7.2.0-linux",
+                "expand"    : true
+            }
+        ],
+        "version": "{{deps.filter-engine.version}}",
+        "env": "release",
+        "autoBuild": true,
+        "autoPush": true,
+        "tags": ["{{deps.filter-engine.version}}-oel7", "{{deps.filter-engine.version}}-latest", "{{deps.filter-engine.version}}-{{deps.filter-engine.push}}"],
+        "schemas": "e2e-121",
+        "os": "oel7"
+    }
+}

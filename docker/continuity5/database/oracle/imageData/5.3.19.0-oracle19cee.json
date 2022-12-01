@@ -1,0 +1,34 @@
+{
+  "imageData": {
+    "name": "jenkins-deploy.fircosoft.net/continuity5/database:5.3.19.0-oracle19cee",
+    "product": "continuity5",
+    "asset": "database",
+    "component": "oracle",
+    "version": "5.3.19.0",
+    "env": "release",
+    "manifest": {
+      "entry": "docker/continuity5/database/oracle/database.mjs",
+      "commit": "ae488744917788947af84054b0e6c67550d5c948"
+    },
+    "autoBuild": true,
+    "autoPush": true,
+    "tags": [],
+    "dependencies": [
+      {
+        "type": "image",
+        "name": "database",
+        "reference": "jenkins-deploy.fircosoft.net/continuity/oracle/database-prebuilt:19.3.0-ee"
+      },
+      {
+        "type": "artifact",
+        "name": "sql-main-oracle",
+        "reference": "continuity5-database-5.3.19.0-oracle",
+        "expand": false
+      }
+    ],
+    "schemas": "e2e-121",
+    "thirdParties": {
+      "database": "oracle19cee"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/third-parties/easysoft-licenses:1.0",
+    "product": "third-parties",
+    "asset": "easysoft",
+    "version": "1.0",
+    "digest": "sha256:40bb8f9d1d8ec7885cb7814c564d4d20c61079ed69686bd806154a9be453db21",
+    "buildDate": "2021-10-25T08:26:05.377Z",
+    "labels": {
+      "com.accuity.asset": "easysoft",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "licenses",
+      "com.accuity.product": "third-parties",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "1.0",
+      "org.label-schema.build-date": "2021-06-03T11:25:40Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "third-parties easysoft licenses 1.0",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "85f8a540103a1abbae6c89877171143b8c3b4032",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "1.0"
+    }
+  }
+}

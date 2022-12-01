@@ -1,0 +1,37 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity5/coreengine:5.6.15.0-centos7-fircobase1.0-develop",
+    "product": "continuity5",
+    "asset": "coreengine",
+    "version": "5.6.15.0",
+    "digest": "sha256:db7281da083a59cfcab99804590672f146cff1e3ce93e07123ffefc33ff7d4fc",
+    "buildDate": "2022-02-09T14:39:31.095Z",
+    "labels": {
+      "com.accuity.asset": "coreengine",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "coreengine",
+      "com.accuity.dependencies.coreengine": "COREENGINE5.6.15.0",
+      "com.accuity.environment": "develop",
+      "com.accuity.os": "centos7",
+      "com.accuity.product": "continuity5",
+      "com.accuity.product.vcs-branch": "develop/5.6.x",
+      "com.accuity.product.vcs-ref": "c1147a1420c825f34a29765dd11caf62a52c8cab",
+      "com.accuity.product.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/cty/coreengine.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "5.6.15.0",
+      "maintainer": "Emmanuel MESSEGUE <emmanuel.messegue@fircosoft.com>",
+      "org.label-schema.build-date": "2021-02-05T13:07:48Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "continuity5 coreengine coreengine 5.6.15.0",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "d68ac89ff4ae8966b5f749a546babb6413336233",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "5.6.15.0",
+      "org.opencontainers.image.created": "2020-11-13 00:00:00+00:00",
+      "org.opencontainers.image.licenses": "GPL-2.0-only",
+      "org.opencontainers.image.title": "CentOS Base Image",
+      "org.opencontainers.image.vendor": "CentOS"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/trust/database:5.0.0.0-oracle19.3.0",
+    "product": "Trust",
+    "asset": "Database",
+    "version": "5.0.0.0",
+    "digest": "sha256:0b4b1430c40a24604142c8ef4efc323bfc945efe175d4242a5928a76260da75b",
+    "buildDate": "2021-06-16T14:45:59.203Z",
+    "labels": {
+      "com.accuity.asset": "Database",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "Oracle",
+      "com.accuity.environment": "release",
+      "com.accuity.product": "Trust",
+      "com.accuity.product.vcs-branch": "release/master",
+      "com.accuity.product.vcs-ref": "2344b8ab5e2dcb303c4f0398779154835a2b5362",
+      "com.accuity.product.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/trustv4/database.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.third-parties.database": "oracle19.3.0",
+      "com.accuity.version": "5.0.0.0",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "Trust Database Oracle 5.0.0.0",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "afe67ff9bb68f8f5bbbc71d74b66b1cd70137bfd",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "5.0.0.0"
+    }
+  }
+}

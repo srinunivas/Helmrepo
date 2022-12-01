@@ -1,0 +1,51 @@
+{
+  "InvestigationData": [
+    {
+      "Name": "Name",
+      "Value": "Remitting person_102"
+    },
+    {
+      "Name": "Date of birth",
+      "Value": "1981-03-02"
+    },
+    {
+      "Name": "Passeport",
+      "Value": "35AX0158"
+    },
+    {
+      "Name": "ID",
+      "Value": "19810302"
+    },
+    {
+      "Name": "Color",
+      "Value": "White"
+    },
+    {
+      "Name": "Job",
+      "Value": "Doctor"
+    },
+    {
+      "Name": "Studies",
+      "Value": "PHD"
+    },
+    {
+      "Name": "City",
+      "Value": "Meereen"
+    },
+    {
+      "Name": "Hobby",
+      "Value": "Football"
+    },
+    {
+      "Name": "City of birth",
+      "Value": "Le Havre"
+    },
+    {
+      "Name": "School",
+      "Value": "Jaures"
+    }
+  ],
+  "MessageId": "DIN20190705131937-00000-271",
+  "DataDate": "2019-11-19T14:22:01.629Z",
+  "VersionTag": 1
+}

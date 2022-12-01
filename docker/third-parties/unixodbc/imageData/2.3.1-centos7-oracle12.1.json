@@ -1,0 +1,22 @@
+{
+  "imageData" : {
+    "name" : "jenkins-deploy.fircosoft.net/third-parties/unixodbc:2.3.1-centos7-oracle12.1",
+    "product": "third-parties",
+    "asset": "unixODBC",
+    "component": "Oracle",
+    "version": "2.3.1-centos7-oracle12.1",
+    "dockerfile": "Template.InstanClient12c.dockerfile",
+    "dependencies": [],
+    "labels": {
+      "maintainer": "Sébastien Demanou <sebastien.demanou@accuity.com>"
+    },
+    "thirdParties": {
+      "odbcManager": "unixodbc2.3.1",
+      "odbcClient": "oracle12.1"
+    },
+    "os": "centos7",
+    "requireLocale": false,
+    "autoBuild": true,
+    "autoPush": true
+  }
+}

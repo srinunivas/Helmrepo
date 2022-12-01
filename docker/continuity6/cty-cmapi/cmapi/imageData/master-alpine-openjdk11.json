@@ -1,0 +1,25 @@
+{
+    "imageData" : {
+        "name" : "jenkins-deploy.fircosoft.net/continuity6/cty-cmapi:master-alpine-openjdk11",
+        "product": "continuity6",
+        "asset": "cty-cmapi",
+        "version": "master",
+        "component": "cmapi",
+        "dependencies" : [
+            {
+                "type"      : "image",
+                "name"      : "base",
+                "reference" : "jenkins-deploy.fircosoft.net/third-parties/alpine-with-certs"
+            },
+            {
+                "type"      : "artifact",
+                "name"      : "cmapi",
+                "reference" : "Continuity-CMAPI-master-CaseManagerAPI",
+                "download"  : true
+            }
+        ],
+        "autoBuild": true,
+        "autoPush": true,
+        "tags": ["latest", "master-p{{deps.cmapi.push}}-alpine-openjdk11", "{{deps.cmapi.version}}-p{{deps.cmapi.push}}-alpine-openjdk11"]
+    }
+}

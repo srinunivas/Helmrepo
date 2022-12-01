@@ -1,0 +1,4 @@
+rule DR_NOWF_01 reapply PASSED on msg reasoncode Regular_False_Alert {
+  condition msg.reference = "DR_NOWF_01"
+  action ReapplyEngine "Auto decision from No WF context"
+} 

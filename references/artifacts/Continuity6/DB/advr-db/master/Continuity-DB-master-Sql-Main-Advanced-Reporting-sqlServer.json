@@ -1,0 +1,20 @@
+{
+  "artifact": {
+    "name": "Continuity-DB-master-Sql-Main-Advanced-Reporting-sqlServer",
+    "buildDate": "20220309T162916Z",
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/cty/continuity.git",
+      "commit": "4125f4ed337089b81c7c42f336e865481f1a5fb4",
+      "date": "20220309T162916Z"
+    },
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/Continuity-DB/6.8.0.0.p4-develop-master/Continuity-6.8.0.0.p4-Sql-Main-Advanced-Reporting-SqlServer.zip",
+    "product": "continuity6",
+    "asset": "DB",
+    "component": "advr-db-sqlserver",
+    "version": "6.8.0.0",
+    "push": "4",
+    "latest": true,
+    "comment": "Continuity advanced reporting master database"
+  }
+}

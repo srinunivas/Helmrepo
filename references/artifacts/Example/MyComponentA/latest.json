@@ -1,0 +1,22 @@
+{
+  "artifact": {
+    "name": "Example-MyComponentA-latest",
+    "buildDate": "2021-03-10T15:54:52.178Z",
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/~vclausse/example-mycomponenta.git",
+      "commit": "55e3f6e83c289a625229d668eace0805d420f394",
+      "date": "2020-12-18T09:59:32.000Z"
+    },
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-tests/tmp/example-MyComponentA-1.0-5.tar.gz",
+    "product": "example",
+    "asset": "MyComponentA",
+    "component": "Web",
+    "version": "1.0",
+    "push": "5",
+    "latest": true,
+    "comment": "Bootstrap package for MyComponentA",
+    "hash": "sha256:9048040f3aa631aeae7216b46236bcbc112702aa5f7efc11ef61014b4bcae2d3",
+    "buildUrl": "http://jenkins.fircosoft.net/job/Deployment/job/Example/job/ComponentA-alt/5/"
+  }
+}

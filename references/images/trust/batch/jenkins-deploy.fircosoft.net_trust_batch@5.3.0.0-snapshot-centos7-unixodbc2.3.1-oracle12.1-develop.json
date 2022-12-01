@@ -1,0 +1,37 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/trust/batch:5.3.0.0-snapshot-centos7-unixodbc2.3.1-oracle12.1-develop",
+    "product": "Trust",
+    "asset": "Batch",
+    "version": "5.3.0.0-SNAPSHOT",
+    "digest": "sha256:81793ef0b8502c383bc13c377b022da4f5fd3060c6256047f2fe24bba7424a7a",
+    "buildDate": "2022-03-08T14:11:26.036Z",
+    "labels": {
+      "com.accuity.asset": "Batch",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "Linux",
+      "com.accuity.environment": "develop",
+      "com.accuity.os": "centos7",
+      "com.accuity.product": "Trust",
+      "com.accuity.product.vcs-branch": "develop/master",
+      "com.accuity.product.vcs-ref": "8753d474c2eca1db9968b8a2a56e1331b0a6a2e4",
+      "com.accuity.product.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/trustv4/batch.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.third-parties.odbc-client": "oracle12.1",
+      "com.accuity.third-parties.odbc-manager": "unixodbc2.3.1",
+      "com.accuity.version": "5.3.0.0-SNAPSHOT",
+      "org.label-schema.build-date": "2021-06-02T06:47:19Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "Trust Batch Linux 5.3.0.0-SNAPSHOT",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "747e0bdb123e273aabdbf999da35ff8f3e2d1fd1",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "5.3.0.0-SNAPSHOT",
+      "org.opencontainers.image.created": "2020-11-13 00:00:00+00:00",
+      "org.opencontainers.image.licenses": "GPL-2.0-only",
+      "org.opencontainers.image.title": "CentOS Base Image",
+      "org.opencontainers.image.vendor": "CentOS"
+    }
+  }
+}

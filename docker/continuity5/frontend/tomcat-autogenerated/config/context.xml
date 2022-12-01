@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+
+    <WatchedResource>WEB-INF/web.xml</WatchedResource>
+    <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
+    <WatchedResource>${catalina.base}/conf/cors.xml</WatchedResource>
+
+    <Resource name="jdbc/workflow"
+        auth="Container"
+        type="javax.sql.DataSource"
+        maxActive="100"
+        maxIdle="30"
+        maxWait="10000"
+        username="${dbUser}"
+        password="${dbPassword}"
+        driverClassName="${dbDriver}"
+        url="${dbUrl}"
+        defaultAutoCommit="true" />
+
+    <Resource name="jdbc/application"
+        auth="Container"
+        type="javax.sql.DataSource"
+        maxActive="100"
+        maxIdle="30"
+        maxWait="10000"
+        username="${dbUser}"
+        password="${dbPassword}"
+        driverClassName="${dbDriver}"
+        url="${dbUrl}"
+        defaultAutoCommit="true" />
+
+    <Resource name="jdbc/authentication"
+        auth="Container"
+        type="javax.sql.DataSource"
+        maxActive="100"
+        maxIdle="30"
+        maxWait="10000"
+        username="${dbUser}"
+        password="${dbPassword}"
+        driverClassName="${dbDriver}"
+        url="${dbUrl}"
+        defaultAutoCommit="true" />
+
+</Context>

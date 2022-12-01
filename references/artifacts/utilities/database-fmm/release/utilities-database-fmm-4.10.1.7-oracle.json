@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "name": "utilities-database-fmm-4.10.1.7-oracle",
+    "buildDate": "2019/04/16 11:15:18",
+    "commit": "df45963a64af026c14dbfcb9959ef0ca48dc5eb0",
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/Utilities-FMM/4.10.1.7.p3-release-4.10.x/Utilities-FMM-4.10.1.7.p3-scripts.zip",
+    "hash": "sha1:274e62a5d2274167709b21e8db6d28e26fc44902",
+    "product": "utilities",
+    "asset": "database-fmm",
+    "env": "release",
+    "prefix": "release-4.10.x",
+    "version": "4.10.1.7",
+    "push": "3",
+    "mutable": false,
+    "comment": "utilities database-fmm version 4.10.1.7 push 3 (release)",
+    "manifest": {
+      "entry": "docker/utilities/database-fmm/UtilitiesFmmDatabaseOracle19Manifest.yaml",
+      "commit": "ee244621d34e0ff56745653d8abd77bdbe7dec4a"
+    },
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/utilities/fmm.git",
+      "branch": "release/4.10.x",
+      "commit": "df45963a64af026c14dbfcb9959ef0ca48dc5eb0"
+    },
+    "sqlScripts": {
+      "creationScript": "SQL Server/FMM_Creation_Sql_Server.sql",
+      "batchScript": "SQL Server/batch-schema-sqlserver.sql"
+    }
+  }
+}

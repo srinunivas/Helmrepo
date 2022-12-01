@@ -1,0 +1,13 @@
+{
+    "artifact" : {
+        "name" : "mssql-jdbc-8.4.1.jre8",
+        "buildDate" : "2021-02-03T11:53:00Z",
+        "hash" : "sha256:c5a992394118df99bbea0c8b65e959d53df06bc5fe419de568f74b919729584b",
+        "uri" : "http://dev-nexus.fircosoft.net/content/sites/site-3rd-parties/microsoft/mssql-jdbc/8.4.1/mssql-jdbc-8.4.1.jre8.jar",
+        "vendor": "microsoft",
+        "product": "third-parties",
+        "asset": "mssql-jdbc",
+        "version" : "8.4.1.jre8",
+        "mutable": false
+    }
+}

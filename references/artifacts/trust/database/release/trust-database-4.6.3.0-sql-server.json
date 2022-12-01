@@ -1,0 +1,27 @@
+{
+  "artifact": {
+    "name": "trust-database-4.6.3.0-sql-server",
+    "buildDate": "2018/03/13 10:41:50",
+    "commit": "83ae93445a7d01f856ae37d0164c810533311c62",
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/TrustSql/4.6.3.0.p7-release-4.6.3.x/FFF_4630p7_Single_Creation_SqlServer.sql",
+    "hash": "sha1:3247885d5b5766584688214eaf68606013bf7013",
+    "product": "Trust",
+    "asset": "Database",
+    "env": "release",
+    "prefix": "release-4.6.3.x",
+    "version": "4.6.3.0",
+    "push": "7",
+    "mutable": false,
+    "comment": "Trust Database version 4.6.3.0 push 7 (release)",
+    "manifest": {
+      "entry": "docker/trust/database/sqlserver/TrustDatabaseSqlServerManifest.yaml",
+      "commit": "3e34603dd3894b5543cf80ee1e2f8c2ccb1ad680"
+    },
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/trustv4/database.git",
+      "branch": "release/4.6.3.x",
+      "commit": "83ae93445a7d01f856ae37d0164c810533311c62"
+    }
+  }
+}

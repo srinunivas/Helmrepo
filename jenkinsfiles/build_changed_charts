@@ -1,0 +1,98 @@
+#!groovy
+
+def getLastSuccessfulCommit() {
+  def lastSuccessfulHash = '4b825dc642cb6eb9a060e54bf8d69288fbee4904'
+  def lastSuccessfulBuild = currentBuild.rawBuild.getPreviousSuccessfulBuild()
+  if ( lastSuccessfulBuild ) {
+    lastSuccessfulHash = commitHashForBuild( lastSuccessfulBuild )
+  }
+  return lastSuccessfulHash
+}
+
+/**
+ * Gets the commit hash from a Jenkins build object, if any
+ */
+@NonCPS
+def commitHashForBuild( build ) {
+  //println build.getProperties().toString()
+  def scmAction = build?.actions.find { action -> action instanceof jenkins.scm.api.SCMRevisionAction }
+  if (scmAction) {
+    return scmAction?.revision?.hash
+  } else {
+    scmAction = build?.actions.find { action -> action instanceof hudson.plugins.git.util.BuildData  }
+    return scmAction?.lastBuild?.revision?.getSha1String()
+  }
+}
+
+properties([
+    pipelineTriggers([pollSCM('')]),
+    disableConcurrentBuilds()
+])
+
+def buildOk = false
+
+node('docker-build') {
+    /*
+    stage('Preparation') {
+      git (
+          url: 'ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git',
+          credentialsId: '4fbbef4c-9bde-4988-bbc2-2b35cb10e14a'
+      )
+    }
+    */
+    checkout scm
+    stage('Prepare shadoker-cli tool') {
+        sh """pushd shadoker
+pip3 install --user \$USER -r requirements.txt
+popd"""
+    }
+    try {
+      withEnv([
+        "DOCKER_REGISTRY=jenkins-deploy.fircosoft.net",
+        "DOCKER_CONFIG=${WORKSPACE}/.docker",
+        "DOCKER_CREDENTIALS=Jenkins2Portus",
+        "REGISTRY=jenkins-deploy.fircosoft.net",
+        "NEXUS_CREDENTIALS=2bf7e377-67d8-4024-8f6a-0336a60d17d3",
+        "NEXUS_URL=http://dev-nexus.fircosoft.net/content/sites/site-builds"
+      ]) {
+        stage('Changed references') {
+          withCredentials([
+            usernamePassword(credentialsId:"${DOCKER_CREDENTIALS}", passwordVariable: 'DOCKER_CREDS_PSW', usernameVariable: 'DOCKER_CREDS_USR')
+          ]) {
+            sh "echo \"${DOCKER_CREDS_PSW}\" | docker login --username \"${DOCKER_CREDS_USR}\" --password-stdin \"${REGISTRY}\""
+            def lastSuccessfulCommit = getLastSuccessfulCommit()
+            def currentCommit = commitHashForBuild( currentBuild.rawBuild )
+            if (lastSuccessfulCommit) {
+                cmd = './shadoker-cli.sh chart build -w -s "' + lastSuccessfulCommit + '" -e "' + currentCommit + '" -b ${BUILD_NUMBER} -l built-charts.log'
+                sh "$cmd"
+                buildOk = true
+            } else {
+                echo 'ERROR CANNOT DETERMINE LAST COMMIT'
+            }
+          }
+        }
+        stage('Publish changed charts') {
+          withCredentials([
+            usernamePassword(credentialsId:"${NEXUS_CREDENTIALS}", passwordVariable: 'NEXUS_PSW', usernameVariable: 'NEXUS_USR')
+          ]) {
+            if (buildOk) {
+              env.CHART_COUNT = "${sh(script:'wc -l built-charts.log | awk \'{print \$1}\'', returnStdout: true).trim()}"
+              if (env.CHART_COUNT == "0") {
+                echo "No chart has been built"
+              } else {
+                echo "${env.CHART_COUNT} charts have been built"
+                currentBuild.description = "<ul>\n" + "${sh(script:'sed -e \"s|^\\(.*\\),\\(.*\\),.*\$|<li>\\1@\\2</li>|\" built-charts.log', returnStdout: true).trim()}" + "\n</ul>"
+                sh "./jenkinsfiles/publish-charts.sh built-charts.log '${env.NEXUS_URL}' '${NEXUS_USR}:${NEXUS_PSW}' .p${env.BUILD_NUMBER}"
+              }
+            } else {
+              echo 'Build failed'
+            }
+          }
+        }
+      }
+    } catch (e) {
+        throw e
+    } finally {
+        sh 'echo done'
+    }
+}

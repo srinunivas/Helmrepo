@@ -1,0 +1,14 @@
+{
+  "image": {
+    "buildDate": "2020-05-26T11:01:07.451Z",
+    "commit": "0b7744cb9d6",
+    "name": "jenkins-deploy.fircosoft.net/continuity5/coreengine-oraclelinux:5.6.5.8",
+    "product": "continuity5",
+    "asset": "coreengine",
+    "version": "",
+    "digest": "sha256:f860446cbbdeaf04c90119ce84c9fd8031a7d8143495afb7aca7ac6b5dbc0a21",
+    "labels": {
+      "maintainer": "Emmanuel MESSEGUE <emmanuel.messegue@fircosoft.com>"
+    }
+  }
+}

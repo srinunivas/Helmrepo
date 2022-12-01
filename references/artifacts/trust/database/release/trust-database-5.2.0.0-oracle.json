@@ -1,0 +1,27 @@
+{
+  "artifact": {
+    "name": "trust-database-5.2.0.0-oracle",
+    "buildDate": "2021/11/08 16:15:08",
+    "commit": "91d755fba369d88545d10103392fc732de5e1c4d",
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/TrustSql/5.2.0.0.p1-release-master/FFF_5200_Single_Creation_Oracle.sql",
+    "hash": "sha1:57d6185db9cc32f64241c6ecd361b6d529276e10",
+    "product": "Trust",
+    "asset": "Database",
+    "env": "release",
+    "prefix": "release-master",
+    "version": "5.2.0.0",
+    "push": "1",
+    "mutable": false,
+    "comment": "Trust Database version 5.2.0.0 push 1 (release)",
+    "manifest": {
+      "entry": "docker/trust/database/oracle/TrustDatabaseOracle19Manifest.yaml",
+      "commit": "ad37a29ab230f894d16efa3cb72c922afa337073"
+    },
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/trustv4/database.git",
+      "branch": "release/master",
+      "commit": "91d755fba369d88545d10103392fc732de5e1c4d"
+    }
+  }
+}

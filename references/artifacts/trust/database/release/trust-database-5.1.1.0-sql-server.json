@@ -1,0 +1,27 @@
+{
+  "artifact": {
+    "name": "trust-database-5.1.1.0-sql-server",
+    "buildDate": "2020/09/21 17:34:26",
+    "commit": "b65a5163b51fae68716c63d084a60b6a498e30fa",
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/TrustSql/5.1.1.0.p1-release-master/FFF_5110_Single_Creation_SqlServer.sql",
+    "hash": "sha1:23ef33b066b392e96fd2c6faf493b929a89066a5",
+    "product": "Trust",
+    "asset": "Database",
+    "env": "release",
+    "prefix": "release-master",
+    "version": "5.1.1.0",
+    "push": "1",
+    "mutable": false,
+    "comment": "Trust Database version 5.1.1.0 push 1 (release)",
+    "manifest": {
+      "entry": "docker/trust/database/sqlserver/TrustDatabaseSqlServerManifest.yaml",
+      "commit": "3e34603dd3894b5543cf80ee1e2f8c2ccb1ad680"
+    },
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/trustv4/database.git",
+      "branch": "release/master",
+      "commit": "b65a5163b51fae68716c63d084a60b6a498e30fa"
+    }
+  }
+}

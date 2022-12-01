@@ -1,0 +1,10 @@
+{
+    "image": {
+        "name" : "jenkins-deploy.fircosoft.net/third-parties/unixodbc:2.3.7-centos8-oracle12.1",
+        "product": "third-parties",
+        "asset": "unixodbc",
+        "version": "2.3.7-centos8-oracle12.1",
+        "digest": "sha256:d9a572e21d3fd5e658a89f3feffee6203991f887da940b2f5799d8349bbc00ad",
+        "buildDate": "2020-04-16T10:11:17.000Z"
+    }
+}

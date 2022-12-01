@@ -1,0 +1,28 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity5/sahi-engine:5.3.x",
+    "product": "continuity5",
+    "asset": "sahi-engine",
+    "version": "5.3.x",
+    "digest": "sha256:55fa1715f643b611e7addfff9844982674e6f0cb7c0f8cbd4c98bd7aece0f742",
+    "buildDate": "2021-01-26T15:38:57.043Z",
+    "labels": {
+      "com.accuity.asset": "sahi-engine",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "basic",
+      "com.accuity.os": "ubuntu",
+      "com.accuity.product": "continuity5",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "5.3.x",
+      "maintainer": "Maamoun Soltani <maamoun.soltani@accuity.com>",
+      "org.label-schema.build-date": "2021-01-26T15:35:13Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "continuity5 sahi-engine basic 5.3.x",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "075e569e4c92b4a2b6163694523e52d22fc874a7",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "5.3.x"
+    }
+  }
+}

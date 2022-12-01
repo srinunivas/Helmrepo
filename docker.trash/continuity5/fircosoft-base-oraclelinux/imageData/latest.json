@@ -1,0 +1,12 @@
+{
+    "imageData" : { 
+        "name" : "jenkins-deploy.fircosoft.net/shared/fircosoft-base-oraclelinux:latest",
+        "dependencies" : [
+            {
+                "type"      : "image",
+                "name"      : "oraclelinux",
+                "reference" : "oraclelinux:latest"
+            }
+        ]
+    }
+}

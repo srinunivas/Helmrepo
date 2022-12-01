@@ -1,0 +1,37 @@
+---
+project: Utilities-FUM
+product: utilities
+asset: database-fum
+component: SQL Server
+buildDescFilenameFilterRegex: buildDesc-Windows-win32\.json$
+environments:
+  release:
+    generateLatestTags: true
+    excludedVersions:
+      - 4.10.0.7
+      - 4.10.1.5
+      - 4.10.2.0
+      - 4.10.2.3
+      - 4.11.0.0
+      - 4.11.3.0
+      - 4.11.3.9
+      - 4.11.3.9_BETA
+    branchPrefixFilter: release
+    artifacts: &artifacts
+      - name: database
+        filter: UTILITIES-FUM-.*.-scripts.zip$
+        expand: true
+        more:
+          sqlScripts:
+            creationScript: "SQL-Server/FUM_Creation_Sql_Server.sql"
+    image: &image
+      type: db
+      db:
+        name: sqlserver
+        versions:
+          - 2019
+    dependencies: &dependencies
+      - type: image
+        name: sqlserver
+        reference: jenkins-deploy.fircosoft.net/third-parties/sqlserver:2019-GA-ubuntu-16.04
+    additionalTags: []

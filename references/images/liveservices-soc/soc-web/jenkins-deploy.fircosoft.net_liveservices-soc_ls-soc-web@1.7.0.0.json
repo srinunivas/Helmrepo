@@ -1,0 +1,35 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/liveservices-soc/ls-soc-web:1.7.0.0",
+    "product": "liveservices-soc",
+    "asset": "soc-web",
+    "version": "1.7.0.0",
+    "digest": "sha256:119e80fe3ab80412e050735f4fc6248cf8b3fba03a4811fc6f01aa245e300ca9",
+    "buildDate": "2022-03-12T12:14:55.294Z",
+    "labels": {
+      "asset": "soc-web",
+      "com.accuity.asset": "soc-web",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "soc-web",
+      "com.accuity.product": "liveservices-soc",
+      "com.accuity.product.vcs-url": "ssh://git@bitbucket.fpa.rbxd.ds/ls/ls-webapp.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "1.7.0.0",
+      "maintainer": "Glauber ARAUJO <glauber.araujo@accuity.com>",
+      "org.label-schema.build-date": "20201113",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "liveservices-soc soc-web soc-web 1.7.0.0",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "71f9f86d3551cb3abb1da13a69b76f50a6f4c5dd",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "1.7.0.0",
+      "org.opencontainers.image.created": "2020-11-13 00:00:00+00:00",
+      "org.opencontainers.image.licenses": "GPL-2.0-only",
+      "org.opencontainers.image.title": "CentOS Base Image",
+      "org.opencontainers.image.vendor": "CentOS",
+      "product": "liveservices-soc",
+      "version": "1.7.0.0"
+    }
+  }
+}

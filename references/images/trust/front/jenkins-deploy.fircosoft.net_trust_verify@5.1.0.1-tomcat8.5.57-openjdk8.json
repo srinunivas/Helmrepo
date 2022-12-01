@@ -1,0 +1,52 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/trust/verify:5.1.0.1-tomcat8.5.57-openjdk8",
+    "product": "Trust",
+    "asset": "Verify",
+    "version": "5.1.0.1",
+    "digest": "sha256:450d2d3c581dcb7f4036b921f1d7d0efb853439525c48535dc9e834d9b8dd7d0",
+    "buildDate": "2021-11-22T10:54:27.714Z",
+    "labels": {
+      "net.fircosoft.image.category": "Verify",
+      "net.fircosoft.image.maintainer": "Sébastien Demanou <sebastien.demanou@accuity.com>",
+      "net.fircosoft.image.name": "Firco Trust",
+      "net.fircosoft.image.version": "5.1.0.1",
+      "net": {
+        "fircosoft": {
+          "image": {
+            "category": "Verify",
+            "maintainer": "Sébastien Demanou <sebastien.demanou@accuity.com>",
+            "name": "Firco Trust",
+            "version": "5.1.0.1"
+          }
+        }
+      },
+      "com": {
+        "accuity": {
+          "asset": "Verify",
+          "product": "Trust"
+        }
+      },
+      "com.accuity.asset": "Verify",
+      "com.accuity.product": "Trust",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "WAR",
+      "com.accuity.environment": "release",
+      "com.accuity.product.vcs-branch": "release/master",
+      "com.accuity.product.vcs-ref": "7f3f9086b19b6b1bc4c254fe95249c12b748f82c",
+      "com.accuity.product.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/trustv4/frontv5.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "5.1.0.1",
+      "org.label-schema.build-date": "2021-04-13T08:49:01Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "Trust Verify WAR 5.1.0.1",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "44187db52a6702c751ee79ec50670c516d6db060",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "5.1.0.1",
+      "com.accuity.third-parties.java": "openjdk8",
+      "com.accuity.third-parties.web-server": "tomcat8.5.57"
+    }
+  }
+}

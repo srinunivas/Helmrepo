@@ -1,0 +1,63 @@
+dn: ou=users,dc=fircosoft,dc=com
+changetype: add
+objectclass: top
+objectclass: organizationalUnit
+ou: users
+
+dn: ou=roles,dc=fircosoft,dc=com
+changetype: add
+objectclass: top
+objectclass: organizationalUnit
+ou: roles
+
+dn: uid=\23admin1,ou=users,dc=fircosoft,dc=com
+changetype: add
+objectclass: top
+objectclass: posixAccount
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+gecos: LDAPADMINISTRATOR
+cn: LDAPADMINISTRATOR
+sn: ADMINISTRATOR
+uid: admin1
+userPassword: Hello00
+loginShell: /bin/bash
+homeDirectory: /home/admin1
+gidNumber: 10000
+uidNumber: 10000
+
+dn: uid=acunetix,ou=users,dc=fircosoft,dc=com
+changetype: add
+objectclass: top
+objectclass: posixAccount
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+gecos: LDAPADMINISTRATOR
+cn: LDAPADMINISTRATOR
+sn: ADMINISTRATOR
+uid: acunetix
+userPassword: Hello00
+loginShell: /bin/bash
+homeDirectory: /home/acunetix
+gidNumber: 10001
+uidNumber: 10001
+
+dn: cn=ADMINISTRATOR,ou=roles,dc=fircosoft,dc=com
+changetype: add
+objectclass: top
+objectclass: posixGroup
+cn: ADMINISTRATOR
+gidNumber: 10010
+
+dn: cn=OPERATOR,ou=roles,dc=fircosoft,dc=com
+changetype: add
+objectclass: top
+objectclass: posixGroup
+cn: OPERATOR
+gidNumber: 10011
+
+dn: cn=SUPERVISOR,ou=roles,dc=fircosoft,dc=com
+changetype: add
+objectclass: top
+objectclass: posixGroup
+cn: SUPERVISOR

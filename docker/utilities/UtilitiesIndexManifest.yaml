@@ -1,0 +1,10 @@
+---
+manifests:
+  - docker/utilities/database-fmm/UtilitiesFmmDatabaseOracle19Manifest.yaml 
+  - docker/utilities/database-fmm/UtilitiesFmmDatabaseOracle12Manifest.yaml
+  - docker/utilities/database-fum/UtilitiesFumDatabaseOracle19Manifest.yaml
+  - docker/utilities/database-fum/UtilitiesFumDatabaseOracle12Manifest.yaml
+  - docker/utilities/database-fmm-sqlserver/sqlserver/UtilitiesDatabaseSqlServerManifest.yaml
+  - docker/utilities/database-fum-sqlserver/sqlserver/UtilitiesDatabaseSqlServerManifest.yaml  
+  
+  

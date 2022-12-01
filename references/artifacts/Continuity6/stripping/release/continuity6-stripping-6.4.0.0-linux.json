@@ -1,0 +1,26 @@
+{
+  "artifact": {
+    "name": "continuity6-stripping-6.4.0.0-linux",
+    "buildDate": "2020/12/31 17:41:57",
+    "commit": "a87a8e5d610dab46e57f1267f0964c145abfaa04",
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/Continuity-CEBACK/6.4.0.0.p1-release-master/ContinuityStripping-6.4.0.0.p1-linux.tar.gz",
+    "hash": "sha1:29fc5fc51001167206918784fd9c480d8266fd9c",
+    "product": "continuity6",
+    "asset": "Stripping",
+    "env": "release",
+    "prefix": "release-master",
+    "version": "6.4.0.0",
+    "push": "1",
+    "mutable": false,
+    "comment": "continuity6 Stripping version 6.4.0.0 push 1 (release)",
+    "manifest": {
+      "entry": "docker/continuity6/CEBACK/Stripping/StrippingManifest.mjs"
+    },
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/cty/continuity.git",
+      "branch": "release/master",
+      "commit": "a87a8e5d610dab46e57f1267f0964c145abfaa04"
+    }
+  }
+}

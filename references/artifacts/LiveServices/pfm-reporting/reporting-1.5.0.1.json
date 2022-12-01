@@ -1,0 +1,19 @@
+{
+  "artifact": {
+    "name": "reporting-1.5.0.1",
+    "buildDate": "2021-07-09T14:09:39.3NZ",
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@bitbucket.fpa.rbxd.ds/ls/reporting.git",
+      "commit": "",
+      "date": ""
+    },
+    "uri": "http://nexus.fpa.rbxd.ds/content/repositories/snapshots/com/accuity/sirius/services/reporting/1.5.0.1.60/reporting-1.5.0.1.60.zip",
+    "product": "liveservices-platform",
+    "asset": "reporting",
+    "component": "reporting",
+    "version": "1.5.0.1",
+    "push": "60",
+    "latest": true
+  }
+}

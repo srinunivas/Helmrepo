@@ -1,0 +1,19 @@
+{
+  "artifact": {
+    "name": "soc-api-1.5.0.1",
+    "buildDate": "2021-07-13T15:17:04.3NZ",
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@bitbucket.fpa.rbxd.ds/ls/ls-web.git",
+      "commit": "",
+      "date": ""
+    },
+    "uri": "http://nexus.fpa.rbxd.ds/content/repositories/snapshots/com/accuity/liveservices/ls-api/1.5.0.1.182/ls-api-1.5.0.1.182.zip",
+    "product": "liveservices-soc",
+    "asset": "soc-api",
+    "component": "soc-api",
+    "version": "1.5.0.1",
+    "push": "182",
+    "latest": true
+  }
+}

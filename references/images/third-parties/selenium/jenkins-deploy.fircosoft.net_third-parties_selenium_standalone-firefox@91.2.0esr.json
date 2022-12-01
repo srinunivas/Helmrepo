@@ -1,0 +1,27 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/third-parties/selenium/standalone-firefox:91.2.0esr",
+    "product": "third-parties",
+    "asset": "selenium",
+    "version": "91.2.0esr",
+    "digest": "sha256:d714fb8d2e764fdbcae3c6a48fb8a9c8c88621cabea2655525470ad165238f8e",
+    "buildDate": "2021-10-26T07:31:51.963Z",
+    "labels": {
+      "authors": "SeleniumHQ",
+      "com.accuity.asset": "selenium",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "standalone-firefox",
+      "com.accuity.environment": "release",
+      "com.accuity.product": "third-parties",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "91.2.0esr",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "third-parties selenium standalone-firefox 91.2.0esr",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "48f91f1ccf08f9b2e103231bb1c92b46eb3391f1",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "91.2.0esr"
+    }
+  }
+}

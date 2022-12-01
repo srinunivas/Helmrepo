@@ -1,0 +1,33 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity6/dbclient:6.0.0.2_mtsm-centos7-coreengine6.2.0.0",
+    "product": "continuity6",
+    "asset": "dbclient",
+    "version": "6.0.0.2_MTSM",
+    "digest": "sha256:ef73268c7f92555288ef822619b73c6ad1f180613e673f67c61a96b39fff2474",
+    "buildDate": "2021-01-29T16:01:04.331Z",
+    "labels": {
+      "com.accuity.asset": "dbclient",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "Linux",
+      "com.accuity.environment": "release",
+      "com.accuity.os": "centos7",
+      "com.accuity.product": "continuity6",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.third-parties.coreengine": "coreengine6.2.0.0",
+      "com.accuity.version": "6.0.0.2_MTSM",
+      "org.label-schema.build-date": "2021-01-29T15:51:16Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "continuity6 dbclient Linux 6.0.0.2_MTSM",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "a90f4530e9b5b651c069eccaf1ccc7300812dd74",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "6.0.0.2_MTSM",
+      "org.opencontainers.image.created": "2020-11-13 00:00:00+00:00",
+      "org.opencontainers.image.licenses": "GPL-2.0-only",
+      "org.opencontainers.image.title": "CentOS Base Image",
+      "org.opencontainers.image.vendor": "CentOS"
+    }
+  }
+}

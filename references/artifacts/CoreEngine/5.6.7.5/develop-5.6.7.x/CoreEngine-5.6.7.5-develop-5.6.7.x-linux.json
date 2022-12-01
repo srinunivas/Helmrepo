@@ -1,0 +1,14 @@
+{
+    "artifact" : {
+        "name" : "CoreEngine-5.6.7.5-develop-5.6.7.x-linux",
+        "buildDate" : "18/02/2020",
+        "commit" : "0b7744cb9d6",
+        "uri" : "http://dev-nexus.fircosoft.net/content/sites/site-builds/CoreEngine/5.6.7.5.p0-develop-5.6.7.x/CoreEngine32-5.6.7.5.p0-linux.tar.gz",
+        "product" : "continuity5",
+        "asset" : "coreengine",
+        "prefix" : "develop-5.6.7.x",
+        "version" : "5.6.7.5",
+        "push" : "p0",
+        "comment" : ""
+        }
+}

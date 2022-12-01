@@ -1,0 +1,27 @@
+{
+  "artifact": {
+    "name": "trust-verify-4.7.2.4-war",
+    "buildDate": "2021/12/15 14:44:39",
+    "commit": "7c200ae8a7dc8d9e740639a8d77dff4b7b5c72a2",
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/TrustFront/4.7.2.4.p1-release-master/FFFVerifyWeb-4.7.2.4.p1.war",
+    "hash": "sha1:275db15304419a35d83894f48e87cc2b90298b26",
+    "product": "Trust",
+    "asset": "Verify",
+    "env": "release",
+    "prefix": "release-master",
+    "version": "4.7.2.4",
+    "push": "1",
+    "mutable": false,
+    "comment": "Trust Verify version 4.7.2.4 push 1 (release)",
+    "manifest": {
+      "entry": "docker/trust/verify/tomcat/TrustVerify4TomcatManifest.mjs",
+      "commit": "303934924eb33df7b41d6fa7750dcbf783af98c1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/trustv4/front.git",
+      "branch": "release/master",
+      "commit": "7c200ae8a7dc8d9e740639a8d77dff4b7b5c72a2"
+    }
+  }
+}

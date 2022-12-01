@@ -1,0 +1,20 @@
+{
+  "artifact": {
+    "name": "Orchestrator-release-OREN_2.0.0.0_BETA1",
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net/cty-orc/orchestrator.git",
+      "commit": "e45b4ed67b70611e593bf8fc3feefdd54d47b524",
+      "date": "20220221T155325Z"
+    },
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/Continuity-OREN/2.0.0.0_BETA1.p5-release-OREN_2.0.0.0_BETA1/Orchestrator-2.0.0.0_BETA1.p5.zip",
+    "product": "orchestrator",
+    "asset": "oren",
+    "component": "oren",
+    "version": "2.0.0.0_BETA1",
+    "latest": true,
+    "push": "0_BETA5",
+    "comment": "Orchestrator with universal mapper package from release-2.0.0.0_BETA1",
+    "buildDate": "20220221T155325Z"
+  }
+}

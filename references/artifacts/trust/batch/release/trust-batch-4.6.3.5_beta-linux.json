@@ -1,0 +1,27 @@
+{
+  "artifact": {
+    "name": "trust-batch-4.6.3.5_beta-linux",
+    "buildDate": "2018/09/20 18:13:55",
+    "commit": "c377b1ce43ad3825c5772903ea94815919248dac",
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/TrustBatch/4.6.3.5_BETA.p1-release-4.6.3.x/TrustBatch-4.6.3.5_BETA.p1-Linux-i686.tar.gz",
+    "hash": "sha1:16ba45a713dfadb95c740052d8d33cd0734558b3",
+    "product": "Trust",
+    "asset": "Batch",
+    "env": "release",
+    "prefix": "release-4.6.3.x",
+    "version": "4.6.3.5_BETA",
+    "push": "1",
+    "mutable": false,
+    "comment": "Trust Batch version 4.6.3.5_BETA push 1 (release)",
+    "manifest": {
+      "entry": "docker/trust/batch/TrustBatchEasySoftManifest.mjs",
+      "commit": "c4b2bbbf315e1a3832039673829d079e1f4e0499"
+    },
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/trustv4/batch.git",
+      "branch": "release/4.6.3.x",
+      "commit": "c377b1ce43ad3825c5772903ea94815919248dac"
+    }
+  }
+}

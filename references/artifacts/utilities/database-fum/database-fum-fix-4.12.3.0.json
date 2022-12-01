@@ -1,0 +1,22 @@
+{
+    "artifact" : {
+        "name" : "utilities-database-fum-fix-4.12.3.0",
+        "buildDate" : "2020-11-09T17:55:00.000Z",
+        "repository": {
+            "type": "git",
+            "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/utilities/firco-utilities-manager.git",
+            "commit": "919c2f043de29578875ad23e61a4ac80ef244a0d",
+            "date": "2020-11-09T17:35:00.000Z",
+            "branch": "release/master"
+        },
+        "hash" : "sha1:368c8bf1ab60057d28cc72e26468af8b2b75238d",
+        "uri" : "http://bordeaux.fircosoft.net:8080/FUM/4-12-3/sql/SQL_FIX-FUM-4.12.3.0.p0.zip",
+        "product": "utilities",
+        "asset": "database-fum",
+        "component": "oracle-fix",
+        "version" : "4.12.3.0",
+        "env": "release",
+        "push" : "0",
+        "mutable": false
+    }
+}

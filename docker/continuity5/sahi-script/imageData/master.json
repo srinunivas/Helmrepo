@@ -1,0 +1,19 @@
+{
+    "imageData" : {       
+        "name" : "jenkins-deploy.fircosoft.net/continuity5/sahi-engine:5.3.x",
+        "product": "continuity5",
+        "asset": "sahi-engine",
+        "version": "5.3.x",
+        "dependencies" : [
+            {
+                "type"      : "artifact",
+                "name"      : "sahi-engine",
+                "reference" : "sahi-engine-installer-911",
+                "download" : true
+            }
+        ],
+        "autoBuild": true,
+        "autoPush": true,
+        "os": "ubuntu"
+    }
+}

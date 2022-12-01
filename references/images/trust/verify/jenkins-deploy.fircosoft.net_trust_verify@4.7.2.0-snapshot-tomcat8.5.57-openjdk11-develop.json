@@ -1,0 +1,31 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/trust/verify:4.7.2.0-snapshot-tomcat8.5.57-openjdk11-develop",
+    "product": "Trust",
+    "asset": "Verify",
+    "version": "4.7.2.0-SNAPSHOT",
+    "digest": "sha256:a9e964338db932050a88d40d7065a823ac21e32b98b9fcb224691f18fc47d4a3",
+    "buildDate": "2021-11-22T10:33:38.462Z",
+    "labels": {
+      "com.accuity.asset": "Verify",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "WAR",
+      "com.accuity.environment": "develop",
+      "com.accuity.product": "Trust",
+      "com.accuity.product.vcs-branch": "develop/master",
+      "com.accuity.product.vcs-ref": "9a334d3d72329d438aeac98a58d3a74eab21a5ca",
+      "com.accuity.product.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/trustv4/front.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.third-parties.java": "openjdk11",
+      "com.accuity.third-parties.web-server": "tomcat8.5.57",
+      "com.accuity.version": "4.7.2.0-SNAPSHOT",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "Trust Verify WAR 4.7.2.0-SNAPSHOT",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "44187db52a6702c751ee79ec50670c516d6db060",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "4.7.2.0-SNAPSHOT"
+    }
+  }
+}

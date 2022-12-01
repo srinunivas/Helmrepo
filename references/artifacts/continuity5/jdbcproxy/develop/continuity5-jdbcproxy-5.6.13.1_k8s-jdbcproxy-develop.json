@@ -1,0 +1,24 @@
+{
+  "artifact": {
+    "name": "continuity5-jdbcproxy-5.6.13.1_k8s-jdbcproxy-develop",
+    "buildDate": "2021/11/02 14:16:29",
+    "commit": "3b175faeae88d6cfff7574c695ae706e2261bc3e",
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/CoreEngine/5.6.13.1_k8s.p3-develop-5.6.x-K8S/jdbcproxy-5.6.13.1_k8s.p3.jar",
+    "product": "continuity5",
+    "asset": "jdbcproxy",
+    "env": "develop",
+    "version": "5.6.13.1_k8s",
+    "push": "3",
+    "mutable": false,
+    "comment": "continuity5 jdbcproxy version 5.6.13.1_k8s push 3 (develop)",
+    "manifest": {
+      "entry": "docker/continuity5/backend/jdbcproxy/jdbcproxy.mjs",
+      "commit": "f7727acac7bd63a2402b7e411d027b45fd3f8cee"
+    },
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/cty/coreengine.git",
+      "commit": "3b175faeae88d6cfff7574c695ae706e2261bc3e"
+    }
+  }
+}

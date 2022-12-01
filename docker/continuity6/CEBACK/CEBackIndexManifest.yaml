@@ -1,0 +1,7 @@
+---
+manifests:
+  - docker/continuity6/CEBACK/Acquisition/AcquisitionManifest.mjs
+  - docker/continuity6/CEBACK/Requester/RequesterManifest.mjs
+  - docker/continuity6/CEBACK/DBClient/DBClientManifest.mjs  
+  - docker/continuity6/CEBACK/DecisionReapplication/DecisionReapplicationManifest.mjs  
+  - docker/continuity6/CEBACK/Stripping/StrippingManifest.mjs  

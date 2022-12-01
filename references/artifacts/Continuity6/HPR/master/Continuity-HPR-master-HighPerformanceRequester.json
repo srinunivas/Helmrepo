@@ -1,0 +1,20 @@
+{
+  "artifact": {
+    "name": "Continuity-HPR-master-HighPerformanceRequester",
+    "buildDate": "20220207T164950Z",
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/cty/continuity.git",
+      "commit": "980beb6aacddfa47c09bc8e50bcd967743d63c9c",
+      "date": "20220207T164950Z"
+    },
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/Continuity-HPR/6.3.0.0_HPR.p44-develop-master/HighPerformanceRequester-6.3.0.0_HPR.p44.zip",
+    "product": "continuity6",
+    "asset": "hpr",
+    "component": "cty-web-application",
+    "version": "6.3.0.0_HPR",
+    "push": "0_HPR.44",
+    "latest": true,
+    "comment": "Continuity hpr master"
+  }
+}

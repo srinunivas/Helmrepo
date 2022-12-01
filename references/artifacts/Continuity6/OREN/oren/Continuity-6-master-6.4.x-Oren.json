@@ -1,0 +1,20 @@
+{
+  "artifact": {
+    "name": "Continuity-6-master-6.4.x-Oren",
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/cty/continuity.git",
+      "commit": "72b1ab1519ad83472587e544379a2db4782739eb",
+      "date": "20220304T115454Z"
+    },
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/Continuity-OREN/1.0.0.0_ERF_ALPHA.p0-develop-master/Orchestrator-1.0.0.0_ERF_ALPHA.p0.zip",
+    "product": "continuity6",
+    "asset": "oren",
+    "component": "oren",
+    "version": "1.0.0.0_ERF_ALPHA",
+    "push": "0_ERF_ALPHA.0",
+    "latest": true,
+    "comment": "Orchestrator package from develop-master",
+    "buildDate": "20220304T115454Z"
+  }
+}

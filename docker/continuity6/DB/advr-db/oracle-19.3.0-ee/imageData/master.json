@@ -1,0 +1,25 @@
+{
+    "imageData" : {       
+        "name" : "jenkins-deploy.fircosoft.net/continuity6/advr-db-oracle:master-oracle19cee-dev",
+        "product": "continuity6",
+        "asset": "advr-db-oracle",
+        "version": "master",
+        "component": "database",
+        "dependencies" : [
+            {
+                "type"      : "image",
+                "name"      : "database",
+                "reference" : "jenkins-deploy.fircosoft.net/continuity/oracle/database-prebuilt:19.3.0-ee"
+            },
+            {
+                "type"      : "artifact",
+                "name"      : "sqladvr",
+                "reference" : "Continuity-DB-master-Sql-Main-Advanced-Reporting-Oracle",
+                "expand" : true
+            }
+        ],
+        "autoBuild": true,
+        "autoPush": true,
+        "tags": ["master-oracle19cee-dev-latest", "master-oracle19cee-dev-b{{BUILD_INDEX}}"]
+    }
+}

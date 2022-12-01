@@ -1,0 +1,14 @@
+{
+  "imageData": {
+    "name": "jenkins-deploy.fircosoft.net/third-parties/docker.io/store/oracle/weblogic:12.2.1.4",
+    "product": "third-parties",
+    "asset": "weblogic",
+    "component": "WAS",
+    "version": "12.2.1.4",
+    "env": "release",
+    "autoBuild": true,
+    "autoPush": true,
+    "tags": [],
+    "dependencies": []
+  }
+}

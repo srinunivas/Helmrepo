@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+    sut:
+        image: curlimages/curl:7.70.0
+        depends_on:
+            - mycomponentb
+        links:
+            - mycomponentb
+        command: "curl -sf mycomponentb/pageB.html -o /tmp/pageB.html"
+
+    mycomponentb:
+        image: {{name}}
+        ports:
+            - "80"

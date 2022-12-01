@@ -1,0 +1,26 @@
+{
+  "artifact": {
+    "name": "javabatchfmm-4.11.3.7-develop",
+    "buildDate": "2021/09/08 18:33:03",
+    "commit": "31bebe6e735894c643f0b1cfda8d4977c7174ad8",
+	"uri": "http://bordeaux.fircosoft.net:8080/FMM/4-11-3/bin/FMM_V41137.p0-JAVA.zip",
+	"hash": "sha1:3bc773ac78e47ed5ab06746ab7ffd8375fac0eb8",
+    "product": "utilities",
+    "asset": "javabatchfmm",
+    "env": "develop",
+    "version": "41137",
+    "push": "p0",
+    "mutable": false,
+    "comment": "utilities fmm java batch 4.11.3.7 develop-master",
+    "manifest": {
+      "entry": "docker/utilities/javabatch-fmm/javabatch-fmm.mjs",
+      "commit": "193e72c13c86fcdd1793206f3edef4469481be98"
+    },
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net/utilities/fmm.git",
+      "commit": "65b598083617bec707f794c97dae41a4652bb4a2"
+    }
+  }
+}
+

@@ -1,0 +1,31 @@
+{
+  "artifact": {
+    "name": "utilities-database-fmm-4.11.2.3-sql-server",
+    "buildDate": "2018/11/28 11:02:33",
+    "commit": "1a2e68071b6ebcc326c5f5d12e02ab38866a92ba",
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/Utilities-FMM/4.11.2.3.p3-release-4.11.x/Utilities-FMM-4.11.2.3.p3-scripts.zip",
+    "hash": "sha1:cb76c35773f057c3f05ae90c83c33a05a73982b7",
+    "product": "utilities",
+    "asset": "database-fmm",
+    "env": "release",
+    "prefix": "release-4.11.x",
+    "version": "4.11.2.3",
+    "push": "3",
+    "mutable": false,
+    "comment": "utilities database-fmm version 4.11.2.3 push 3 (release)",
+    "manifest": {
+      "entry": "docker/utilities/database-fmm-sqlserver/sqlserver/UtilitiesDatabaseSqlServerManifest.yaml",
+      "commit": "ee244621d34e0ff56745653d8abd77bdbe7dec4a"
+    },
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/utilities/fmm.git",
+      "branch": "release/4.11.x",
+      "commit": "1a2e68071b6ebcc326c5f5d12e02ab38866a92ba"
+    },
+    "sqlScripts": {
+      "creationScript": "SQL Server/FMM_Creation_Sql_Server.sql",
+      "batchScript": "SQL Server/batch-schema-sqlserver.sql"
+    }
+  }
+}

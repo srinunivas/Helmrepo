@@ -1,0 +1,42 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/trust/fsk:5.1.0.2-centos7-unixodbc2.3.1-oracle12.1-webpheremq7.5.0.2",
+    "product": "Trust",
+    "asset": "FSK",
+    "version": "5.1.0.2",
+    "digest": "sha256:fcb590b9f572cb9efdfd6157948aee6facf1354e792fd5646c66cf43d0786cca",
+    "buildDate": "2021-01-29T15:25:51.919Z",
+    "labels": {
+      "com.accuity.asset": "FSK",
+      "com.accuity.product": "Trust",
+      "env.oracle-client.version": "12.1.0.2.0",
+      "env.os": "CentOS 7",
+      "env.unixodbc.version": "2.3.1",
+      "maintainer": "Sébastien Demanou <sebastien.demanou@accuity.com>",
+      "net.fircosoft.image.category": "FSK",
+      "net.fircosoft.image.maintainer": "Sébastien Demanou <sebastien.demanou@accuity.com>",
+      "net.fircosoft.image.name": "Firco Screen & Keep",
+      "net.fircosoft.image.version": "5.1.0.2",
+      "org.label-schema.build-date": "2021-01-29T15:06:57Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "Trust FSK Linux 5.1.0.2",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vendor": "Fircosoft",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "Linux",
+      "com.accuity.environment": "release",
+      "com.accuity.os": "centos7",
+      "com.accuity.product.vcs-branch": "release/master",
+      "com.accuity.product.vcs-ref": "4dd325869f4ac376e5ae5e422af9f41d70d24a3e",
+      "com.accuity.product.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/trustv4/firco-screen-keep.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.third-parties.mq-client": "webpheremq7.5.0.2",
+      "com.accuity.third-parties.odbc-client": "oracle12.1",
+      "com.accuity.third-parties.odbc-manager": "unixodbc2.3.1",
+      "com.accuity.version": "5.1.0.2",
+      "org.label-schema.vcs-ref": "be94ade9bd5f547209781395ed107c82acf2f0ae",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.version": "5.1.0.2"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+    "image": {
+        "buildDate" :  "23/02/2020",
+        "commit" : "0b7744cb9d6",
+        "name" : "jenkins-deploy.fircosoft.net/continuity5/requester-oraclelinux:5.3.16.14_BTA"
+    }
+}

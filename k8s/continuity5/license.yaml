@@ -1,0 +1,17 @@
+#############################################################################################
+# Licenses
+#############################################################################################
+
+license:
+  fbe: |
+    <<<Paste your Continuity backend fbe.cf license here>>>
+  fof: |
+    <<<Paste your Filter fof.cf license here>>>
+  frontend:
+    oracle:
+      license: |
+        <<<Paste the Oracle sql lines to add your front-end license into the db by deployement-console>>>
+    sqlserver:
+      license: |
+        <<<Paste the SQLServer sql lines to add your front-end license into the db by deployement-console>>>
+

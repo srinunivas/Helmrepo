@@ -1,0 +1,16 @@
+{
+    "artifact" : {
+        "name" : "oracle-instantclient-odbc-19.6.0.0.0.i386",
+        "buildDate" : "2020-11-10T15:33:04.00Z",
+        "hash" : "sha256:61ca76e7bc2162f12d2726207aa72f47b54f50125b63371892352129cdb7b018",
+        "uri" : "http://dev-nexus.fircosoft.net/content/repositories/site-3rd-parties/instantclient/19/Linux/i386/oracle-instantclient19.6-odbc-19.6.0.0.0-1.i386.rpm",
+        "vendor": "oracle",
+        "product": "third-parties",
+        "asset": "oracle-instantclient",
+        "component": "odbc",
+        "version" : "19.6",
+        "platform": "linux/i386",
+        "push" : "19.6.0.0.0",
+        "mutable": false
+    }
+}

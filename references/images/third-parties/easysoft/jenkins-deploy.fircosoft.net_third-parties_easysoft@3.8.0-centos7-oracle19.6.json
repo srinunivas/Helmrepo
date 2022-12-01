@@ -1,0 +1,33 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/third-parties/easysoft:3.8.0-centos7-oracle19.6",
+    "product": "third-parties",
+    "asset": "easysoft",
+    "version": "3.8.0-centos7-oracle19.6",
+    "digest": "sha256:06e60486dedc5159f534d1e4286e0278c04fff7676ca74668adda1745b5e1cdb",
+    "buildDate": "2021-10-25T06:06:15.866Z",
+    "labels": {
+      "com.accuity.asset": "easysoft",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "oracle",
+      "com.accuity.os": "centos7",
+      "com.accuity.product": "third-parties",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.third-parties.odbc-client": "oracle19.6",
+      "com.accuity.third-parties.odbc-manager": "easysoft3.8.0",
+      "com.accuity.version": "3.8.0-centos7-oracle19.6",
+      "org.label-schema.build-date": "2021-06-02T06:47:19Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "third-parties easysoft oracle 3.8.0-centos7-oracle19.6",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "85f8a540103a1abbae6c89877171143b8c3b4032",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "3.8.0-centos7-oracle19.6",
+      "org.opencontainers.image.created": "2020-11-13 00:00:00+00:00",
+      "org.opencontainers.image.licenses": "GPL-2.0-only",
+      "org.opencontainers.image.title": "CentOS Base Image",
+      "org.opencontainers.image.vendor": "CentOS"
+    }
+  }
+}

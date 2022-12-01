@@ -1,0 +1,44 @@
+{
+  "imageData": {
+    "name": "jenkins-deploy.fircosoft.net/trust/batch:5.1.0.0-centos7-unixodbc2.3.1-oracle19.6",
+    "product": "Trust",
+    "asset": "Batch",
+    "component": "Linux",
+    "version": "5.1.0.0",
+    "env": "release",
+    "manifest": {
+      "entry": "docker/trust/batch/TrustBatchUnixODBCManifest.mjs",
+      "commit": "c4b2bbbf315e1a3832039673829d079e1f4e0499"
+    },
+    "autoBuild": true,
+    "autoPush": true,
+    "tags": [
+      "5.1.0.latest-centos7-unixodbc2.3.1-oracle19.6"
+    ],
+    "labels": {
+      "maintainer": "Sébastien Demanou <sebastien.demanou@accuity.com>",
+      "com.accuity.team": "Trust",
+      "com.accuity.project-name": "TRUST",
+      "com.accuity.project-url": "http://jira.fircosoft.net/projects/TRUST"
+    },
+    "dependencies": [
+      {
+        "type": "image",
+        "name": "unixodbc",
+        "reference": "jenkins-deploy.fircosoft.net/third-parties/unixodbc:2.3.1-centos7-oracle19.6"
+      },
+      {
+        "type": "artifact",
+        "name": "batch",
+        "reference": "trust-batch-5.1.0.0-linux",
+        "expand": false
+      }
+    ],
+    "schemas": "e2e-121",
+    "thirdParties": {
+      "odbcManager": "unixodbc2.3.1",
+      "odbcClient": "oracle19.6"
+    },
+    "os": "centos7"
+  }
+}

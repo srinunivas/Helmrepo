@@ -1,0 +1,19 @@
+{
+  "artifact": {
+    "name": "soc-ia-controller-1.6.0.0",
+    "buildDate": "2021-11-03T10:41:17.3NZ",
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@bitbucket.fpa.rbxd.ds/ls/filter-connector.git",
+      "commit": "",
+      "date": ""
+    },
+    "uri": "http://nexus.fpa.rbxd.ds/content/repositories/snapshots/com/accuity/liveservices/ls-filtercontroller/1.6.0.0.41/ls-filtercontroller-1.6.0.0.41-ia.zip",
+    "product": "liveservices-soc",
+    "asset": "soc-filter-controller",
+    "component": "filter-controller",
+    "version": "1.6.0.0",
+    "push": "41",
+    "latest": true
+  }
+}

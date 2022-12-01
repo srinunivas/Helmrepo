@@ -1,0 +1,28 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/third-parties/docker.io/store/oracle/weblogic:12.2.1.4",
+    "product": "third-parties",
+    "asset": "weblogic",
+    "version": "12.2.1.4",
+    "digest": "sha256:c3a859635086efa50d520f888f352128a3e3fe02d819f998b65b721f0c0ac408",
+    "buildDate": "2021-03-02T19:55:26.083Z",
+    "labels": {
+      "com.accuity.asset": "weblogic",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "WAS",
+      "com.accuity.environment": "release",
+      "com.accuity.product": "third-parties",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "12.2.1.4",
+      "com.oracle.weblogic.imagetool.buildid": "5128f3c0-2d0a-43aa-b2de-07b3a1245b1f",
+      "org.label-schema.build-date": "2021-03-02T19:53:49Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "third-parties weblogic WAS 12.2.1.4",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "d9c9c15535bd3e1d01a745ead73201011c610c96",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "12.2.1.4"
+    }
+  }
+}

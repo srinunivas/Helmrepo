@@ -1,0 +1,20 @@
+{
+    "imageData" : {       
+        "name" : "jenkins-deploy.fircosoft.net/continuity/orchestrator:2.0.0.0_ALPHA-ubuntu18.04-openjdk11",
+        "product": "orchestrator",
+        "asset": "oren",
+        "component": "oren",
+        "version": "2.0.0.0_ALPHA",
+        "dependencies" : [
+            {
+                "type": "artifact",
+                "name": "orchestrator",
+                "reference": "Orchestrator-release-OREN_2.0.0.0_ALPHA",
+                "expand": true
+            }
+        ],
+        "autoBuild": true,
+        "autoPush": true,
+        "tags": ["2.0.0.0_ALPHA"]
+    }
+}

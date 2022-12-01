@@ -1,0 +1,19 @@
+{
+    "imageData" : { 
+        "name" : "jenkins-deploy.fircosoft.net/shared/fircobase:1.0-centos7",
+        "product": "shared",
+        "asset": "fircobase",
+        "version" : "1.0",
+        "tags" : ["{{_tag_e2e_121}}"],
+        "dependencies" : [
+            {
+                "type"      : "image",
+                "name"      : "base",
+                "reference" : "centos:7"
+            }
+        ],
+        "autoBuild": true,
+        "autoPush" : true,
+        "os": "centos7"
+    }
+}

@@ -1,0 +1,33 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/utilities/fmm-database:4.11.3.7-oracle19cee",
+    "product": "utilities",
+    "asset": "fmm-database",
+    "version": "4.11.3.7",
+    "digest": "sha256:c000b317e0906f869f46eda84781e395b86c4d0e9fdab8c814ba1b4bbf194c58",
+    "buildDate": "2021-08-11T07:25:04.349Z",
+    "labels": {
+      "com.accuity.asset": "fmm-database",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "oracle",
+      "com.accuity.environment": "release",
+      "com.accuity.product": "utilities",
+      "com.accuity.product.vcs-ref": "e41df68610b2643e4e8e3b3b3a6eeee4e591061d",
+      "com.accuity.product.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net/utilities/fmm.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.third-parties.database": "oracle19cee",
+      "com.accuity.version": "4.11.3.7",
+      "net.fircosoft.image.category": "fmm-database",
+      "net.fircosoft.image.maintainer": "David Thomé <David.Thome@accuity.com>",
+      "net.fircosoft.image.name": "FMM Database",
+      "net.fircosoft.image.version": "4.11.3.7",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "utilities fmm-database oracle 4.11.3.7",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "763c564c7f17f80aa8f0b48bb111823e8433c12f",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "4.11.3.7"
+    }
+  }
+}

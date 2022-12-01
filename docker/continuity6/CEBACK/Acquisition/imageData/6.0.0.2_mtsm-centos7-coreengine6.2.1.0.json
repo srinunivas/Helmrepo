@@ -1,0 +1,38 @@
+{
+  "imageData": {
+    "name": "jenkins-deploy.fircosoft.net/continuity6/acquisition:6.0.0.2_mtsm-centos7-coreengine6.2.1.0",
+    "product": "continuity6",
+    "asset": "acquisition",
+    "component": "Linux",
+    "version": "6.0.0.2_MTSM",
+    "env": "release",
+    "manifest": {
+      "entry": "docker/continuity6/CEBACK/Acquisition/AcquisitionManifest.mjs"
+    },
+    "autoBuild": true,
+    "autoPush": true,
+    "tags": [
+      "6.0.0.latest-centos7-coreengine6.2.1.0",
+      "6.0.latest-centos7-coreengine6.2.1.0"
+    ],
+    "dependencies": [
+      {
+        "type": "artifact",
+        "name": "coreengine",
+        "reference": "third-parties-coreengine-6.2.1.0-linux",
+        "expand": false
+      },
+      {
+        "type": "artifact",
+        "name": "acquisition",
+        "reference": "continuity6-acquisition-6.0.0.2_mtsm-linux",
+        "expand": false
+      }
+    ],
+    "schemas": "e2e-121",
+    "thirdParties": {
+      "coreengine": "coreengine6.2.1.0"
+    },
+    "os": "centos7"
+  }
+}

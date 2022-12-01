@@ -1,0 +1,25 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/liveservices-wlm/ls-wlm-web:1.0.0.0_alpha2",
+    "product": "wlm",
+    "asset": "wlm-web",
+    "version": "1.0.0.0_alpha2",
+    "digest": "sha256:fc807af21ff0b4b779cb2f8c1bcc08ab904578223f34b08e237071763ae6f6d5",
+    "buildDate": "2020-06-23T13:11:53.601Z",
+    "labels": {
+      "asset": "wlm-web",
+      "maintainer": "Glauber ARAUJO <glauber.araujo@accuity.com>",
+      "org.label-schema.build-date": "20200504",
+      "org.label-schema.license": "GPLv2",
+      "org.label-schema.name": "CentOS Base Image",
+      "org.label-schema.schema-version": "1.0",
+      "org.label-schema.vendor": "CentOS",
+      "org.opencontainers.image.created": "2020-05-04 00:00:00+01:00",
+      "org.opencontainers.image.licenses": "GPL-2.0-only",
+      "org.opencontainers.image.title": "CentOS Base Image",
+      "org.opencontainers.image.vendor": "CentOS",
+      "product": "liveservices-wlm",
+      "version": "1.0"
+    }
+  }
+}

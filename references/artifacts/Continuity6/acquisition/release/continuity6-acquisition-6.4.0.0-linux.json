@@ -1,0 +1,26 @@
+{
+  "artifact": {
+    "name": "continuity6-acquisition-6.4.0.0-linux",
+    "buildDate": "2020/12/31 17:41:57",
+    "commit": "a87a8e5d610dab46e57f1267f0964c145abfaa04",
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/Continuity-CEBACK/6.4.0.0.p1-release-master/ContinuityAcquisition-6.4.0.0.p1-linux.tar.gz",
+    "hash": "sha1:4b14e4f2d76d97a305ba7ae3f2313605b8e9bfa7",
+    "product": "continuity6",
+    "asset": "Acquisition",
+    "env": "release",
+    "prefix": "release-master",
+    "version": "6.4.0.0",
+    "push": "1",
+    "mutable": false,
+    "comment": "continuity6 Acquisition version 6.4.0.0 push 1 (release)",
+    "manifest": {
+      "entry": "docker/continuity6/CEBACK/Acquisition/AcquisitionManifest.mjs"
+    },
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/cty/continuity.git",
+      "branch": "release/master",
+      "commit": "a87a8e5d610dab46e57f1267f0964c145abfaa04"
+    }
+  }
+}

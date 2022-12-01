@@ -1,0 +1,7 @@
+{
+    "image": {
+        "buildDate" :  "20200513T044300Z",
+        "commit" : "7fa3968d7ebc",
+        "name" : "tomcat:9"
+    }
+}

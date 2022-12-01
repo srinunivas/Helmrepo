@@ -1,0 +1,35 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity5/verify-web:5.3.26.0-centos7-sqlserverclient17.8.1.1-1-openjdk11-continuity5.3.26.0",
+    "product": "continuity5",
+    "asset": "verify-web",
+    "version": "5.3.26.0",
+    "digest": "sha256:f8f30477d28f5659465d7ba89648d55e61353f6da6e451b8ae38fe2406461961",
+    "buildDate": "2021-11-10T08:31:28.397Z",
+    "labels": {
+      "com.accuity.asset": "verify-web",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "verify-web",
+      "com.accuity.environment": "release",
+      "com.accuity.os": "centos7",
+      "com.accuity.product": "continuity5",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.third-parties.java": "openjdk11",
+      "com.accuity.third-parties.odbc-client": "sqlserverclient17.8.1.1-1",
+      "com.accuity.version": "5.3.26.0",
+      "maintainer": "Emmanuel MESSEGUE <emmanuel.messegue@fircosoft.com>",
+      "org.label-schema.build-date": "20201113",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "continuity5 verify-web verify-web 5.3.26.0",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "0bff39d5559161a19ba113370e8ac5fb740c87a6",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "5.3.26.0",
+      "org.opencontainers.image.created": "2020-11-13 00:00:00+00:00",
+      "org.opencontainers.image.licenses": "GPL-2.0-only",
+      "org.opencontainers.image.title": "CentOS Base Image",
+      "org.opencontainers.image.vendor": "CentOS"
+    }
+  }
+}

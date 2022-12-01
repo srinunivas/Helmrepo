@@ -1,0 +1,35 @@
+{
+  "imageData": {
+    "name": "jenkins-deploy.fircosoft.net/continuity6/acquisition:6.4.0.0-centos7-coreengine6.2.0.0",
+    "product": "continuity6",
+    "asset": "acquisition",
+    "component": "Linux",
+    "version": "6.4.0.0",
+    "env": "release",
+    "manifest": {
+      "entry": "docker/continuity6/CEBACK/Acquisition/AcquisitionManifest.mjs"
+    },
+    "autoBuild": true,
+    "autoPush": true,
+    "tags": [],
+    "dependencies": [
+      {
+        "type": "artifact",
+        "name": "coreengine",
+        "reference": "third-parties-coreengine-6.2.0.0-linux",
+        "expand": false
+      },
+      {
+        "type": "artifact",
+        "name": "acquisition",
+        "reference": "continuity6-acquisition-6.4.0.0-linux",
+        "expand": false
+      }
+    ],
+    "schemas": "e2e-121",
+    "thirdParties": {
+      "coreengine": "coreengine6.2.0.0"
+    },
+    "os": "centos7"
+  }
+}

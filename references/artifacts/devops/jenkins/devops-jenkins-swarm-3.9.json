@@ -1,0 +1,15 @@
+{
+    "artifact" : {
+        "name" : "devops-jenkins-swarm-3.9",
+        "buildDate" : "2018-02-07T08:02:00.000Z",
+        "commit" : "0b7744cb9d6",
+        "uri" : "http://dev-nexus.fircosoft.net/service/local/repositories/site-3rd-parties/content/jenkins-ci/plugins/swarm-client/3.9/swarm-client-3.9.jar",
+        "hash": "sha1:b5a7687e9cd82b5c37cb8a58b70a486f70215976",
+        "product" : "devops",
+        "asset" : "jenkins",
+        "component" : "swarm",
+        "version" : "3.9",
+        "mutable": false,
+        "comment" : "This is the official Jenkins swarm agent 3.9 as found in https://repo.jenkins-ci.org/releases/org/jenkins-ci/plugins/swarm-client/3.9/"
+    }
+}

@@ -1,0 +1,37 @@
+{
+  "configurations": [
+    {
+      "domain": "liveservices.super",
+      "applications": [
+        {
+          "applicationName": "LIVESERVICES",
+          "clientId": "9JRVrBI68a7_9FltwTKai0u0RQoa",
+          // default clientSecret password = "8wxhhZzcRWv5Wnixffp4p0BffWIa"
+          "clientSecret": "$2a$10$QmB/56XXfLHpFRrBrksc7.zsNfIdU17d/.GmfBU3UWpVbW1Bf6SgG"
+        }
+      ],
+      "users": [
+        {
+          "username": "ls-api",
+          // default ls-api password = "ls-api"
+          "password": "$2a$12$oThPfstmPDvRCssY0x8T5.SHsyP9c7hpf.XfB3.fGuGD0GSVh.jVu"
+        },
+        {
+          "username": "messaging",
+          // default messaging password = "messaging"
+          "password": "$2a$12$14W9rwL.EwnGYDckNwCIy.9wrck0oCuN6ex/8p5sTXxJYzWdVYlrC"
+        }
+      ]
+    },
+    {
+      "domain": "live.fircosoft.net",
+      "users": [
+        {
+          "username": "agent_global",
+          //password = "agent_global"
+          "password": "$2a$10$58Mgjdz6zcvBIrhZla95M.70ohg8Z6/SrvJ0t8D4WLYQ9od3Tyflu"
+        }
+      ]
+    }
+  ]
+}

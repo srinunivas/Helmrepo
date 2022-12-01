@@ -1,0 +1,27 @@
+{
+  "artifact": {
+    "name": "trust-fsk-5.2.0.0-linux",
+    "buildDate": "2021/11/10 12:19:41",
+    "commit": "57e7867f592379d1576aebc64f539de1862d1909",
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/TrustFSK/5.2.0.0.p5-release-master/TrustFSK-5.2.0.0.p5-Linux-i686.tar.gz",
+    "hash": "sha1:2705cc9d5e5f60d79b4222003f333c239c923f89",
+    "product": "Trust",
+    "asset": "FSK",
+    "env": "release",
+    "prefix": "release-master",
+    "version": "5.2.0.0",
+    "push": "5",
+    "mutable": false,
+    "comment": "Trust FSK version 5.2.0.0 push 5 (release)",
+    "manifest": {
+      "entry": "docker/trust/fsk/TrustFSKMQ9Manifest.mjs",
+      "commit": "b21289135127b2509dbed863040c639843e8701b"
+    },
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/trustv4/firco-screen-keep.git",
+      "branch": "release/master",
+      "commit": "57e7867f592379d1576aebc64f539de1862d1909"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity5/verify-web:5.3.26.2-tomcat9.0.37-openjdk8-continuity5.3.26.2",
+    "product": "continuity5",
+    "asset": "verify-web",
+    "version": "5.3.26.2",
+    "digest": "sha256:fe51433213f11437a73ee6f1426bbdd567cbfd6c39fca2c264a3679b5afafe92",
+    "buildDate": "2021-12-21T09:13:08.495Z",
+    "labels": {
+      "com.accuity.asset": "verify-web",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "verify-web",
+      "com.accuity.environment": "release",
+      "com.accuity.product": "continuity5",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.third-parties.java": "openjdk8",
+      "com.accuity.third-parties.web-server": "tomcat9.0.37",
+      "com.accuity.version": "5.3.26.2",
+      "maintainer": "Emmanuel MESSEGUE <emmanuel.messegue@fircosoft.com>",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "continuity5 verify-web verify-web 5.3.26.2",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "a71adf486989c97310612342755cce5935ed7d56",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "5.3.26.2"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "artifact": {
+    "name": "wlm-api-1.0.4",
+    "buildDate": "2022-03-14T14:48:40.3NZ",
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@bitbucket.fpa.rbxd.ds/wlm/wlm-api.git",
+      "commit": "",
+      "date": ""
+    },
+    "uri": "http://nexus.fpa.rbxd.ds/content/repositories/snapshots/com/accuity/watchlistmanager/wlm-api/1.0.4.293/wlm-api-1.0.4.293.zip",
+    "product": "liveservices-wlm",
+    "asset": "wlm-api",
+    "component": "api",
+    "version": "1.0.4",
+    "push": "293",
+    "latest": true
+  }
+}

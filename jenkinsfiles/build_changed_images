@@ -1,0 +1,101 @@
+#!groovy
+
+def getLastSuccessfulCommit() {
+  def lastSuccessfulHash = '4b825dc642cb6eb9a060e54bf8d69288fbee4904'
+  def lastSuccessfulBuild = currentBuild.rawBuild.getPreviousSuccessfulBuild()
+  if ( lastSuccessfulBuild ) {
+    lastSuccessfulHash = commitHashForBuild( lastSuccessfulBuild )
+  }
+  return lastSuccessfulHash
+}
+
+/**
+ * Gets the commit hash from a Jenkins build object, if any
+ */
+@NonCPS
+def commitHashForBuild( build ) {
+  //println build.getProperties().toString()
+  def scmAction = build?.actions.find { action -> action instanceof jenkins.scm.api.SCMRevisionAction }
+  if (scmAction) {
+    return scmAction?.revision?.hash
+  } else {
+    scmAction = build?.actions.find { action -> action instanceof hudson.plugins.git.util.BuildData  }
+    return scmAction?.lastBuild?.revision?.getSha1String()
+  }
+}
+
+properties([
+    pipelineTriggers([pollSCM('')]),
+    disableConcurrentBuilds()
+])
+
+def buildOk = false
+ansiColor('xterm') {
+node('docker-build') {
+    /*
+    stage('Preparation') {
+      git (
+          url: 'ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git',
+          credentialsId: '4fbbef4c-9bde-4988-bbc2-2b35cb10e14a'
+      )
+    }
+    */
+    checkout scm
+    stage('Prepare shadoker-cli tool') {
+        sh """pushd shadoker
+pip3 install --user \$USER -r requirements.txt
+popd
+rm -f reports/test-*.xml 2>/dev/null || true"""
+    }
+    try {
+      withEnv([
+        "DOCKER_CONFIG=${WORKSPACE}/.docker",
+        "DOCKER_CREDENTIALS=Jenkins2Portus",
+        "REGISTRY=jenkins-deploy.fircosoft.net",
+        "GRYPE_EXECUTABLE=$HOME/bin/grype",
+        "SYFT_EXECUTABLE=$HOME/bin/syft"
+      ]) {
+        stage('Changed references') {
+          withCredentials([
+            usernamePassword(credentialsId:"${DOCKER_CREDENTIALS}", passwordVariable: 'DOCKER_CREDS_PSW', usernameVariable: 'DOCKER_CREDS_USR'),
+            usernamePassword(credentialsId:"DockerHub2", passwordVariable: 'DOCKERHUB_CREDS_PSW', usernameVariable: 'DOCKERHUB_CREDS_USR')
+          ]) {
+            sh "echo \"${DOCKER_CREDS_PSW}\" | docker login --username \"${DOCKER_CREDS_USR}\" --password-stdin \"${REGISTRY}\""
+            sh "echo \"${DOCKERHUB_CREDS_PSW}\" | docker login --username \"${DOCKERHUB_CREDS_USR}\" --password-stdin"
+            def lastSuccessfulCommit = getLastSuccessfulCommit()
+            def currentCommit = commitHashForBuild( currentBuild.rawBuild )
+            if (lastSuccessfulCommit) {
+                cmd = './shadoker-cli.sh docker build -w -s "' + lastSuccessfulCommit + '" -e "' + currentCommit + '" -b ${BUILD_NUMBER} -l built-images.log'
+                sh "$cmd"
+                buildOk = true
+            } else {
+                echo 'ERROR CANNOT DETERMINE LAST COMMIT'
+            }
+          }  
+        }
+        stage('Notify changed references') {
+          if (buildOk) {
+            env.IMAGE_COUNT = "${sh(script:'wc -l built-images.log | awk \'{print \$1}\'', returnStdout: true).trim()}"
+            if (env.IMAGE_COUNT == "0") {
+              echo "No image has been built"
+            } else {
+              echo "${env.IMAGE_COUNT} images have been built"
+              currentBuild.description = "<ul>\n" + "${sh(script:'sed -e \"s|^jenkins-deploy.fircosoft.net/|<li>|;s|\$|</li>|\" built-images.log', returnStdout: true).trim()}" + "\n</ul>"
+              catchError(buildResult: 'SUCCESS', stageResult: 'UNSTABLE') {
+                build job: 'shadoker-update-images', parameters: [[$class: 'StringParameterValue', name: 'COMMIT', value: 'true']], propagate: false, wait: false
+              }
+            }
+          } else {
+            echo 'Build failed, do not notiy shadoker-update-images'
+          }
+        }
+      }
+    } catch (e) {
+        throw e
+    } finally {
+        step([$class: 'XUnitBuilder',
+                thresholds: [[$class: 'FailedThreshold', unstableThreshold: '']],
+                tools: [[$class: 'JUnitType', pattern: 'reports/test-*.xml',  failIfNotNew: false, skipNoTestFiles: true, stopProcessingIfError: false]]])
+    }
+}
+}

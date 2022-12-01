@@ -1,0 +1,40 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/trust/database:5.2.0.0_alpha-sqlserver2019-develop",
+    "product": "Trust",
+    "asset": "Database",
+    "version": "5.2.0.0_ALPHA",
+    "digest": "sha256:4576c403864df3d31a9bda7faf5048cef11bd06398e06dfd7b204ac303175824",
+    "buildDate": "2021-02-17T17:30:07.553Z",
+    "labels": {
+      "com.accuity.asset": "Database",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "SQL Server",
+      "com.accuity.environment": "develop",
+      "com.accuity.product": "Trust",
+      "com.accuity.product.vcs-branch": "develop/master",
+      "com.accuity.product.vcs-ref": "aa4c356eb41697c2dc7f96f064aa2a5483323f11",
+      "com.accuity.product.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/trustv4/database.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.third-parties.database": "sqlserver2019",
+      "com.accuity.version": "5.2.0.0_ALPHA",
+      "com.microsoft.product": "Microsoft SQL Server",
+      "com.microsoft.version": "15.0.2000.5",
+      "net.fircosoft.image.asset": "sqlserver",
+      "net.fircosoft.image.component": "Database",
+      "net.fircosoft.image.maintainer": "Sébastien Demanou <sebastien.demanou@accuity.com>",
+      "net.fircosoft.image.name": "SQL Server",
+      "net.fircosoft.image.product": "third-parties",
+      "net.fircosoft.image.version": "2019-GA-ubuntu-16.04",
+      "org.label-schema.build-date": "2021-02-17T15:23:35Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "Trust Database SQL Server 5.2.0.0_ALPHA",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "3a1977878b1b1cc324fe76a1b7bd38716703f0e3",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "5.2.0.0_ALPHA",
+      "vendor": "Microsoft"
+    }
+  }
+}

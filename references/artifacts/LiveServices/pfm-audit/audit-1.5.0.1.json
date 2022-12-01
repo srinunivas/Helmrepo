@@ -1,0 +1,19 @@
+{
+  "artifact": {
+    "name": "audit-1.5.0.1",
+    "buildDate": "2021-07-09T14:00:19.3NZ",
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@bitbucket.fpa.rbxd.ds/ls/audit.git",
+      "commit": "",
+      "date": ""
+    },
+    "uri": "http://nexus.fpa.rbxd.ds/content/repositories/snapshots/com/accuity/sirius/services/audit/1.5.0.1.43/audit-1.5.0.1.43.zip",
+    "product": "liveservices-platform",
+    "asset": "audit",
+    "component": "audit",
+    "version": "1.5.0.1",
+    "push": "43",
+    "latest": true
+  }
+}

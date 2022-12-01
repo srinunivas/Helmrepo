@@ -1,0 +1,29 @@
+version: '2.4'
+
+services:
+  mq:
+    image: jenkins-deploy.fircosoft.net/trust/mq:9.1.2.0
+    ports:
+      - 9443:9443
+      - 1414:1414
+      - 9157:9157
+
+  OFICPUT-MQ7:
+    image: jenkins-deploy.fircosoft.net/trust/fsk:5.1.0.5-centos7-unixodbc2.3.1-oracle12.1-webspheremq7.5.0.2
+    depends_on:
+      mq:
+        condition: service_healthy
+    volumes:
+      - ./buffer:/data/buffer
+    working_dir: /data/buffer
+    command: "OFICPUT -Q='IN:FSKQM:mq(1414):FSKQM_CHL' -DIR=/data/buffer -FILE=Trust_MQSizeOver5.msg -MAXMSGSZ=10000000 -GUESSMSGSZ=1000000 -VERBOSE=99"
+
+  OFICPUT-MQ9:
+    image: jenkins-deploy.fircosoft.net/trust/fsk:5.2.0.0_beta-centos7-unixodbc2.3.1-oracle12.1-webspheremq9.2.0.1
+    depends_on:
+      mq:
+        condition: service_healthy
+    volumes:
+      - ./buffer:/data/buffer
+    working_dir: /data/buffer
+    command: "OFICPUT -Q='IN:FSKQM:mq(1414):FSKQM_CHL' -DIR=/data/buffer -FILE=Trust_MQSizeOver5.msg -MAXMSGSZ=10000000 -GUESSMSGSZ=1000000 -VERBOSE=99"

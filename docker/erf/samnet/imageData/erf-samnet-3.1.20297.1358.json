@@ -1,0 +1,20 @@
+{
+    "imageData" : {       
+        "name" : "jenkins-deploy.fircosoft.net/erf/samnet:3.1.20297.1358-CENTOS7",
+        "product": "erf",
+        "asset": "samnet",
+        "version": "3.1.20297.1358",
+        "dependencies" : [
+            {
+                "type"      : "artifact",
+                "name"      : "erf",
+                "reference" : "erf-samnet-3.1.20297.1358",
+                "expand" : true
+            }
+        ],
+        "autoBuild": true,
+        "autoPush": true,
+        "os": "centos7",
+        "tags": ["3.1.20297.1358-centos7"]
+    }
+}

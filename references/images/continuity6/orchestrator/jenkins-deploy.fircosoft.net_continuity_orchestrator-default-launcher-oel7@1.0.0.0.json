@@ -1,0 +1,17 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity/orchestrator-default-launcher-oel7:1.0.0.0",
+    "product": "continuity6",
+    "asset": "Orchestrator",
+    "version": "1.0.0.0",
+    "digest": "sha256:1bb86e67a9bf113b62f3b0adec87d5ba60e74441dd75606b328de9fc33262806",
+    "buildDate": "2020-07-31T14:48:28.974Z",
+    "labels": {
+      "asset": "Orchestrator",
+      "maintainer": "Mehdi <mehdi.dardani@accuity.com>",
+      "product": "continuity6",
+      "push": "1",
+      "version": "1.0.0.0"
+    }
+  }
+}

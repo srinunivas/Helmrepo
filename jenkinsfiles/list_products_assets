@@ -1,0 +1,37 @@
+#!groovy
+
+properties([
+    pipelineTriggers([pollSCM('')]),
+    buildDiscarder(logRotator(daysToKeepStr: '12'))
+])
+
+node('docker-build') {
+    checkout scm
+    stage('Prepare shadoker-cli tool') {
+        sh """pushd shadoker
+pip3 install --user \$USER -r requirements.txt
+popd"""
+    }
+    try {
+        stage('List Assets and Products') {
+            cmd = '''mkdir report 2>/dev/null && true
+./shadoker-cli.sh asset html > report/report_assets.html
+./shadoker-cli.sh asset metrics -p RBI.shadoker. > report/metrics_assets.log
+'''
+            sh "$cmd"
+
+            publishHTML (target: [
+              allowMissing: false,
+              alwaysLinkToLastBuild: true,
+              keepAll: true,
+              reportDir: 'report',
+              reportFiles: 'report_assets.html',
+              reportName: "Assets"
+            ])
+        }
+    } catch (e) {
+        throw e
+    } finally {
+        sh 'echo done'
+    }
+}

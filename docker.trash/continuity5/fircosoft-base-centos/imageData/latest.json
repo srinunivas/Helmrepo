@@ -1,0 +1,12 @@
+{
+    "imageData" : { 
+        "name" : "jenkins-deploy.fircosoft.net/shared/fircosoft-base-centos:latest",
+        "dependencies" : [
+            {
+                "type"      : "image",
+                "name"      : "centos",
+                "reference" : "centos:latest"
+            }
+        ]
+    }
+}

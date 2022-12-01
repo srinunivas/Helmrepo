@@ -1,0 +1,16 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity6/cty-cmapi:master",
+    "product": "continuity6",
+    "asset": "cty-cmapi",
+    "version": "master",
+    "digest": "sha256:1b9d1055207c1e7dc8ccdb839cc7c1e3814490b1dd52dcbe39f5f253802ac0e9",
+    "buildDate": "2020-09-21T09:02:25.328Z",
+    "labels": {
+      "asset": "cty-cmapi",
+      "maintainer": "RBI-DL Fircosoft Continuity Paris <FircosoftContinuityParis@reedbusiness.com>",
+      "product": "continuity6",
+      "version": "master"
+    }
+  }
+}

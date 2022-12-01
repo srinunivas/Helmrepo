@@ -1,0 +1,34 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/example/mycomponentb2:1.0-CENTOS7-ORACLE12CXE",
+    "product": "example",
+    "asset": "MyComponentB",
+    "version": "1.0",
+    "digest": "sha256:73f6a9c28d3dc88a869b6b2d5db01bf31a402836a18fa9b7db66255ed8d1bd0f",
+    "buildDate": "2021-06-08T10:56:48.446Z",
+    "labels": {
+      "asset": "MyComponentB",
+      "maintainer": "DevOps <devops@accuity.com>",
+      "org.label-schema.build-date": "2021-06-08T10:56:08Z",
+      "org.label-schema.name": "example MyComponentB Web 1.0",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "1.0",
+      "product": "example",
+      "push": "85",
+      "version": "1.0",
+      "com.accuity.asset": "MyComponentB",
+      "com.accuity.product": "example",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "Web",
+      "com.accuity.environment": "DEVELOP",
+      "com.accuity.product.vcs-ref": "214506dbd013936aa1597c0bf0cbd28f5117a110",
+      "com.accuity.product.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/~vclausse/example-mycomponentb.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "1.0",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.vcs-ref": "9461653e9bde1f5fa629a8b479f8491981032f7c",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git"
+    }
+  }
+}

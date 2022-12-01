@@ -1,0 +1,14 @@
+{
+    "artifact" : {
+        "name" : "devops-jenkins-swarm-2.0",
+        "buildDate" : "2015-08-03T18:59:00.000Z",
+        "uri" : "http://dev-nexus.fircosoft.net/service/local/repositories/site-3rd-parties/content/jenkins-ci/plugins/swarm-client/2.0/swarm-client-2.0-jar-with-dependencies.jar",
+        "hash": "sha1:41042bda1a33439a28ac7b78fb34e43a4f0e2370",
+        "product" : "devops",
+        "asset" : "jenkins",
+        "component" : "swarm",
+        "version" : "2.0",
+        "mutable": false,
+        "comment" : "This is the official Jenkins swarm agent 2.0 as found in https://repo.jenkins-ci.org/releases/org/jenkins-ci/plugins/swarm-client/2.0/"
+    }
+}

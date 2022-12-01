@@ -1,0 +1,34 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/filter/unifilter:6.0.3.0",
+    "product": "filter",
+    "asset": "unifilter",
+    "version": "6.0.3",
+    "digest": "sha256:27e61acf7af953fdd429f8ba730e12999350582007573f2700ad60077a3c3a30",
+    "buildDate": "2022-02-08T15:30:30.810Z",
+    "labels": {
+      "asset": "unifilter",
+      "com.accuity.asset": "unifilter",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.environment": "release",
+      "com.accuity.os": "oel7",
+      "com.accuity.product": "filter",
+      "com.accuity.product.vcs-branch": "6.0.3",
+      "com.accuity.product.vcs-ref": "xxx",
+      "com.accuity.product.vcs-url": "ssh://git@bitbucket.fpa.rbxd.ds/fil/filter.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "6.0.3",
+      "maintainer": "DevOps <devops@accuity.com>",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "filter unifilter  6.0.3",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "bf20a9a6090e6c600322f1401f107b595fbaaff0",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "6.0.3",
+      "product": "filter",
+      "push": "p7",
+      "version": ""
+    }
+  }
+}

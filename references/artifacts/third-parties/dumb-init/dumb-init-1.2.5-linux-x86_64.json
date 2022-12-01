@@ -1,0 +1,14 @@
+{
+    "artifact" : {
+        "name" : "dumb-init-1.2.5-linux-x86_64",
+        "buildDate" : "2021-02-03T11:53:00Z",
+        "hash" : "sha1:7c0a8ff4a1c95c713bb8a9064df9fbb7f66ef8a2",
+        "uri" : "http://dev-nexus.fircosoft.net/content/repositories/site-3rd-parties/yelp/dumb-init/linux/x86_64/dumb-init_1.2.5_x86_64",
+        "vendor": "yelp",
+        "product": "third-parties",
+        "asset": "dumb-init",
+        "version" : "1.2.5",
+        "platform": "linux/x86_64",
+        "mutable": false
+    }
+}

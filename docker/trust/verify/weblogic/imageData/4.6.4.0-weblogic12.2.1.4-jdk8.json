@@ -1,0 +1,41 @@
+{
+  "imageData": {
+    "name": "jenkins-deploy.fircosoft.net/trust/verify:4.6.4.0-weblogic12.2.1.4-jdk8",
+    "product": "Trust",
+    "asset": "Verify",
+    "component": "WAR",
+    "version": "4.6.4.0",
+    "env": "release",
+    "manifest": {
+      "entry": "docker/trust/verify/weblogic/TrustVerify4WeblogicManifest.mjs",
+      "commit": "8327633d2a85b855194ded260c3c618a5e6b0f61"
+    },
+    "autoBuild": true,
+    "autoPush": true,
+    "tags": [],
+    "labels": {
+      "maintainer": "Sébastien Demanou <sebastien.demanou@accuity.com>",
+      "com.accuity.team": "Trust",
+      "com.accuity.project-name": "TRUST",
+      "com.accuity.project-url": "http://jira.fircosoft.net/projects/TRUST"
+    },
+    "dependencies": [
+      {
+        "type": "image",
+        "name": "weblogic",
+        "reference": "jenkins-deploy.fircosoft.net/third-parties/docker.io/store/oracle/weblogic:12.2.1.4"
+      },
+      {
+        "type": "artifact",
+        "name": "verify",
+        "reference": "trust-verify-4.6.4.0-war",
+        "expand": false
+      }
+    ],
+    "schemas": "e2e-121",
+    "thirdParties": {
+      "webServer": "weblogic12.2.1.4",
+      "java": "jdk8"
+    }
+  }
+}

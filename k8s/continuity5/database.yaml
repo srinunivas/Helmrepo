@@ -1,0 +1,16 @@
+#############################################################################################
+# Database connections
+#############################################################################################
+
+# defines database configuration
+databases:
+  sqlserver:
+    logLevel: INFO
+    vendorName: microsoft
+    host: ""
+    port: 1433
+    name: ""
+    user: ""
+    password: ""
+    jdbcDriver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    jdbcUrl: "jdbc:sqlserver://..."

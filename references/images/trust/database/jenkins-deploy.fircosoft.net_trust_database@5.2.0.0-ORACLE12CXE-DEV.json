@@ -1,0 +1,27 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/trust/database:5.2.0.0-ORACLE12CXE-DEV",
+    "product": "trust",
+    "asset": "database",
+    "version": "5.2.0.0",
+    "digest": "sha256:9e2037c01e8129127e27f332ca9f83364d73f989cc2607d48271af777e668aa1",
+    "buildDate": "2020-08-25T12:22:49.849Z",
+    "labels": {
+      "net.fircosoft.image.artefact": "http://dev-nexus.fircosoft.net/content/sites/site-builds/TrustSql/5.2.0.0.p0-develop-master/FFF_5200_Single_Creation_Oracle.sql",
+      "net.fircosoft.image.category": "database",
+      "net.fircosoft.image.maintainer": "S\u00e9bastien Demanou <sebastien.demanou@accuity.com>",
+      "net.fircosoft.image.name": "Trust Database",
+      "net.fircosoft.image.version": "5.2.0.0",
+      "net": {
+        "fircosoft": {
+          "image": {
+            "category": "database",
+            "maintainer": "S\u00e9bastien Demanou <sebastien.demanou@accuity.com>",
+            "name": "Trust Database",
+            "version": "5.2.0.0"
+          }
+        }
+      }
+    }
+  }
+}

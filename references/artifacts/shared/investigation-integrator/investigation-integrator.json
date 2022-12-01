@@ -1,0 +1,12 @@
+{
+    "artifact" : {
+        "name" : "investigation-integrator",
+        "buildDate" : "28/04/2020",
+        "commit" : "",
+        "uri" : "http://dev-nexus.fircosoft.net/content/sites/site-3rd-parties/decision-insight/2.0.0/simulators-1.0.0.jar",
+        "product": "continuity5",
+        "asset": "investigation-integrator",
+        "version" : "1.0.0",
+        "push" : ""
+    }
+}

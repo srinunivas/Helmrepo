@@ -1,0 +1,14 @@
+{
+    "artifact": {
+      "name": "erf-samconsole-3.1.20297.1358",
+      "buildDate": "2020-10-23T23:24:00.000Z",
+      "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/erf/samconsole/3.1.20297.1358/ERFBatch.3.1.20297.1358-production-linux-x64.zip",
+      "hash": "sha1:fc369f0b4f8df42e7be2fc813145a1f0cfd30082",
+      "product": "erf",
+      "asset": "samconsole",
+      "component": "erfbatch",
+      "version": "3.1.20297.1358",
+      "env": "release",
+      "mutable": false
+    }
+}

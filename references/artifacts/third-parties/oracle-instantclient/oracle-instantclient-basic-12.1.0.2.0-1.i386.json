@@ -1,0 +1,16 @@
+{
+    "artifact" : {
+        "name" : "oracle-instantclient-basic-12.1.0.2.0.i386",
+        "buildDate" : "2020-06-29T08:30:00.00Z",
+        "hash" : "sha256:98645437c28a3faf568769ed8b5a05aad30156c7f63ef48e2b9d1a49e931fdcb",
+        "uri" : "http://dev-nexus.fircosoft.net/content/sites/external/release/Linux/i386/oracle-instantclient-basic/12.1.0.2.0-1/oracle-instantclient12.1-basic-12.1.0.2.0-1.i386.rpm",
+        "vendor": "oracle",
+        "product": "third-parties",
+        "asset": "oracle-instantclient",
+        "component": "basic",
+        "version" : "12.1",
+        "platform": "linux/i386",
+        "push" : "12.1.0.2.0",
+        "mutable": false
+    }
+}

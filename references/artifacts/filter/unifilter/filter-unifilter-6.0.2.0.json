@@ -1,0 +1,21 @@
+{
+  "artifact": {
+    "name": "filter-unifilter-6.0.2.0-linux",
+    "buildDate": "29/04/2020",
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@bitbucket.fpa.rbxd.ds/fil/filter.git",
+      "branch": "6.0.2",
+      "commit": "xxx",
+      "date": "20200422T000000Z"
+    },
+    "uri": "http://dev-nexus.fircosoft.net/content/repositories/site-builds/nginx_unique_filter/6.0.2.0p1/nginx_unique_filter-6.0.2.0-linux.tar.gz",
+    "product": "filter",
+    "asset": "unifilter",
+    "version": "6.0.2",
+    "push": "p1",
+    "latest": true,
+    "platform": "linux",
+    "description": "FOF version 6.0.2.0"
+  }
+}

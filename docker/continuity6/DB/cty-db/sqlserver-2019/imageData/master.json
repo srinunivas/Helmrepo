@@ -1,0 +1,20 @@
+{
+    "imageData" : {
+        "name" : "jenkins-deploy.fircosoft.net/continuity6/cty-db-sqlserver:master-mssql2019-dev",
+        "product": "continuity6",
+        "asset": "cty-db-sqlserver",
+        "version": "master",
+        "component": "database",
+        "dependencies" : [
+            {
+                "type"      : "artifact",
+                "name"      : "sqlmain",
+                "reference" : "Continuity-DB-master-Sql-Main-SqlServer",
+                "expand" : true
+            }
+        ],
+        "autoBuild": true,
+        "autoPush": true,
+        "tags": ["master-mssql2019-dev-latest", "{{deps.sqlmain.version}}-mssql2019-dev","{{deps.sqlmain.version}}-mssql2019-dev-b{{BUILD_INDEX}}","{{deps.sqlmain.version}}.p{{deps.sqlmain.push}}-mssql2019-dev"]
+    }
+}

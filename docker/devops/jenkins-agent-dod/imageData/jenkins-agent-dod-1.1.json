@@ -1,0 +1,19 @@
+{
+    "imageData": {
+        "name": "jenkins-deploy.fircosoft.net/devops/jenkins-agent-dod:1.1",
+        "product": "devops",
+        "asset": "jenkins",
+        "component": "agent-docker-on-docker",
+        "version": "1.1",
+        "dependencies": [
+            {
+                "type": "artifact",
+                "name": "swarm",
+                "reference": "devops-jenkins-swarm-2.0",
+                "download": true
+            }
+        ],
+        "autoBuild": true,
+        "autoPush": true
+    }
+}

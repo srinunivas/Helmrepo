@@ -1,0 +1,14 @@
+{
+  "imageData": {
+    "name": "jenkins-deploy.fircosoft.net/shared/keycloak/keycloak:1.0.0-keycloak12.0.4",
+    "product": "shared",
+    "asset": "keycloak",
+    "component": "keycloak",
+    "version": "12.0.4",
+    "env": "release",
+    "autoBuild": true,
+    "autoPush": true,
+    "tags": [],
+    "dependencies": []
+  }
+}

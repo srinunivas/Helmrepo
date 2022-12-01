@@ -1,0 +1,32 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity6/cty-cmapi:master-alpine-openjdk11",
+    "product": "continuity6",
+    "asset": "cty-cmapi",
+    "version": "master",
+    "digest": "sha256:ceb3b091f4f5af3fb588235fed0bbce3b634673b6be862d1f1051c56ec3531cf",
+    "buildDate": "2022-03-11T09:40:27.295Z",
+    "labels": {
+      "asset": "cty-cmapi",
+      "maintainer": "RBI-DL Fircosoft Continuity Paris <FircosoftContinuityParis@reedbusiness.com>",
+      "product": "continuity6",
+      "version": "master",
+      "com.accuity.asset": "cty-cmapi",
+      "com.accuity.product": "continuity6",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "cmapi",
+      "com.accuity.product.vcs-ref": "73e8b573a4fc018145b19f3acdbe647ed187c2fe",
+      "com.accuity.product.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/cty/continuity.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "master",
+      "org.label-schema.build-date": "2020-12-29T17:16:56Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "continuity6 cty-cmapi cmapi master",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "e73ebdcd1105184b82312896355dd14d841382be",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "master"
+    }
+  }
+}

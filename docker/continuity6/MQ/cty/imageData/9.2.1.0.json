@@ -1,0 +1,17 @@
+{
+    "imageData" : {
+        "name" : "jenkins-deploy.fircosoft.net/continuity6/mq-cty:9.2.1.0",
+        "autoBuild": true,
+        "autoPush": false,
+        "product": "thirdparties",
+        "asset": "websphere_mq-continuity",
+        "dependencies" : [
+            {
+                "type"      : "image",
+                "name"      : "mqadvancedServer",
+                "reference" : "jenkins-deploy.fircosoft.net/third-parties/mq_webspheremq:9.2.1.0"
+            }
+        ],
+        "version": "9.2.1.0"
+    }
+}

@@ -1,0 +1,34 @@
+#!groovy
+
+properties([
+    pipelineTriggers([cron('H H(8-20)/1 * * 1-5')])
+])
+
+node('docker-build') {
+    checkout scm
+    stage('Prepare shadoker-cli tool') {
+        sh """pushd shadoker
+pip3 install --user \$USER -r requirements.txt
+popd"""
+    }
+    try {
+        stage('List Package URLs') {
+            report_page = 'report_urls.html'
+            cmd = "./shadoker-cli.sh package inspect -o html > ${report_page}"
+            sh cmd
+
+            publishHTML (target: [
+              allowMissing: false,
+              alwaysLinkToLastBuild: true,
+              keepAll: true,
+              reportDir: '.',
+              reportFiles: report_page,
+              reportName: "Package URLs"
+            ])
+        }
+    } catch (e) {
+        throw e
+    } finally {
+        sh 'echo done'
+    }
+}

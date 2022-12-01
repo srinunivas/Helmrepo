@@ -1,0 +1,17 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/example/mycomponentb:1.0",
+    "product": "example",
+    "asset": "MyComponentB",
+    "version": "1.0",
+    "digest": "sha256:9dc609c1b9f41d16e9804d19a31ed2740a2a88974195992df9b3c681c9560124",
+    "buildDate": "2021-01-19T16:15:29.000Z",
+    "labels": {
+      "asset": "MyComponentB",
+      "maintainer": "DevOps <devops@accuity.com>",
+      "product": "Example",
+      "push": "xx",
+      "version": "1.0"
+    }
+  }
+}

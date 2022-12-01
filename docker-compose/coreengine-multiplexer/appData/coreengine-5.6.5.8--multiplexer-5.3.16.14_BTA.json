@@ -1,0 +1,27 @@
+{
+    "appData" : { 
+        "name" : "coreengine-5.6.5.8--multiplexer-5.3.16.14_BTA",
+        "dependencies" : [
+            {
+                "type"      : "image",
+                "name"      : "coreengine",
+                "reference" : "jenkins-deploy.fircosoft.net/continuity5/coreengine-oraclelinux:5.6.5.8"
+            },
+            {
+                "type"      : "image",
+                "name"      : "multiplexer",
+                "reference" : "jenkins-deploy.fircosoft.net/continuity5/multiplexer-oraclelinux:5.3.16.14_BTA"
+            },
+            {
+                "type"      : "image",
+                "name"      : "requester",
+                "reference" : "jenkins-deploy.fircosoft.net/continuity5/requester-oraclelinux:5.3.16.14_BTA"
+            },
+            {
+                "type"      : "image",
+                "name"      : "filterengine",
+                "reference" : "jenkins-deploy.fircosoft.net/continuity5/filterengine-oraclelinux:5.8.2.0"
+            }
+        ]
+    }
+}

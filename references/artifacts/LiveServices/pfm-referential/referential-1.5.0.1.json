@@ -1,0 +1,19 @@
+{
+  "artifact": {
+    "name": "referential-1.5.0.1",
+    "buildDate": "2021-07-09T14:11:05.3NZ",
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@bitbucket.fpa.rbxd.ds/ls/referential.git",
+      "commit": "",
+      "date": ""
+    },
+    "uri": "http://nexus.fpa.rbxd.ds/content/repositories/snapshots/com/accuity/sirius/services/referential/1.5.0.1.195/referential-1.5.0.1.195.zip",
+    "product": "liveservices-platform",
+    "asset": "referential",
+    "component": "referential",
+    "version": "1.5.0.1",
+    "push": "195",
+    "latest": true
+  }
+}

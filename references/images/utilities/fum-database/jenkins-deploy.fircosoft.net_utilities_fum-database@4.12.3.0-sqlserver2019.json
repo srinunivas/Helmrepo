@@ -1,0 +1,40 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/utilities/fum-database:4.12.3.0-sqlserver2019",
+    "product": "utilities",
+    "asset": "fum-database",
+    "version": "4.12.3.0",
+    "digest": "sha256:95f3b634ad4de4eb85b75676945fdc8d22198be9312fb8a1930db266a15a7fac",
+    "buildDate": "2021-03-02T18:54:17.897Z",
+    "labels": {
+      "com.accuity.asset": "fum-database",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "sqlserver",
+      "com.accuity.environment": "release",
+      "com.accuity.product": "utilities",
+      "com.accuity.product.vcs-branch": "release/master",
+      "com.accuity.product.vcs-ref": "919c2f043de29578875ad23e61a4ac80ef244a0d",
+      "com.accuity.product.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/utilities/firco-utilities-manager.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.third-parties.database": "sqlserver2019",
+      "com.accuity.version": "4.12.3.0",
+      "com.microsoft.product": "Microsoft SQL Server",
+      "com.microsoft.version": "15.0.2000.5",
+      "maintainer": "David Thomé <david.thome@accuity.com>",
+      "net.fircosoft.image.asset": "sqlserver",
+      "net.fircosoft.image.component": "Database",
+      "net.fircosoft.image.name": "SQL Server",
+      "net.fircosoft.image.product": "third-parties",
+      "net.fircosoft.image.version": "2019-GA-ubuntu-16.04",
+      "org.label-schema.build-date": "2021-03-02T18:42:20Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "utilities fum-database sqlserver 4.12.3.0",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "f589468a27ec217ea591c3954877e61fe8797a4f",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "4.12.3.0",
+      "vendor": "Microsoft"
+    }
+  }
+}

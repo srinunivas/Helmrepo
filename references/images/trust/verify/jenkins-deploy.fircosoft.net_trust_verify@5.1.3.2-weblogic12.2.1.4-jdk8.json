@@ -1,0 +1,33 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/trust/verify:5.1.3.2-weblogic12.2.1.4-jdk8",
+    "product": "Trust",
+    "asset": "Verify",
+    "version": "5.1.3.2",
+    "digest": "sha256:bb45702ea7aca0dae46851951bc8bc7289ae14578aca9ef19c47cbaed01e3b8f",
+    "buildDate": "2021-11-02T12:47:14.351Z",
+    "labels": {
+      "com.accuity.asset": "Verify",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "WAR",
+      "com.accuity.environment": "release",
+      "com.accuity.product": "Trust",
+      "com.accuity.product.vcs-branch": "release/master",
+      "com.accuity.product.vcs-ref": "c3c794fbc30ae8cda47bf4418e5e15528c667257",
+      "com.accuity.product.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/trustv4/frontv5.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.third-parties.java": "jdk8",
+      "com.accuity.third-parties.web-server": "weblogic12.2.1.4",
+      "com.accuity.version": "5.1.3.2",
+      "com.oracle.weblogic.imagetool.buildid": "5128f3c0-2d0a-43aa-b2de-07b3a1245b1f",
+      "org.label-schema.build-date": "2021-03-02T19:53:49Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "Trust Verify WAR 5.1.3.2",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "7e20e19c00ae878b5da5f4633856607c31aa4805",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "5.1.3.2"
+    }
+  }
+}

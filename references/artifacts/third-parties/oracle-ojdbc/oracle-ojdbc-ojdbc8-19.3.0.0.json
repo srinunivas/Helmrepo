@@ -1,0 +1,13 @@
+{
+    "artifact" : {
+        "name" : "oracle-ojdbc-ojdbc8-19.3.0.0",
+        "buildDate" : "2021-02-03T11:53:00Z",
+        "hash" : "sha1:967c0b1a2d5b1435324de34a9b8018d294f8f47b",
+        "uri" : "http://dev-nexus.fircosoft.net/content/groups/public/com/oracle/ojdbc/ojdbc8/19.3.0.0/ojdbc8-19.3.0.0.jar",
+        "vendor": "oracle",
+        "product": "third-parties",
+        "asset": "ojdbc8",
+        "version" : "19.3.0.0",
+        "mutable": false
+    }
+}

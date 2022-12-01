@@ -1,0 +1,14 @@
+{
+  "imageData": {
+    "name": "jenkins-deploy.fircosoft.net/third-parties/sqlserver:2019-GA-ubuntu-16.04",
+    "product": "third-parties",
+    "asset": "sqlserver",
+    "component": "Database",
+    "version": "2019-GA-ubuntu-16.04",
+    "env": "release",
+    "autoBuild": true,
+    "autoPush": true,
+    "tags": [],
+    "dependencies": []
+  }
+}

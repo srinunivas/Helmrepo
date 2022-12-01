@@ -1,0 +1,119 @@
+{{- range $key, $value := .Values.ruleRecorders.injecting }}
+---
+# mount this configmap in /fircosoft/config
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $key }}-cfg
+  labels:
+    {{- include "continuity5.labels" $ | nindent 4 }}
+data:
+  injecting.rule: |
+    {{ $value.content | nindent 4 }}
+  config.cfg: |
+    {{- include "continuity5.sharedConfiguration" $value | nindent 4 }}
+    dynload ./bin32/linux/Injecting
+    dynload ./bin32/linux/Pairing
+    dynload ./bin32/linux/Stripping
+    dynload ./bin32/linux/Jdbc
+    fkscript ContinuityDBTools.kl
+    jdbc-proxy FMFSYSTEM continuity.5.3.0 /unix-socket/jdbcproxy.sock
+    jdbc-proxy FMFKW continuity.5.3.0 /unix-socket/jdbcproxy.sock
+    null-queue QNULL
+    set QERROR     QNULL
+    file-in QIN        "/fircosoft/config/injecting.rule"
+    set QPROCESSED QNULL
+    run recorder "injecting.rule.recorder"
+  jdbcproxy.properties: |
+    {{- with index $.Values.databases $value.database }}
+    listener.addr=/unix-socket/jdbcproxy.sock
+    logging.level.root={{ .logLevel }}
+    database.vendor.name={{ .vendorName }}
+    jdbc.driver={{ .jdbcDriver }}
+    jdbc.url={{ .jdbcUrl }}
+    jdbc.user={{ .user }}
+    jdbc.password={{ .password }}
+    batch=true
+    {{- end }}
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ $key }}
+  labels:
+    {{- include "continuity5.labels" $ | nindent 4 }}
+spec:
+  ttlSecondsAfterFinished: {{ $value.ttlSecondsAfterFinished }}
+  template:
+    metadata:
+      annotations:
+      {{- with $.Values.podAnnotations }}
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "continuity5.selectorLabels" $ | nindent 8 }}
+    spec:
+      {{- with $.Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "continuity5.serviceAccountName" $ }}
+      securityContext:
+        {{- toYaml $.Values.podSecurityContext | nindent 8 }}
+      restartPolicy: Never
+      volumes:
+        - name: firco-shared
+          configMap:
+            name: firco-shared
+        - name: {{ $key }}-cfg
+          configMap:
+            name: {{ $key }}-cfg
+        - name: unix-socket
+          emptyDir: {}
+      containers:
+        - name: "rule-recorder"
+          securityContext:
+            {{- toYaml $.Values.securityContext | nindent 12 }}
+          {{- with index $.Values.images $value.image }}
+          image: "{{ .backend }}"
+          imagePullPolicy: {{ .pullPolicy }}
+          {{- end }}
+          args: ["-s", "4", "2", "-options", "/fircosoft/config/config.cfg"]
+          volumeMounts:
+            - name: firco-shared
+              mountPath: "/fircosoft/shared"
+            - name: {{ $key }}-cfg
+              mountPath: "/fircosoft/config"
+            - name: unix-socket
+              mountPath: /unix-socket
+          ports:
+            - name: http
+              containerPort: 5400
+              protocol: TCP
+          resources:
+            {{- toYaml $.Values.resources | nindent 12 }}
+        - name: jdbcproxy
+          securityContext:
+            {{- toYaml $.Values.securityContext | nindent 12 }}
+          {{- with index $.Values.images $value.image }}
+          image: "{{ .jdbcProxy }}"
+          imagePullPolicy: {{ .pullPolicy }}
+          {{- end }}
+          volumeMounts:
+            - name: {{ $key }}-cfg
+              mountPath: "/fircosoft/config"
+            - name: unix-socket
+              mountPath: /unix-socket
+      {{- with $.Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with $.Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with $.Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+{{- end }}

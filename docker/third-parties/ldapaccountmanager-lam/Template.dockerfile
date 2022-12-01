@@ -1,0 +1,1 @@
+FROM ldapaccountmanager/lam:{{version}}

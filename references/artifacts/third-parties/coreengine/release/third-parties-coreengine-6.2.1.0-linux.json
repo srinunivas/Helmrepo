@@ -1,0 +1,26 @@
+{
+  "artifact": {
+    "name": "third-parties-coreengine-6.2.1.0-linux",
+    "buildDate": "2020/12/14 11:10:31",
+    "commit": "50f2840c6b21ccef3255f1614e8e307d8cbcea75",
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/CoreEngine/6.2.1.0.p2-release-master/CoreEngine32-6.2.1.0.p2-linux.tar.gz",
+    "hash": "sha1:27da6fbbed3ad2a7e59b0f5b54801c719ed05939",
+    "product": "Third Parties",
+    "asset": "CoreEngine",
+    "env": "release",
+    "prefix": "release-master",
+    "version": "6.2.1.0",
+    "push": "2",
+    "mutable": false,
+    "comment": "Third Parties CoreEngine version 6.2.1.0 push 2 (release)",
+    "manifest": {
+      "entry": "docker/third-parties/coreengine/CoreEngineManifest.yaml"
+    },
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/cty/coreengine.git",
+      "branch": "release/master",
+      "commit": "50f2840c6b21ccef3255f1614e8e307d8cbcea75"
+    }
+  }
+}

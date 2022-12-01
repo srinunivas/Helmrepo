@@ -1,0 +1,42 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/liveservices-platform/ls-pfm-messaging:1.3.5.0",
+    "product": "liveservices-platform",
+    "asset": "messaging",
+    "version": "1.3.5.0",
+    "digest": "sha256:1fd346965b4e485c44740ea5c27b4843ec3885e330b6674f206591789baa5d78",
+    "buildDate": "2020-09-30T12:01:04.044Z",
+    "labels": {
+      "asset": "messaging",
+      "maintainer": "Glauber ARAUJO <glauber.araujo@accuity.com>",
+      "org.label-schema.build-date": "20200809",
+      "org.label-schema.license": "GPLv2",
+      "org.label-schema.name": "CentOS Base Image",
+      "org.label-schema.schema-version": "1.0",
+      "org.label-schema.vendor": "CentOS",
+      "org.opencontainers.image.created": "2020-08-09 00:00:00+01:00",
+      "org.opencontainers.image.licenses": "GPL-2.0-only",
+      "org.opencontainers.image.title": "CentOS Base Image",
+      "org.opencontainers.image.vendor": "CentOS",
+      "product": "liveservices-platform",
+      "version": "1.3.5.0",
+      "org": {
+        "label-schema": {
+          "build-date": "20200809",
+          "license": "GPLv2",
+          "name": "CentOS Base Image",
+          "schema-version": "1.0",
+          "vendor": "CentOS"
+        },
+        "opencontainers": {
+          "image": {
+            "created": "2020-08-09 00:00:00+01:00",
+            "licenses": "GPL-2.0-only",
+            "title": "CentOS Base Image",
+            "vendor": "CentOS"
+          }
+        }
+      }
+    }
+  }
+}

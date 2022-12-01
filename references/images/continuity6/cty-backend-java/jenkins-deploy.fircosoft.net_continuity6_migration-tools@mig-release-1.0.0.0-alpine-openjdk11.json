@@ -1,0 +1,16 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity6/migration-tools:mig-release-1.0.0.0-alpine-openjdk11",
+    "product": "continuity6",
+    "asset": "cty-backend-java",
+    "version": "1.0.0.0",
+    "digest": "sha256:71a438d217796d633cb04a684f8c441172693d3ba0871c1678ac151413cb91e6",
+    "buildDate": "2020-09-28T17:52:43.879Z",
+    "labels": {
+      "asset": "cty-backend-java",
+      "maintainer": "RBI-DL Fircosoft Continuity Paris <FircosoftContinuityParis@reedbusiness.com>",
+      "product": "continuity6",
+      "version": "1.0.0.0"
+    }
+  }
+}

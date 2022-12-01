@@ -1,0 +1,36 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/trust/verify:5.2.0.0_alpha-tomcat8.5.57-openjdk11",
+    "product": "Trust",
+    "asset": "Verify",
+    "version": "5.2.0.0_ALPHA",
+    "digest": "sha256:ba16a878fa6fed4ae14dd63a43069f2da86e49e60dbb9b93796fdcd14a0ad489",
+    "buildDate": "2021-11-22T10:24:55.281Z",
+    "labels": {
+      "com.accuity.asset": "Verify",
+      "com.accuity.product": "Trust",
+      "net.fircosoft.image.category": "Verify",
+      "net.fircosoft.image.maintainer": "Sébastien Demanou <sebastien.demanou@accuity.com>",
+      "net.fircosoft.image.name": "Firco Trust",
+      "net.fircosoft.image.version": "5.2.0.0_ALPHA",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "WAR",
+      "com.accuity.environment": "release",
+      "com.accuity.product.vcs-branch": "release/5.2.x.x",
+      "com.accuity.product.vcs-ref": "ad6e6d3ee4a7eefcfdb674aab122c2ac54bb5de2",
+      "com.accuity.product.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/trustv4/frontv5.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "5.2.0.0_ALPHA",
+      "org.label-schema.build-date": "2021-03-25T17:20:58Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "Trust Verify WAR 5.2.0.0_ALPHA",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "44187db52a6702c751ee79ec50670c516d6db060",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "5.2.0.0_ALPHA",
+      "com.accuity.third-parties.java": "openjdk11",
+      "com.accuity.third-parties.web-server": "tomcat8.5.57"
+    }
+  }
+}

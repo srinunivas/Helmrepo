@@ -1,0 +1,42 @@
+{
+  "imageData": {
+    "name": "jenkins-deploy.fircosoft.net/trust/batch:4.6.4.3-centos7-easysoft3.8.0-oracle12.1",
+    "product": "Trust",
+    "asset": "Batch",
+    "component": "Linux",
+    "version": "4.6.4.3",
+    "env": "release",
+    "manifest": {
+      "entry": "docker/trust/batch/TrustBatchEasySoftManifest.mjs",
+      "commit": "c4b2bbbf315e1a3832039673829d079e1f4e0499"
+    },
+    "autoBuild": true,
+    "autoPush": true,
+    "tags": [],
+    "labels": {
+      "maintainer": "Sébastien Demanou <sebastien.demanou@accuity.com>",
+      "com.accuity.team": "Trust",
+      "com.accuity.project-name": "TRUST",
+      "com.accuity.project-url": "http://jira.fircosoft.net/projects/TRUST"
+    },
+    "dependencies": [
+      {
+        "type": "image",
+        "name": "unixodbc",
+        "reference": "jenkins-deploy.fircosoft.net/third-parties/easysoft:3.8.0-centos7-oracle12.1"
+      },
+      {
+        "type": "artifact",
+        "name": "batch",
+        "reference": "trust-batch-4.6.4.3-linux",
+        "expand": false
+      }
+    ],
+    "schemas": "e2e-121",
+    "thirdParties": {
+      "odbcManager": "easysoft3.8.0",
+      "odbcClient": "oracle12.1"
+    },
+    "os": "centos7"
+  }
+}

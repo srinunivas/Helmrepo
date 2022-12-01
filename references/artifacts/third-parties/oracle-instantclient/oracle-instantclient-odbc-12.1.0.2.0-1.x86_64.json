@@ -1,0 +1,16 @@
+{
+    "artifact" : {
+        "name" : "oracle-instantclient-odbc-12.1.0.2.0.x86_64",
+        "buildDate" : "2020-06-29T08:30:00.00Z",
+        "hash" : "sha256:d3aa1a4957a2f15ced05921dab551ba823aa7925d8fcb58d5b3a7f624e4df063",
+        "uri" : "http://dev-nexus.fircosoft.net/content/sites/external/release/Linux/x86_64/oracle-instantclient-odbc/12.1.0.2.0-1/oracle-instantclient12.1-odbc-12.1.0.2.0-1.x86_64.rpm",
+        "vendor": "oracle",
+        "product": "third-parties",
+        "asset": "oracle-instantclient",
+        "component": "odbc",
+        "version" : "12.1",
+        "platform": "linux/x86_64",
+        "push" : "12.1.0.2.0",
+        "mutable": false
+    }
+}

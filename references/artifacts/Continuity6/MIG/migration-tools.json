@@ -1,0 +1,22 @@
+{
+    "artifact": {
+        "name": "Continuity-Migration-Tools-release",
+        "buildDate": "",
+        "repository": {
+            "type": "git",
+            "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/cty/continuity.git",
+            "branch": "release/master",
+            "commit": "742486a1b999c177adbe51d119ea0bd515ee48d5",
+            "date": "20200228T100632Z"
+        },
+        "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/Continuity-MIG/1.0.0.0.p2-release-master/ContinuityMigrationTools-1.0.0.0.p2.zip",
+        "hash": "sha1:65acb53b8c75b8fdeb0cadc4912af7c74f6135f3",
+        "product": "continuity6",
+        "asset": "cty-backend-java",
+        "component": "migration-tools",
+        "version": "1.0.0.0",
+        "push": "2",
+        "latest": true,
+        "description": "Continuity V6 Migration Tools 1.0.0.0 release"
+    }
+}

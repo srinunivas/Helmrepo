@@ -1,0 +1,20 @@
+{
+    "imageData" : {
+        "name" : "jenkins-deploy.fircosoft.net/continuity6/cty-webui:master-websphere9.0.5.3-openjdk8-ojdbc8-dev",
+        "product": "continuity6",
+        "asset": "verify-web",
+        "version": "master",
+        "component": "websphere-oracle",
+        "dependencies" : [
+            {
+                "type"      : "artifact",
+                "name"      : "webui",
+                "reference" : "Continuity-WEBUI-master-cty-web-application",
+                "expand" : true
+            }
+        ],
+        "autoBuild": true,
+        "autoPush": true,
+        "tags": ["master-websphere9.0.5.3-openjdk8-ojdbc8-dev-latest", "{{deps.webui.version}}-websphere9.0.5.3-openjdk8-ojdbc8-dev", "{{deps.webui.version}}-websphere9.0.5.3-openjdk8-ojdbc8-dev-b{{BUILD_INDEX}}", "{{deps.webui.version}}.p{{deps.webui.push}}-websphere9.0.5.3-openjdk8-ojdbc8-dev"]
+    }
+}

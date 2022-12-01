@@ -1,0 +1,31 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity6/hpr-uf:hpr-6.3.0.0_HPR-uf-6.0.0-oel7-openjdk8",
+    "product": "continuity6",
+    "asset": "hpr-uf",
+    "version": "hpr-6.3.0.0_HPR-uf-6.0.0",
+    "digest": "sha256:47b49ab5a583a5ebb8859327968d3b52860275a553e02d9bc72f45c49562d29d",
+    "buildDate": "2022-02-07T17:25:08.020Z",
+    "labels": {
+      "asset": "hpr-uf",
+      "com.accuity.asset": "hpr-uf",
+      "com.accuity.product": "continuity6",
+      "maintainer": "RBI-DL Fircosoft Continuity Paris <FircosoftContinuityParis@reedbusiness.com>",
+      "product": "continuity6",
+      "push": "hpr-0_HPR.44_uf-p34",
+      "version": "hpr-master-uf-6.0.0",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "hpr-uf",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "hpr-master-uf-6.0.0",
+      "org.label-schema.build-date": "2021-05-27T16:27:49Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "continuity6 hpr-uf hpr-uf hpr-master-uf-6.0.0",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "0e4f97e311d6972e7a363841d009dd790bba9636",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "hpr-master-uf-6.0.0"
+    }
+  }
+}

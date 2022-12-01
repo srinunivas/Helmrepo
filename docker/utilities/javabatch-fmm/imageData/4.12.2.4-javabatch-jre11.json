@@ -1,0 +1,32 @@
+{
+  "imageData": {
+    "name": "jenkins-deploy.fircosoft.net/utilities/javabatch-fmm:4.12.2.4",
+    "product": "utilities",
+    "asset": "javabatchfmm",
+    "component": "javabatchfmm",
+    "version": "4.12.2.4",
+    "env": "develop",
+    "manifest": {
+      "entry": "docker/utilities/javabatch-fmm/javabatch-fmm.mjs",           
+      "commit": "193e72c13c86fcdd1793206f3edef4469481be98"
+    },
+    "autoBuild": true,
+    "autoPush": true,
+    "tags": [
+      "4.12.2.4-openjdk11-develop"
+    ],
+    "dependencies": [
+      {
+        "type": "artifact",
+        "name": "javabatchfmm",
+        "reference": "javabatchfmm-4.12.2.4-develop",
+        "expand": false
+      }
+    ],
+    "schemas": "e2e-121",
+    "thirdParties": {
+      "java": "openjdk11"
+    },
+    "os": "alpinejre-11.0.11_9"
+  }
+}

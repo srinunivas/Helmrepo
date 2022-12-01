@@ -1,0 +1,14 @@
+{
+  "imageData": {
+    "name": "jenkins-deploy.fircosoft.net/third-parties/ibmcom/websphere-traditional:9.0.5.6",
+    "product": "third-parties",
+    "asset": "websphere",
+    "component": "WAS",
+    "version": "9.0.5.6",
+    "env": "release",
+    "autoBuild": true,
+    "autoPush": true,
+    "tags": [],
+    "dependencies": []
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "artifact": {
+    "name": "Continuity-CMAPI-master-CMAPIRestClientMock",
+    "buildDate": "20220302T125043Z",
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/cty/continuity.git",
+      "commit": "e65a6530f087be9f675c97438414321e431be1cb",
+      "date": "20220302T125043Z"
+    },
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/Continuity-CMAPIRestClientMock/1.0.0.0.p1-develop-6.7.x/CMAPIRestClientMock-1.0.0.0.p1.zip",
+    "product": "continuity6",
+    "asset": "CMAPIRestClientMock",
+    "component": "CMAPIRestClientMock",
+    "version": "1.0.0.0",
+    "push": "1",
+    "latest": true,
+    "comment": "Continuity Case Manager API's REST Client Mock"
+  }
+}

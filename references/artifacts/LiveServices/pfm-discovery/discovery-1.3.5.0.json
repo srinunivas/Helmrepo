@@ -1,0 +1,19 @@
+{
+  "artifact": {
+    "name": "discovery-1.3.5.0",
+    "buildDate": "2020-09-28T11:56:31.3NZ",
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@bitbucket.fpa.rbxd.ds/ls/discovery.git",
+      "commit": "",
+      "date": ""
+    },
+    "uri": "http://nexus.fpa.rbxd.ds/content/repositories/snapshots/com/accuity/sirius/services/discovery/1.3.5.0.42/discovery-1.3.5.0.42.zip",
+    "product": "liveservices-platform",
+    "asset": "discovery",
+    "component": "discovery",
+    "version": "1.3.5.0",
+    "push": "42",
+    "latest": true
+  }
+}

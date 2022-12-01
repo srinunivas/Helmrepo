@@ -1,0 +1,20 @@
+{
+    "imageData" : {       
+        "name" : "jenkins-deploy.fircosoft.net/continuity/orchestrator:latest-ubuntu18.04-openjdk11",
+        "product": "orchestrator",
+        "asset": "oren",
+        "component": "oren",
+        "version": "latest",
+        "dependencies" : [
+            {
+                "type": "artifact",
+                "name": "orchestrator",
+                "reference": "Orchestrator-master",
+                "expand": true
+            }
+        ],
+        "autoBuild": true,
+        "autoPush": true,
+        "tags": ["latest"]
+    }
+}

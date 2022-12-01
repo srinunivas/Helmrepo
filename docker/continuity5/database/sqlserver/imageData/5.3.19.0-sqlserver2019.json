@@ -1,0 +1,34 @@
+{
+  "imageData": {
+    "name": "jenkins-deploy.fircosoft.net/continuity5/database:5.3.19.0-sqlserver2019",
+    "product": "continuity5",
+    "asset": "database",
+    "component": "sqlserver",
+    "version": "5.3.19.0",
+    "env": "release",
+    "manifest": {
+      "entry": "docker/continuity5/database/sqlserver/database.mjs",
+      "commit": "ae488744917788947af84054b0e6c67550d5c948"
+    },
+    "autoBuild": true,
+    "autoPush": true,
+    "tags": [],
+    "dependencies": [
+      {
+        "type": "image",
+        "name": "database",
+        "reference": "jenkins-deploy.fircosoft.net/third-parties/sqlserver:2019-GA-ubuntu-16.04"
+      },
+      {
+        "type": "artifact",
+        "name": "sql-main-sqlserver",
+        "reference": "continuity5-database-5.3.19.0-sqlserver",
+        "expand": true
+      }
+    ],
+    "schemas": "e2e-121",
+    "thirdParties": {
+      "database": "sqlserver2019"
+    }
+  }
+}

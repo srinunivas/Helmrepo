@@ -1,0 +1,170 @@
+{{- range $key, $value := .Values.pairingManagers }}
+---
+# mount this configmap in /fircosoft/www/dapr
+# it contains the response to dapr to the /dapr/subscribe end point
+# and tells dapr which topic to consume
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $key }}-checker-cfgd
+  labels:
+    {{- include "continuity5.labels" $ | nindent 4 }}
+data:
+  subscribe: |
+    {{- include "continuity5.subscribe" $value | nindent 4 }}
+---
+# mount this configmap in /fircosoft/config
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $key }}-checker-cfg
+  labels:
+    {{- include "continuity5.labels" $ | nindent 4 }}
+data:
+  routing.rule: |
+    routemap RETAINED for msg {
+      default IGNORE
+      condition msg.retention?       
+      exit                          
+    }
+    {{ include "continuity5.routingRule" $value | nindent 4 }}
+  config.cfg: |
+    {{- include "continuity5.sharedConfiguration" $value | nindent 4 }}
+    dynload ./bin32/linux/Pairing
+    dynload ./bin32/linux/Jdbc
+    fkscript ContinuityPairing.kl
+    jdbc-proxy DBPAIRING pairing.5.3.0 /unix-socket/jdbcproxy.sock
+    jdbc-proxy DBPAIRINGAC pairing.5.3.0 /unix-socket/jdbcproxy.sock
+    {{- include "continuity5.inputConnectionPoint" $ | nindent 4 }}
+    null-queue QNULL
+    {{- include "continuity5.ouputConnectionPoints" $value | nindent 4 -}}\
+      IGNORE:QNULL:"original"
+    http-client QRETENTION 127.0.0.1 3500 \
+      /v1.0/state/{{ .dapr.statestore }} \
+      default-content-type application/json \
+      dapr_wrap_save_state
+    http-client QASSEMBLE 127.0.0.1 3500 \
+      /v1.0/publish/{{ .dapr.pubsub }}/{{ .assembleTopic }}\
+      default-content-type application/json \
+      dapr_wrap_cloud_event
+    set FORMAT_IN "{{ $value.input.format }}"
+    set APPLY_PAIRING_RULE? {{ $value.applyPairingRule }}
+    run j "pairing.checker" by 1 forever timeout 0
+  jdbcproxy.properties: |
+    {{- with index $.Values.databases $value.database }}
+    listener.addr=/unix-socket/jdbcproxy.sock
+    logging.level.root={{ .logLevel }}
+    database.vendor.name={{ .vendorName }}
+    jdbc.driver={{ .jdbcDriver }}
+    jdbc.url={{ .jdbcUrl }}
+    jdbc.user={{ .user }}
+    jdbc.password={{ .password }}
+    {{- end }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $key }}-checker
+  labels:
+    {{- include "continuity5.labels" $ | nindent 4 }}
+    app.kubernetes.io/component: "pairing-checker"
+spec:
+  {{- if not $.Values.autoscaling.enabled }}
+  replicas: {{ $value.replicaCount.checker }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "continuity5.selectorLabels" $ | nindent 6 }}
+  template:
+    metadata:
+      annotations:
+        checksum/config: "{{ toYaml $value | sha256sum }}"
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "pairing-{{ $key }}-checker"
+        dapr.io/app-max-concurrency: "1"
+      {{- with $.Values.podAnnotations }}
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "continuity5.selectorLabels" $ | nindent 8 }}
+    spec:
+      {{- with $.Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "continuity5.serviceAccountName" $ }}
+      securityContext:
+        {{- toYaml $.Values.podSecurityContext | nindent 8 }}
+      volumes:
+        - name: firco-shared
+          configMap:
+            name: firco-shared
+        - name: {{ $key }}-checker-cfg
+          configMap:
+            name: {{ $key }}-checker-cfg
+        - name: {{ $key }}-checker-cfgd
+          configMap:
+            name: {{ $key }}-checker-cfgd
+        - name: unix-socket
+          emptyDir: {}
+      containers:
+        - name: "pairing-checker"
+          securityContext:
+            {{- toYaml $.Values.securityContext | nindent 12 }}
+          {{- with index $.Values.images $value.image }}
+          image: "{{ .backend }}"
+          imagePullPolicy: {{ .pullPolicy }}
+          {{- end }}
+          args: ["-s", "4", "2", "-options", "/fircosoft/config/config.cfg"]
+          volumeMounts:
+            - name: firco-shared
+              mountPath: "/fircosoft/shared"
+            - name: {{ $key }}-checker-cfg
+              mountPath: "/fircosoft/config"
+            - name: {{ $key }}-checker-cfgd
+              mountPath: "/fircosoft/www/dapr"
+            - name: unix-socket
+              mountPath: /unix-socket
+          ports:
+            - name: http
+              containerPort: 5400
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 5400
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 5400
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          resources:
+            {{- toYaml $.Values.resources | nindent 12 }}
+        - name: jdbcproxy
+          securityContext:
+            {{- toYaml $.Values.securityContext | nindent 12 }}
+          {{- with index $.Values.images $value.image }}
+          image: "{{ .jdbcProxy }}"
+          imagePullPolicy: {{ .pullPolicy }}
+          {{- end }}
+          volumeMounts:
+            - name: {{ $key }}-checker-cfg
+              mountPath: "/fircosoft/config"
+            - name: unix-socket
+              mountPath: /unix-socket
+      {{- with $.Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with $.Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with $.Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+{{- end }}

@@ -1,0 +1,43 @@
+{
+  "imageData": {
+    "name": "jenkins-deploy.fircosoft.net/trust/verify:4.7.1.0-websphere9.0.5.6-ibmjdk8",
+    "product": "Trust",
+    "asset": "Verify",
+    "component": "WAR",
+    "version": "4.7.1.0",
+    "env": "release",
+    "manifest": {
+      "entry": "docker/trust/verify/websphere/TrustVerify4WebsphereManifest.mjs",
+      "commit": "4908de71bb6b1b4b796609aee5cb130a8e2ae5dc"
+    },
+    "autoBuild": true,
+    "autoPush": true,
+    "tags": [
+      "4.7.1.latest-websphere9.0.5.6-ibmjdk8"
+    ],
+    "labels": {
+      "maintainer": "Sébastien Demanou <sebastien.demanou@accuity.com>",
+      "com.accuity.team": "Trust",
+      "com.accuity.project-name": "TRUST",
+      "com.accuity.project-url": "http://jira.fircosoft.net/projects/TRUST"
+    },
+    "dependencies": [
+      {
+        "type": "image",
+        "name": "websphere",
+        "reference": "jenkins-deploy.fircosoft.net/third-parties/ibmcom/websphere-traditional:9.0.5.6"
+      },
+      {
+        "type": "artifact",
+        "name": "verify",
+        "reference": "trust-verify-4.7.1.0-war",
+        "expand": false
+      }
+    ],
+    "schemas": "e2e-121",
+    "thirdParties": {
+      "webServer": "websphere9.0.5.6",
+      "java": "ibmjdk8"
+    }
+  }
+}

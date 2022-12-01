@@ -1,0 +1,46 @@
+version: '3'
+services:
+  case-manager-api:
+    image: jenkins-deploy.fircosoft.net/continuity6/cty-cmapi:master-alpine-openjdk11
+    container_name: cmapirest
+    networks:
+      - cmapi-network
+    env_file:
+      - envs/general
+      - envs/keys
+      - envs/networking
+      - envs/oracledb1
+    volumes:
+      - ./keys/cmapikeystore.p12:/opt/cty-backend/cmapikeystore.p12
+      - ./keys/truststore:/opt/cty-backend/truststore
+      - ./configs/cmapi.properties:/opt/cty-backend/conf/CaseManagerAPI.properties
+  cmapi-rest-client-mock:
+    image: jenkins-deploy.fircosoft.net/continuity6/cty-cmapi-rest-client-mock:master-alpine-openjdk11
+    container_name: restclientmock
+    networks:
+      - cmapi-network
+    env_file:
+      - envs/general
+      - envs/keys
+      - envs/networking
+    volumes:
+      - ./keys/mockclientkeystore.p12:/opt/cty-backend/mockclientkeystore.p12
+      - ./keys/truststore:/opt/cty-backend/truststore
+      - ./configs/client.properties:/opt/cty-backend/conf/CMAPIRestClientMock.properties
+      - ./shareddirs/share1:/var/cmapi-data
+  cmapi-rest-server-mock:
+    image: jenkins-deploy.fircosoft.net/continuity6/cty-cmapi-rest-server-mock:master-alpine-openjdk11
+    container_name: restservermock
+    networks:
+      - cmapi-network
+    env_file:
+      - envs/general
+      - envs/keys
+      - envs/networking
+    volumes:
+      - ./keys/mockserverkeystore.p12:/opt/cty-backend/mockserverkeystore.p12
+      - ./keys/truststore:/opt/cty-backend/truststore
+      - ./configs/server.properties:/opt/cty-backend/conf/CMAPIRestServerMock.properties
+      - ./shareddirs/share1:/var/cmapi-data
+networks:
+  cmapi-network:

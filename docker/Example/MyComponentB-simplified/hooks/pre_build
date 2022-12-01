@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+echo Doing some prebuild actions with Bash

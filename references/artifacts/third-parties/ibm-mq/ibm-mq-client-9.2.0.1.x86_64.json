@@ -1,0 +1,15 @@
+{
+    "artifact" : {
+        "name" : "ibm-mq-client-9.2.0.1.x86_64",
+        "buildDate" : "2021-01-22T10:23:12.000Z",
+        "hash" : "sha256:4fe17244e1900ef444b6f52be1030cfa3bdd27ba217689eee05e0cb2a7ef4707",
+        "uri" : "http://dev-nexus.fircosoft.net/content/repositories/site-3rd-parties/ibm-mqseries/Linux/9.2.0.1/x64/9.2.0.1-IBM-MQC-Redist-LinuxX64.tar.gz",
+        "vendor": "ibm",
+        "product": "third-parties",
+        "asset": "ibm-mq",
+        "component": "client",
+        "version" : "9.2.0.1",
+        "platform": "linux/x86_64",
+        "mutable": false
+    }
+}

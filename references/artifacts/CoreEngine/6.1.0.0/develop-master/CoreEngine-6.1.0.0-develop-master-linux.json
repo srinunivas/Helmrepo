@@ -1,0 +1,13 @@
+{
+    "artifact" : {
+        "name" : "CoreEngine-6.1.0.0-develop-master-linux",
+        "buildDate" : "18/02/2020",
+        "commit" : "0b7744cb9d6",
+        "uri" : "http://dev-nexus.fircosoft.net/content/sites/site-builds/CoreEngine/6.1.0.0.p1-develop-master/CoreEngine32-6.1.0.0.p1-linux.tar.gz",
+        "product" : "continuity6",
+        "asset" : "coreengine",
+        "prefix" : "develop-master",
+        "version" : "6.1.0.0",
+        "push" : "p1" 
+        }
+}

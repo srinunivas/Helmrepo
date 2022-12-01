@@ -1,0 +1,22 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/third-parties/sqlserver:2019-GA-ubuntu-16.04",
+    "product": "third-parties",
+    "asset": "sqlserver",
+    "version": "2019-GA-ubuntu-16.04",
+    "digest": "sha256:a8f6118e429a2fb6ae9ebb9404adaa6f1206641d01d929da95a2d189c7476a70",
+    "buildDate": "2020-11-03T13:59:46.298Z",
+    "labels": {
+      "com.accuity.asset": "sqlserver",
+      "com.accuity.product": "third-parties",
+      "com.microsoft.product": "Microsoft SQL Server",
+      "com.microsoft.version": "15.0.2000.5",
+      "vendor": "Microsoft",
+      "net.fircosoft.image.asset": "sqlserver",
+      "net.fircosoft.image.component": "Database",
+      "net.fircosoft.image.name": "SQL Server",
+      "net.fircosoft.image.product": "third-parties",
+      "net.fircosoft.image.version": "2019-GA-ubuntu-16.04"
+    }
+  }
+}

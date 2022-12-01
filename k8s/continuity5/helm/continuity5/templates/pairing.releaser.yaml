@@ -1,0 +1,212 @@
+{{- range $key, $value := .Values.pairingManagers }}
+---
+# mount this configmap in /fircosoft/www/dapr
+# it contains the response to dapr to the /dapr/subscribe end point
+# and tells dapr which topic to consume
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $key }}-releaser-cfgd
+  labels:
+    {{- include "continuity5.labels" $ | nindent 4 }}
+data:
+  subscribe: |
+    []
+---
+# mount this configmap in /fircosoft/config
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $key }}-releaser-cfg
+  labels:
+    {{- include "continuity5.labels" $ | nindent 4 }}
+data:
+  routing.rule: |
+    {{ include "continuity5.routingRule" $value | nindent 4 }}
+
+    # special route to delete all states
+    routemap DELETE_STATE for msg {
+      set msg.qdesc.URI = unknown
+      default DELETE_STATE
+    }
+  config.cfg: |
+    {{- include "continuity5.sharedConfiguration" $value | nindent 4 }}
+    dynload ./bin32/linux/Pairing
+    dynload ./bin32/linux/Jdbc
+    fkscript ContinuityPairing.kl
+    fkscript /fircosoft/config/patch.xml
+    jdbc-proxy DBPAIRING pairing.5.3.0 /unix-socket/jdbcproxy.sock
+    jdbc-proxy DBPAIRINGAC pairing.5.3.0 /unix-socket/jdbcproxy.sock
+    http-client QRETENTION 127.0.0.1 3500 \
+      /v1.0/state/{{ .dapr.statestore }}/<<desc.id>> \
+      default-content-type application/json \
+      dapr_unwrap_get_state
+    http-client QRETENTION_DELETE 127.0.0.1 3500 \
+      /v1.0/state/{{ .dapr.statestore }}/<<desc.retentionid>> \
+      default-content-type application/json \
+      put-method DELETE \
+      dapr_wrap_delete_state
+    {{- include "continuity5.inputConnectionPoint" $ | nindent 4 }}
+    {{- include "continuity5.ouputConnectionPoints" $value | nindent 4 -}} \
+      DELETE_STATE:QRETENTION_DELETE:"original"
+    run j "pairing.releaser" by 1 forever
+  jdbcproxy.properties: |
+    {{- with index $.Values.databases $value.database }}
+    listener.addr=/unix-socket/jdbcproxy.sock
+    logging.level.root={{ .logLevel }}
+    database.vendor.name={{ .vendorName }}
+    jdbc.driver={{ .jdbcDriver }}
+    jdbc.url={{ .jdbcUrl }}
+    jdbc.user={{ .user }}
+    jdbc.password={{ .password }}
+    {{- end }}
+  patch.xml: |
+    <package>
+      <procedure name=pop.retained.messages.from.qids>
+        <arg bind=QRETENTION:any />
+        <arg bind=qids />
+        <body>
+          <new bind=rdesc:object />
+          <set bind=msgs value=list() />
+          <for bind=qid in=qids>
+            <set bind=rdesc.id value=qid />
+            <set bind=rdesc.correlation value="" />
+            <qget q=QRETENTION descriptor=rdesc buffer=buf found=found? />
+            <if test=found?>
+              <hit stat=pairing.retention.pop />
+              <set bind=msg value=unserialize(buf) />
+              <set bind=msg.qdesc.retentionid value=qid />
+              <add bind=msgs value=msg />
+            </if>
+            <else>
+              <hit stat=pairing.not.found.message />
+              <logwarn arg=qid>
+                Message id ~A not found in RETENTION queue
+                This must be a duplicate caused by a connection failure unless:
+                  - RETENTION queue is NOT in cluster mode
+                  - no manual intervention has been done on the RETENTION queue
+                  - no previously commit failure appears
+              </logwarn>
+            </else>
+          </for>
+          <if test=msgs>
+            <if test='length(msgs) = 1 | length(msgs) > 1 & length(msgs) < msgs[1].group_size'>
+              <!-- The group is not complete  or size is 1 no pairing -->
+              <set bind=msgs.pairing_id value="" />
+            </if>
+            <else>
+              <set bind=msgs.pairing_id value=md5(uid()) />
+            </else>
+            <yield name=group arg=msgs />
+          </if>
+        </body>
+      </procedure>
+    </package>
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $key }}-releaser
+  labels:
+    {{- include "continuity5.labels" $ | nindent 4 }}
+    app.kubernetes.io/component: "pairing-releaser"
+spec:
+  {{- if not $.Values.autoscaling.enabled }}
+  replicas: {{ $value.replicaCount.releaser }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "continuity5.selectorLabels" $ | nindent 6 }}
+  template:
+    metadata:
+      annotations:
+        checksum/config: "{{ toYaml $value | sha256sum }}"
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "pairing-{{ $key }}-releaser"
+        dapr.io/app-max-concurrency: "1"
+      {{- with $.Values.podAnnotations }}
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "continuity5.selectorLabels" $ | nindent 8 }}
+    spec:
+      {{- with $.Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "continuity5.serviceAccountName" $ }}
+      securityContext:
+        {{- toYaml $.Values.podSecurityContext | nindent 8 }}
+      volumes:
+        - name: firco-shared
+          configMap:
+            name: firco-shared
+        - name: {{ $key }}-releaser-cfg
+          configMap:
+            name: {{ $key }}-releaser-cfg
+        - name: {{ $key }}-releaser-cfgd
+          configMap:
+            name: {{ $key }}-releaser-cfgd
+        - name: unix-socket
+          emptyDir: {}
+      containers:
+        - name: "pairing-releaser"
+          securityContext:
+            {{- toYaml $.Values.securityContext | nindent 12 }}
+          {{- with index $.Values.images $value.image }}
+          image: "{{ .backend }}"
+          imagePullPolicy: {{ .pullPolicy }}
+          {{- end }}
+          args: ["-s", "4", "2", "-options", "/fircosoft/config/config.cfg"]
+          volumeMounts:
+            - name: firco-shared
+              mountPath: "/fircosoft/shared"
+            - name: {{ $key }}-releaser-cfg
+              mountPath: "/fircosoft/config"
+            - name: {{ $key }}-releaser-cfgd
+              mountPath: "/fircosoft/www/dapr"
+            - name: unix-socket
+              mountPath: /unix-socket
+          ports:
+            - name: http
+              containerPort: 5400
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 5400
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 5400
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          resources:
+            {{- toYaml $.Values.resources | nindent 12 }}
+        - name: jdbcproxy
+          securityContext:
+            {{- toYaml $.Values.securityContext | nindent 12 }}
+          {{- with index $.Values.images $value.image }}
+          image: "{{ .jdbcProxy }}"
+          imagePullPolicy: {{ .pullPolicy }}
+          {{- end }}
+          volumeMounts:
+            - name: {{ $key }}-releaser-cfg
+              mountPath: "/fircosoft/config"
+            - name: unix-socket
+              mountPath: /unix-socket
+      {{- with $.Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with $.Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with $.Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+{{- end }}

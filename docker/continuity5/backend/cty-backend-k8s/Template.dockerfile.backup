@@ -1,0 +1,48 @@
+FROM centos:7 AS builder
+
+########## STAGE 1 ##########
+
+RUN mkdir -p /fircosoft
+
+# Install coreengine Component
+COPY {{deps.coreengine.path}} .
+RUN tar xzvC /fircosoft < {{deps.coreengine.filename}}
+
+# Install Kl files
+COPY {{deps.multiplexer.path}} .
+RUN tar xzvC /fircosoft < {{deps.multiplexer.filename}}
+COPY {{deps.requester.path}} .
+RUN tar xzvC /fircosoft < {{deps.requester.filename}}
+COPY {{deps.stripping.path}} .
+RUN tar xzvC /fircosoft < {{deps.stripping.filename}}
+COPY {{deps.dbclient.path}} .
+RUN tar xzvC /fircosoft < {{deps.dbclient.filename}}
+COPY {{deps.dbtools.path}} .
+RUN tar xzvC /fircosoft < {{deps.dbtools.filename}}
+
+########## STAGE 2 ##########
+
+# build the thinest possible image
+
+FROM centos:7
+
+COPY {{deps.init.path}} /usr/bin/dumb-init
+
+RUN yum install -y glibc.i686 libstdc++.i686 && \
+    yum install -y openssl-devel.i686 && \
+    yum clean all
+
+COPY --from=builder /fircosoft/bin32/linux/ /fircosoft/bin32/linux/
+COPY --from=builder /fircosoft/ContinuityMultiplexer/ContinuityMultiplexer.kl /fircosoft/
+COPY --from=builder /fircosoft/ContinuityRequester/ContinuityRequester.kl /fircosoft/
+COPY --from=builder /fircosoft/ContinuityStripping/ContinuityStripping.kl /fircosoft/
+COPY --from=builder /fircosoft/ContinuityDBClient/ContinuityDBClient.kl /fircosoft/
+COPY --from=builder /fircosoft/ContinuityDBTools/ContinuityDBTools.kl /fircosoft/
+
+WORKDIR /fircosoft
+
+RUN mkdir /fircosoft/tmp
+RUN mkdir /fircosoft/www
+ENV FKRUN_LICENSE_PATH=/fircosoft/shared/fbe.cf
+
+ENTRYPOINT [ "/usr/bin/dumb-init", "./bin32/linux/FKRUN" ]

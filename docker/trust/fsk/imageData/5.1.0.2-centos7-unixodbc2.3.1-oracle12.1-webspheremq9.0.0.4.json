@@ -1,0 +1,50 @@
+{
+  "imageData": {
+    "name": "jenkins-deploy.fircosoft.net/trust/fsk:5.1.0.2-centos7-unixodbc2.3.1-oracle12.1-webspheremq9.0.0.4",
+    "product": "Trust",
+    "asset": "FSK",
+    "component": "Linux",
+    "version": "5.1.0.2",
+    "env": "release",
+    "manifest": {
+      "entry": "docker/trust/fsk/TrustFSKMQ9Manifest.mjs",
+      "commit": "b21289135127b2509dbed863040c639843e8701b"
+    },
+    "dockerfile": "TemplateMQ9.dockerfile",
+    "autoBuild": true,
+    "autoPush": true,
+    "tags": [],
+    "labels": {
+      "maintainer": "Sébastien Demanou <sebastien.demanou@accuity.com>",
+      "com.accuity.team": "Trust",
+      "com.accuity.project-name": "TRUST",
+      "com.accuity.project-url": "http://jira.fircosoft.net/projects/TRUST"
+    },
+    "dependencies": [
+      {
+        "type": "image",
+        "name": "unixodbc",
+        "reference": "jenkins-deploy.fircosoft.net/third-parties/unixodbc:2.3.1-centos7-oracle12.1"
+      },
+      {
+        "type": "artifact",
+        "name": "mqclient",
+        "reference": "ibm-mq-client-9.0.0.4.x86_64",
+        "expand": false
+      },
+      {
+        "type": "artifact",
+        "name": "fsk",
+        "reference": "trust-fsk-5.1.0.2-linux",
+        "expand": false
+      }
+    ],
+    "schemas": "e2e-121",
+    "thirdParties": {
+      "odbcManager": "unixodbc2.3.1",
+      "odbcClient": "oracle12.1",
+      "mqClient": "webspheremq9.0.0.4"
+    },
+    "os": "centos7"
+  }
+}

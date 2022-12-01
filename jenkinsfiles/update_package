@@ -1,0 +1,63 @@
+#!groovy
+
+properties([
+    parameters([
+      string(name: 'PACKAGE', defaultValue: '', description: 'Name of the Package to update. You can leave this empty if you provide a PACKAGE_INFO parameter as JSON instead.'),
+      string(name: 'PACKAGE_INFO', defaultValue: '', description: 'JSON search values for the Package to update. You can leave this empty if you provide a PACKAGE name instead.'),
+      string(name: 'UPDATE', defaultValue: '', description: 'JSON changes to apply on this Package.'),
+      string(name: 'COMMIT', defaultValue: '', description: 'Commit all previous Package(s) changes.'),
+      string(name: 'CREATE', defaultValue: 'false', description: 'Create package if missing in shadoker.')
+    ]),
+    disableConcurrentBuilds()
+])
+
+node('docker-build') {
+    stage('Get shadoker') {
+      step([$class: 'WsCleanup'])
+      /* WARNING: in Jenkins UI set SCM additional behaviour "Check out to specific local branch" = "**" */
+      checkout scm
+    }
+    stage('Prepare shadoker-cli tool') {
+        sh """pushd shadoker
+pip3 install --user \$USER -r requirements.txt
+popd"""
+    }
+    try {
+        stage('Update package') {
+          def updates = false
+          if (!params.UPDATE) {
+            echo "No parameters, no update"
+          } else {
+            echo "PACKAGE=${params.PACKAGE}"
+            echo "PACKAGE_INFO=${params.PACKAGE_INFO}"
+            echo "UPDATE=${params.UPDATE}"
+            echo "CREATE=${params.CREATE}"
+            if (params.PACKAGE_INFO) {
+              cmd = "./shadoker-cli.sh package update --create ${params.CREATE} -u '${params.UPDATE}' -m '${params.PACKAGE_INFO}'"
+            } else {
+              cmd = "./shadoker-cli.sh package update --create ${params.CREATE} -u '${params.UPDATE}' '${params.PACKAGE}'"
+            }
+            sh "echo $cmd"
+            def statusCode = sh script:"$cmd", returnStatus:true
+            if (statusCode == 2) {
+              currentBuild.result = 'UNSTABLE'
+              return
+            } else if (statusCode != 0) {
+              error 'Error while updating package'
+            }
+            sh "./shadoker-cli.sh change ls"
+            updates = true
+          }
+          if (params.COMMIT) {
+            if (!updates) {
+              sh "./shadoker-cli.sh change ls"
+            }
+            sh "./shadoker-cli.sh change commit"
+          }
+        }
+    } catch (e) {
+        throw e
+    } finally {
+        sh 'echo done'
+    }
+}

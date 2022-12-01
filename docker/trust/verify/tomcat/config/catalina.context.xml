@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Context> 
+    <WatchedResource>WEB-INF/web.xml</WatchedResource>
+    <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
+    <WatchedResource>${catalina.base}/conf/cors.xml</WatchedResource>
+
+    <Resource auth="Container"
+              driverClassName="${TRUST_DB_DRIVER}"
+              maxActive="10" maxIdle="10" maxWait="10000"
+              url="${TRUST_DB_URL}"
+              type="javax.sql.DataSource"
+              name="jdbc/fffRecordsDataSource"
+              username="${TRUST_DB_USER}"
+              password="${TRUST_DB_PWD}"/>
+
+    <Resource auth="Container"
+              driverClassName="${TRUST_DB_DRIVER}"
+              maxActive="10" maxIdle="10" maxWait="10000"
+              url="${TRUST_DB_URL}"
+              type="javax.sql.DataSource"
+              name="jdbc/fffSystemDataSource"
+              username="${TRUST_DB_USER}"
+              password="${TRUST_DB_PWD}"/>
+
+    <CookieProcessor sameSiteCookies="strict" />
+</Context>

@@ -1,0 +1,57 @@
+{
+  "chartData": {
+    "version": "1.0",
+    "name": "continuity5-poc",
+    "product": "continuity5",
+    "appVersion": "5.3.25.1",
+    "env": "RELEASE",
+    "helmChartDir": "helm/continuity5",
+    "description": "Continuity 5 Cloud Native Edition - Version 5.3.25.1",
+    "helmValueFiles": [
+      "images.yaml",
+      "values.yaml",
+      "database.yaml",
+      "license.yaml",
+      "dapr.yaml",
+      "refdata.persistentvolume.yaml",
+      "jaeger-operator.yaml",
+      "akhq-values.yaml",
+      "cluster-setup.sh",
+      "install.sh",
+      "dataaccess.yaml",
+      "filter-data-setup.sh"
+    ],
+    "dependencies": [
+      {
+        "type": "image",
+        "name": "backend",
+        "reference": "jenkins-deploy.fircosoft.net/continuity5/backend-k8s:5.3.25.1_k8s-centos7-coreengine5.6.13.1_k8s-develop"
+      },
+      {
+        "type": "image",
+        "name": "jdbcProxy",
+        "reference": "jenkins-deploy.fircosoft.net/continuity5/jdbcproxy:5.6.13.1_k8s-alpinejre-11.0.11_9-openjdk11-develop"
+      },
+      {
+        "type": "image",
+        "name": "filter",
+        "reference": "jenkins-deploy.fircosoft.net/filter/filter-engine-k8s:5.7.3.4"
+      },
+      {
+        "type": "image",
+        "name": "frontend",
+        "reference": "jenkins-deploy.fircosoft.net/continuity5/verify-web:5.3.25.1_k8s-tomcat9.0.37-openjdk11-continuity5.3.25.1_k8s-develop"
+      },
+      {
+        "type": "image",
+        "name": "deploymentConsole",
+        "reference": "jenkins-deploy.fircosoft.net/continuity5/deployment-console:5.3.25.1_k8s-centos7-sqlserverclient17.8.1.1-1-openjdk11-continuity5.3.25.1_k8s-develop"
+      },
+      {
+        "type": "artifact",
+        "name": "sql",
+        "reference": "continuity5-sql-main-sqlserver-5.3.19.0-database"
+      }
+    ]
+  }
+}

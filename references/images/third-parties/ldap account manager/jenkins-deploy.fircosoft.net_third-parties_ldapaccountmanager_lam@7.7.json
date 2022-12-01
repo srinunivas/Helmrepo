@@ -1,0 +1,27 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/third-parties/ldapaccountmanager/lam:7.7",
+    "product": "third-parties",
+    "asset": "LDAP Account Manager",
+    "version": "7.7",
+    "digest": "sha256:de81229537becbd83ee1d92f696e49b16b23ca1c103aadc242878a02830414d7",
+    "buildDate": "2021-09-30T18:01:19.416Z",
+    "labels": {
+      "com.accuity.asset": "LDAP Account Manager",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "manager",
+      "com.accuity.environment": "release",
+      "com.accuity.product": "third-parties",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "7.7",
+      "maintainer": "Roland Gruber <post@rolandgruber.de>",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "third-parties LDAP Account Manager manager 7.7",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "be810adce130ab896925803f00fb59af17022704",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "7.7"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/example/mycomponentb2:1.0",
+    "product": "example",
+    "asset": "MyComponentB",
+    "version": "1.0",
+    "digest": "sha256:00020feb32488338ef2db04c0f679cdf47aca984372ef3be6cbdacc1baa5301c",
+    "buildDate": "2020-09-09T13:30:39.000Z",
+    "labels": {
+      "asset": "MyComponentB",
+      "maintainer": "DevOps <devops@accuity.com>",
+      "org.label-schema.build-date": "2020-09-09T13:30:18Z",
+      "org.label-schema.name": "Fircosoft example/MyComponentB",
+      "org.label-schema.schema-version": "1.0",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "1.0",
+      "product": "example",
+      "push": "72",
+      "version": "1.0"
+    }
+  }
+}

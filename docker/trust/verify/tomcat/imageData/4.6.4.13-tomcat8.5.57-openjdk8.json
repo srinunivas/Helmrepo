@@ -1,0 +1,44 @@
+{
+  "imageData": {
+    "name": "jenkins-deploy.fircosoft.net/trust/verify:4.6.4.13-tomcat8.5.57-openjdk8",
+    "product": "Trust",
+    "asset": "Verify",
+    "component": "WAR",
+    "version": "4.6.4.13",
+    "env": "release",
+    "manifest": {
+      "entry": "docker/trust/verify/tomcat/TrustVerify4TomcatManifest.mjs",
+      "commit": "303934924eb33df7b41d6fa7750dcbf783af98c1"
+    },
+    "autoBuild": true,
+    "autoPush": true,
+    "tags": [
+      "4.6.4.latest-tomcat8.5.57-openjdk8",
+      "4.6.latest-tomcat8.5.57-openjdk8"
+    ],
+    "labels": {
+      "maintainer": "Sébastien Demanou <sebastien.demanou@accuity.com>",
+      "com.accuity.team": "Trust",
+      "com.accuity.project-name": "TRUST",
+      "com.accuity.project-url": "http://jira.fircosoft.net/projects/TRUST"
+    },
+    "dependencies": [
+      {
+        "type": "image",
+        "name": "tomcat",
+        "reference": "jenkins-deploy.fircosoft.net/third-parties/tomcat:8.5.57-jdk8-openjdk-slim"
+      },
+      {
+        "type": "artifact",
+        "name": "verify",
+        "reference": "trust-verify-4.6.4.13-war",
+        "expand": false
+      }
+    ],
+    "schemas": "e2e-121",
+    "thirdParties": {
+      "webServer": "tomcat8.5.57",
+      "java": "openjdk8"
+    }
+  }
+}

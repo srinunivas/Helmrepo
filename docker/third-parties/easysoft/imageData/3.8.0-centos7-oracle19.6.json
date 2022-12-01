@@ -1,0 +1,32 @@
+{
+    "imageData" : {
+        "name" : "jenkins-deploy.fircosoft.net/third-parties/easysoft:3.8.0-centos7-oracle19.6",
+        "tags": [],
+        "product": "third-parties",
+        "asset": "easysoft",
+        "component": "oracle",
+        "version": "3.8.0-centos7-oracle19.6",
+        "dependencies": [
+            {
+                "type": "image",
+                "name": "root",
+                "reference": "jenkins-deploy.fircosoft.net/third-parties/unixodbc:2.3.1-centos7-oracle19.6"
+            },
+            {
+                "type": "artifact",
+                "name": "easysoft",
+                "reference": "easysoft-odbc-oracle-3.8.0-linux-x86-glibc",
+                "expand": true
+            }
+            
+        ],
+        "thirdParties": {
+            "odbcManager": "easysoft3.8.0",
+            "odbcClient": "oracle19.6"
+        },
+        "os": "centos7",
+        "requireLocale": false,
+        "autoBuild": true,
+        "autoPush": true
+    }
+}

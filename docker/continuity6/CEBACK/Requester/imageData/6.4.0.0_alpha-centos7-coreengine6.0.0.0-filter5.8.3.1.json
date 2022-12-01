@@ -1,0 +1,46 @@
+{
+  "imageData": {
+    "name": "jenkins-deploy.fircosoft.net/continuity6/requester:6.4.0.0_alpha-centos7-coreengine6.0.0.0-filter5.8.3.1",
+    "product": "continuity6",
+    "asset": "requester",
+    "component": "Linux",
+    "version": "6.4.0.0_ALPHA",
+    "env": "release",
+    "manifest": {
+      "entry": "docker/continuity6/CEBACK/Requester/RequesterManifest.mjs"
+    },
+    "autoBuild": true,
+    "autoPush": true,
+    "tags": [
+      "6.4.0.latest-centos7-coreengine6.0.0.0-filter5.8.3.1",
+      "6.4.latest-centos7-coreengine6.0.0.0-filter5.8.3.1",
+      "6.latest-centos7-coreengine6.0.0.0-filter5.8.3.1"
+    ],
+    "dependencies": [
+      {
+        "type": "artifact",
+        "name": "coreengine",
+        "reference": "third-parties-coreengine-6.0.0.0-linux",
+        "expand": false
+      },
+      {
+        "type": "artifact",
+        "name": "filter",
+        "reference": "filter-filter_engine-5.8.3.1-linux",
+        "expand": false
+      },
+      {
+        "type": "artifact",
+        "name": "requester",
+        "reference": "continuity6-requester-6.4.0.0_alpha-linux",
+        "expand": false
+      }
+    ],
+    "schemas": "e2e-121",
+    "thirdParties": {
+      "coreengine": "coreengine6.0.0.0",
+      "filter": "filter5.8.3.1"
+    },
+    "os": "centos7"
+  }
+}

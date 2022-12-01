@@ -1,0 +1,14 @@
+{
+  "imageData" : {
+    "name" : "jenkins-deploy.fircosoft.net/third-parties/ldapaccountmanager/lam:7.7",
+    "product": "third-parties",
+    "asset": "LDAP Account Manager",
+    "component": "manager",
+    "version": "7.7",
+    "env": "release",
+    "autoBuild": true,
+    "autoPush": true,
+    "tags": [],
+    "dependencies": []
+  }
+}

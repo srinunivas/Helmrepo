@@ -1,0 +1,18 @@
+{
+    "imageData" : {       
+        "name" : "jenkins-deploy.fircosoft.net/continuity6/mq-oren-mtls:9.1.2.0",
+        "product": "continuity6",
+        "asset": "mq-oren-mtls",
+        "version": "9.1.2.0",
+        "component": "mq",
+        "dependencies" : [
+            {
+                "type"      : "image",
+                "name"      : "mqadvancedServer",
+                "reference" : "jenkins-deploy.fircosoft.net/third-parties/mqadvanced-server-dev:9.1.2.0"
+            }
+        ],
+        "autoBuild": true,
+        "autoPush": true
+    }
+}

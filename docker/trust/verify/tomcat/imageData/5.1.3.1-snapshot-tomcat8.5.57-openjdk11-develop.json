@@ -1,0 +1,41 @@
+{
+  "imageData": {
+    "name": "jenkins-deploy.fircosoft.net/trust/verify:5.1.3.1-snapshot-tomcat8.5.57-openjdk11-develop",
+    "product": "Trust",
+    "asset": "Verify",
+    "component": "WAR",
+    "version": "5.1.3.1-SNAPSHOT",
+    "env": "develop",
+    "manifest": {
+      "entry": "docker/trust/verify/tomcat/TrustVerify5TomcatManifest.mjs",
+      "commit": "303934924eb33df7b41d6fa7750dcbf783af98c1"
+    },
+    "autoBuild": true,
+    "autoPush": true,
+    "tags": [],
+    "labels": {
+      "maintainer": "Sébastien Demanou <sebastien.demanou@accuity.com>",
+      "com.accuity.team": "Trust",
+      "com.accuity.project-name": "TRUST",
+      "com.accuity.project-url": "http://jira.fircosoft.net/projects/TRUST"
+    },
+    "dependencies": [
+      {
+        "type": "image",
+        "name": "tomcat",
+        "reference": "jenkins-deploy.fircosoft.net/third-parties/tomcat:8.5.57-jdk11-openjdk-slim"
+      },
+      {
+        "type": "artifact",
+        "name": "verify",
+        "reference": "trust-verify-5.1.3.1-snapshot-war-develop",
+        "expand": false
+      }
+    ],
+    "schemas": "e2e-121",
+    "thirdParties": {
+      "webServer": "tomcat8.5.57",
+      "java": "openjdk11"
+    }
+  }
+}

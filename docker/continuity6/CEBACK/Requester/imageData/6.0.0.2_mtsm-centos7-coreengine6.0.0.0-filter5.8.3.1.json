@@ -1,0 +1,45 @@
+{
+  "imageData": {
+    "name": "jenkins-deploy.fircosoft.net/continuity6/requester:6.0.0.2_mtsm-centos7-coreengine6.0.0.0-filter5.8.3.1",
+    "product": "continuity6",
+    "asset": "requester",
+    "component": "Linux",
+    "version": "6.0.0.2_MTSM",
+    "env": "release",
+    "manifest": {
+      "entry": "docker/continuity6/CEBACK/Requester/RequesterManifest.mjs"
+    },
+    "autoBuild": true,
+    "autoPush": true,
+    "tags": [
+      "6.0.0.latest-centos7-coreengine6.0.0.0-filter5.8.3.1",
+      "6.0.latest-centos7-coreengine6.0.0.0-filter5.8.3.1"
+    ],
+    "dependencies": [
+      {
+        "type": "artifact",
+        "name": "coreengine",
+        "reference": "third-parties-coreengine-6.0.0.0-linux",
+        "expand": false
+      },
+      {
+        "type": "artifact",
+        "name": "filter",
+        "reference": "filter-filter_engine-5.8.3.1-linux",
+        "expand": false
+      },
+      {
+        "type": "artifact",
+        "name": "requester",
+        "reference": "continuity6-requester-6.0.0.2_mtsm-linux",
+        "expand": false
+      }
+    ],
+    "schemas": "e2e-121",
+    "thirdParties": {
+      "coreengine": "coreengine6.0.0.0",
+      "filter": "filter5.8.3.1"
+    },
+    "os": "centos7"
+  }
+}

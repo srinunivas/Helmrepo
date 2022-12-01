@@ -1,0 +1,27 @@
+{
+  "artifact": {
+    "name": "trust-verify-4.7.2.2-snapshot-war-develop",
+    "buildDate": "2021/10/18 15:07:09",
+    "commit": "b4e5cf3f7c05e54b25461633afeb3f60de8f7f3e",
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/TrustFront/4.7.2.2-SNAPSHOT.p2-develop-master/FFFVerifyWeb-4.7.2.2-SNAPSHOT.p2.war",
+    "hash": "sha1:b1309e3c6c73ad3b63e94395c1e2d02fd5ea5c6a",
+    "product": "Trust",
+    "asset": "Verify",
+    "env": "develop",
+    "prefix": "develop-master",
+    "version": "4.7.2.2-SNAPSHOT",
+    "push": "2",
+    "mutable": false,
+    "comment": "Trust Verify version 4.7.2.2-SNAPSHOT push 2 (develop)",
+    "manifest": {
+      "entry": "docker/trust/verify/tomcat/TrustVerify4TomcatManifest.mjs",
+      "commit": "303934924eb33df7b41d6fa7750dcbf783af98c1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/trustv4/front.git",
+      "branch": "develop/master",
+      "commit": "b4e5cf3f7c05e54b25461633afeb3f60de8f7f3e"
+    }
+  }
+}

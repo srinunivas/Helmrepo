@@ -1,0 +1,18 @@
+{
+    "artifact" : {
+        "name": "continuity5-mappingcasemanagerapi-5.3.16.3-mappingcasemanagerapi",
+        "comment" : "This artefact doesn't exit in version 5.3.16.3 in the Nexus so the bordeaux version is used instead.",
+        "buildDate" : "2021-02-05T10:38:22.000Z",
+        "repository": {
+            "type": "git",
+            "uri": "ssh://git@dev-bitbucket.fircosoft.net:7999/cty/continuity.git",
+            "date": "2021-02-05T10:24:00.000Z",
+            "branch": "develop/5.3.x"
+        },
+        "uri" : "ftp://firco:secret135@bordeaux.fircosoft.net/Versions/FCConnectors/MappingContinuityCaseManagerAPI/5-3-16/bin/MappingContinuityCaseManagerAPI-5.3.16.3-linux.tar.gz",
+        "product" : "continuity5",
+        "asset": "mappingcasemanagerapi",
+        "version" : "5.3.16.3",
+        "env" : "release"
+    }
+}

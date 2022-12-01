@@ -1,0 +1,10 @@
+{
+    "imageData" : {
+        "name" : "jenkins-deploy.fircosoft.net/third-parties/alpine-with-certs",
+        "product": "third-parties",
+        "asset": "alpine",
+        "version": "latest",
+        "autoBuild": true,
+        "autoPush": true
+    }
+}

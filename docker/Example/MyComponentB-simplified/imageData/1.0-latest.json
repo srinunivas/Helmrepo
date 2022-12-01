@@ -1,0 +1,23 @@
+{
+    "imageData" : {
+        "name" : "jenkins-deploy.fircosoft.net/example/mycomponentb2:1.0-CENTOS7-ORACLE12CXE",
+        "product": "example",
+        "asset": "MyComponentB",
+        "component": "Web",
+        "version": "1.0",
+        "env": "DEVELOP",
+        "dependencies" : [
+            {
+                "type"              : "artifact",
+                "name"              : "main",
+                "reference"         : "Example-MyComponentB-latest-dev",
+                "referenceFallback" : "Example-MyComponentB-latest",
+                "expand"            : true
+            }
+        ],
+        "autoBuild": true,
+        "autoPush": true,
+        "_forcePush": false,
+        "tags": ["latest", "1.0-p{{deps.main.push}}"]
+    }
+}

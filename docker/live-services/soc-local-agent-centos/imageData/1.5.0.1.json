@@ -1,0 +1,19 @@
+{
+  "imageData": {
+    "name": "jenkins-deploy.fircosoft.net/liveservices-soc/ls-soc-local-agent:1.5.0.1",
+    "dependencies": [
+      {
+        "type": "artifact",
+        "name": "ls-local-agent",
+        "reference": "soc-local-agent-1.5.0.1",
+        "expand": true
+      }
+    ],
+    "autoBuild": true,
+    "autoPush": true,
+    "tags": [
+      "latest",
+      "1.5.0.1.{{deps.ls-local-agent.push}}"
+    ]
+  }
+}

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+echo Doing some post_test actions with Bash
+echo FAILED TEST=$SHDKR_TEST_FAILED
+echo OK TEST=$SHDKR_TEST_OK

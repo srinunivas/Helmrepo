@@ -1,0 +1,27 @@
+{
+  "artifact": {
+    "name": "trust-batch-4.7.2.3-linux",
+    "buildDate": "2021/11/23 16:02:05",
+    "commit": "a37493cce542f46f3ee89136924baf1f83f0f26e",
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/TrustBatch/4.7.2.3.p0-release-4.7.x/TrustBatch-4.7.2.3.p0-Linux-i686.tar.gz",
+    "hash": "sha1:bd510c1143faa2d5279e9db9628d429c3b4d5133",
+    "product": "Trust",
+    "asset": "Batch",
+    "env": "release",
+    "prefix": "release-4.7.x",
+    "version": "4.7.2.3",
+    "push": "0",
+    "mutable": false,
+    "comment": "Trust Batch version 4.7.2.3 push 0 (release)",
+    "manifest": {
+      "entry": "docker/trust/batch/TrustBatchUnixODBCManifest.mjs",
+      "commit": "c4b2bbbf315e1a3832039673829d079e1f4e0499"
+    },
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/trustv4/batch.git",
+      "branch": "release/4.7.x",
+      "commit": "a37493cce542f46f3ee89136924baf1f83f0f26e"
+    }
+  }
+}

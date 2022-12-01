@@ -1,0 +1,27 @@
+{
+  "artifact": {
+    "name": "trust-fsk-4.6.1.5-linux",
+    "buildDate": "2019/10/04 17:08:26",
+    "commit": "b76e86c97e74c3d7fd6ce6f82753ef2ea26592c0",
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/TrustFSK/4.6.1.5.p2-release-4.6.1.x/TrustFSK-4.6.1.5.p2-Linux-i686.tar.gz",
+    "hash": "sha1:4a22fc6449bc7defa0b9f9837aa380a94b6c9e86",
+    "product": "Trust",
+    "asset": "FSK",
+    "env": "release",
+    "prefix": "release-4.6.1.x",
+    "version": "4.6.1.5",
+    "push": "2",
+    "mutable": false,
+    "comment": "Trust FSK version 4.6.1.5 push 2 (release)",
+    "manifest": {
+      "entry": "docker/trust/fsk/TrustFSKManifest.yaml",
+      "commit": "e07155bbdae6bd6cd6fdd8c2783d0fc30087caee"
+    },
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/trustv4/firco-screen-keep.git",
+      "branch": "release/4.6.1.x",
+      "commit": "b76e86c97e74c3d7fd6ce6f82753ef2ea26592c0"
+    }
+  }
+}

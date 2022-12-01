@@ -1,0 +1,19 @@
+{
+  "artifact": {
+    "name": "wlm-web-1.0.4",
+    "buildDate": "2022-03-14T09:59:54.3NZ",
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@bitbucket.fpa.rbxd.ds/wlm/wlm-web.git",
+      "commit": "",
+      "date": ""
+    },
+    "uri": "http://nexus.fpa.rbxd.ds/content/repositories/snapshots/com/accuity/watchlistmanager/wlm-web/1.0.4.100/wlm-web-1.0.4.100.zip",
+    "product": "liveservices-wlm",
+    "asset": "wlm-web",
+    "component": "web",
+    "version": "1.0.4",
+    "push": "100",
+    "latest": true
+  }
+}

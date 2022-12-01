@@ -1,0 +1,22 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity6/cty-webui:master-websphere9.0.5.2-openjdk8-ojdbc8-dev",
+    "product": "continuity6",
+    "asset": "cty-web-ui",
+    "version": "master",
+    "digest": "sha256:87bc039fcdd72f3bdec452f43e0c6ed045fc4045a3c7d037a29e878f43a946a1",
+    "buildDate": "2020-09-10T12:39:22.813Z",
+    "labels": {
+      "BuildLabel": "f5021945.04",
+      "asset": "cty-web-ui",
+      "description": "This image contains the WebSphere Traditional runtime with Ubuntu Linux as the base OS.",
+      "maintainer": "RBI-DL Fircosoft Continuity Paris <FircosoftContinuityParis@reedbusiness.com>",
+      "name": "IBM WebSphere Traditional",
+      "product": "continuity6",
+      "push": "1",
+      "summary": "Image for WebSphere Traditional",
+      "vendor": "IBM",
+      "version": "6.3.0.0"
+    }
+  }
+}

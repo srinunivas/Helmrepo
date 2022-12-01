@@ -1,0 +1,33 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity6/cty-db-oracle:master-oracle19cee-dev",
+    "product": "continuity6",
+    "asset": "cty-db-oracle",
+    "version": "master",
+    "digest": "sha256:3c60e0c03e5de9e85319e977c08c32e3bcacd2a884575bd8e0d6d44f362a2d4e",
+    "buildDate": "2022-03-08T11:15:59.094Z",
+    "labels": {
+      "asset": "cty-db-oracle",
+      "maintainer": "RBI-DL Fircosoft Continuity Paris <FircosoftContinuityParis@reedbusiness.com>",
+      "product": "continuity6",
+      "push": "3",
+      "version": "6.8.0.0",
+      "com.accuity.asset": "cty-db-oracle",
+      "com.accuity.product": "continuity6",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "database",
+      "com.accuity.product.vcs-ref": "c151aa531922b507cc6a9bcc7f14b0018795697b",
+      "com.accuity.product.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/cty/continuity.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "master",
+      "org.label-schema.build-date": "2021-06-03T09:09:26Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "continuity6 cty-db-oracle database master",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "94c80a888868ba1f8c20b411c18e41a9442d43d3",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "master"
+    }
+  }
+}

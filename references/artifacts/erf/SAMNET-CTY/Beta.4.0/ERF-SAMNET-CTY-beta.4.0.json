@@ -1,0 +1,20 @@
+{
+    "artifact": {
+      "name": "ERF-SAMNET-CTY-beta.4.0",
+      "buildDate": "20200903T080331Z",
+      "repository": {
+        "type": "",
+        "url": "",
+        "commit": "",
+        "date": ""
+      },
+      "uri": "http://dev-nexus.fircosoft.net/content/sites/site-deployconfigs/ERF/beta/SAMDeploy-linux-x64.zip",
+      "product": "erf",
+      "asset": "",
+      "component": "erf-samnet-cty",
+      "version": "Beta.4",
+      "push": "",
+      "latest": true,
+      "comment": "ERF Console for Continuity"
+    }
+  }

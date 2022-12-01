@@ -1,0 +1,32 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity/orchestrator:latest-ubuntu18.04-openjdk11",
+    "product": "orchestrator",
+    "asset": "oren",
+    "version": "latest",
+    "digest": "sha256:548177d2d0c99697ef6af6b2f80c10bb86f07590ba555bd9d99def74bb1a1f54",
+    "buildDate": "2022-01-05T15:17:29.090Z",
+    "labels": {
+      "asset": "oren",
+      "com.accuity.asset": "oren",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "oren",
+      "com.accuity.product": "orchestrator",
+      "com.accuity.product.vcs-ref": "bc35f5a2cb54c7879d73cc0c26511215311794fa",
+      "com.accuity.product.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net/cty-orc/orchestrator.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "latest",
+      "maintainer": "RBI-DL Fircosoft Continuity Paris <FircosoftContinuityParis@reedbusiness.com>",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "orchestrator oren oren latest",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "c5976ab84256789f58e7bd5dd128404ef0d01e88",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "latest",
+      "product": "orchestrator",
+      "push": "oren-0_ALPHA.0",
+      "version": "latest"
+    }
+  }
+}

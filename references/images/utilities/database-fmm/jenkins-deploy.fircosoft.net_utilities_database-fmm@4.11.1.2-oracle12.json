@@ -1,0 +1,30 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/utilities/database-fmm:4.11.1.2-oracle12",
+    "product": "utilities",
+    "asset": "database-fmm",
+    "version": "4.11.1.2",
+    "digest": "sha256:65c20d00f99a987f57cdbcd96da0679fec617541659146386000d152b80225d4",
+    "buildDate": "2022-01-06T15:13:01.636Z",
+    "labels": {
+      "com.accuity.asset": "database-fmm",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "oracle",
+      "com.accuity.environment": "release",
+      "com.accuity.product": "utilities",
+      "com.accuity.product.vcs-branch": "release/4.11.x",
+      "com.accuity.product.vcs-ref": "adce16c88fd67ea65d10e7fc68a29b5456ee08d4",
+      "com.accuity.product.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/utilities/fmm.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.third-parties.database": "oracle12",
+      "com.accuity.version": "4.11.1.2",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "utilities database-fmm oracle 4.11.1.2",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "964103dfea2e9abe4fe9369a1d315db7731ea22e",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "4.11.1.2"
+    }
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "imageData": {
+    "name": "jenkins-deploy.fircosoft.net/continuity5/backend-k8s:5.3.25.1_k8s-centos7-coreengine5.6.13.1_k8s-develop",
+    "product": "continuity5",
+    "asset": "backend-k8s",
+    "component": "backend-k8s",
+    "version": "5.3.25.1_k8s",
+    "env": "develop",
+    "manifest": {
+      "entry": "docker/continuity5/backend/cty-backend-k8s/backend-k8s.mjs",
+      "commit": "436b9ad519975b1dcb2e776341adf34f5d266fd3"
+    },
+    "autoBuild": true,
+    "autoPush": true,
+    "tags": [],
+    "dependencies": [
+      {
+        "type": "artifact",
+        "name": "init",
+        "reference": "dumb-init-1.2.5-linux-x86_64",
+        "download": true
+      },
+      {
+        "type": "artifact",
+        "name": "coreengine",
+        "reference": "continuity5-coreengine-5.6.13.1_k8s-coreengine-develop",
+        "referenceFallback": "continuity5-coreengine-5.6.13.1_k8s-coreengine",
+        "expand": true
+      },
+      {
+        "type": "artifact",
+        "name": "upgrade-dbclient",
+        "reference": "continuity5-upgrade-dbclient-5.3.25.0-dbclient-develop",
+        "referenceFallback": "continuity5-upgrade-dbclient-5.3.25.0-dbclient",
+        "expand": true
+      },
+      {
+        "type": "artifact",
+        "name": "upgrade-requester",
+        "reference": "continuity5-upgrade-requester-5.3.25.0-requester-develop",
+        "referenceFallback": "continuity5-upgrade-requester-5.3.25.0-requester",
+        "expand": true
+      },
+      {
+        "type": "artifact",
+        "name": "upgrade-multiplexer",
+        "reference": "continuity5-upgrade-multiplexer-5.3.25.0-multiplexer-develop",
+        "referenceFallback": "continuity5-upgrade-multiplexer-5.3.25.0-multiplexer",
+        "expand": true
+      },
+      {
+        "type": "artifact",
+        "name": "upgrade-pairing",
+        "reference": "continuity5-upgrade-pairing-5.3.25.1_k8s-pairing-develop",
+        "referenceFallback": "continuity5-upgrade-pairing-5.3.25.1_k8s-pairing",
+        "expand": true
+      },
+      {
+        "type": "artifact",
+        "name": "upgrade-stripping",
+        "reference": "continuity5-upgrade-stripping-5.3.25.0-stripping-develop",
+        "referenceFallback": "continuity5-upgrade-stripping-5.3.25.0-stripping",
+        "expand": true
+      },
+      {
+        "type": "artifact",
+        "name": "upgrade-advancedreporting",
+        "reference": "continuity5-upgrade-advancedreporting-5.3.24.0-advancedreporting-develop",
+        "referenceFallback": "continuity5-upgrade-advancedreporting-5.3.24.0-advancedreporting",
+        "expand": true
+      },
+      {
+        "type": "artifact",
+        "name": "upgrade-dbtools",
+        "reference": "continuity5-upgrade-dbtools-5.3.23.0-dbtools-develop",
+        "referenceFallback": "continuity5-upgrade-dbtools-5.3.23.0-dbtools",
+        "expand": true
+      },
+      {
+        "type": "artifact",
+        "name": "upgrade-drchecksummigrator",
+        "reference": "continuity5-upgrade-drchecksummigrator-5.3.23.0-drchecksummigrator-develop",
+        "referenceFallback": "continuity5-upgrade-drchecksummigrator-5.3.23.0-drchecksummigrator",
+        "expand": true
+      },
+      {
+        "type": "artifact",
+        "name": "upgrade-predictionintegrator",
+        "reference": "continuity5-upgrade-predictionintegrator-5.3.21.0-predictionintegrator-develop",
+        "referenceFallback": "continuity5-upgrade-predictionintegrator-5.3.21.0-predictionintegrator",
+        "expand": true
+      },
+      {
+        "type": "artifact",
+        "name": "upgrade-fircocontractmapper",
+        "reference": "continuity5-upgrade-fircocontractmapper-5.3.25.0-fircocontractmapper-develop",
+        "referenceFallback": "continuity5-upgrade-fircocontractmapper-5.3.25.0-fircocontractmapper",
+        "expand": true
+      },
+      {
+        "type": "artifact",
+        "name": "upgrade-jsonutilities",
+        "reference": "continuity5-upgrade-jsonutilities-5.3.16.11-jsonutilities-develop",
+        "referenceFallback": "continuity5-upgrade-jsonutilities-5.3.16.11-jsonutilities",
+        "expand": true
+      },
+      {
+        "type": "artifact",
+        "name": "upgrade-mappingcasemanagerapi",
+        "reference": "continuity5-upgrade-mappingcasemanagerapi-5.3.16.3-mappingcasemanagerapi-develop",
+        "referenceFallback": "continuity5-upgrade-mappingcasemanagerapi-5.3.16.3-mappingcasemanagerapi",
+        "expand": true
+      },
+      {
+        "type": "artifact",
+        "name": "upgrade-mappinghttpstatus",
+        "reference": "continuity5-upgrade-mappinghttpstatus-5.3.16.12-mappinghttpstatus-develop",
+        "referenceFallback": "continuity5-upgrade-mappinghttpstatus-5.3.16.12-mappinghttpstatus",
+        "expand": true
+      },
+      {
+        "type": "artifact",
+        "name": "upgrade-mappingxmluniversal",
+        "reference": "continuity5-upgrade-mappingxmluniversal-5.3.25.1-mappingxmluniversal-develop",
+        "referenceFallback": "continuity5-upgrade-mappingxmluniversal-5.3.25.1-mappingxmluniversal",
+        "expand": true
+      },
+      {
+        "type": "artifact",
+        "name": "upgrade-archiving",
+        "reference": "continuity5-upgrade-archiving-5.3.25.0-archiving-develop",
+        "referenceFallback": "continuity5-upgrade-archiving-5.3.25.0-archiving",
+        "expand": true
+      },
+      {
+        "type": "artifact",
+        "name": "backend-k8s",
+        "reference": "continuity5-backend-k8s-5.3.25.1_k8s-backend-k8s-develop",
+        "expand": false
+      }
+    ],
+    "schemas": "e2e-121",
+    "thirdParties": {
+      "coreengine": "coreengine5.6.13.1_k8s"
+    },
+    "os": "centos7"
+  }
+}

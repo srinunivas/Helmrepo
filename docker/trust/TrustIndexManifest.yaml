@@ -1,0 +1,15 @@
+---
+manifests:
+  - docker/trust/batch/TrustBatchUnixODBCManifest.mjs
+  - docker/trust/batch/TrustBatchEasySoftManifest.mjs
+  - docker/trust/database/sqlserver/TrustDatabaseSqlServerManifest.yaml
+  - docker/trust/database/oracle/TrustDatabaseOracle19Manifest.yaml
+  - docker/trust/database/oracle/TrustDatabaseOracle12Manifest.yaml
+  - docker/trust/fsk/TrustFSKManifest.yaml
+  - docker/trust/fsk/TrustFSKMQ9Manifest.mjs
+  - docker/trust/verify/tomcat/TrustVerify5TomcatManifest.mjs
+  - docker/trust/verify/tomcat/TrustVerify4TomcatManifest.mjs
+  - docker/trust/verify/weblogic/TrustVerify5WeblogicManifest.mjs
+  - docker/trust/verify/weblogic/TrustVerify4WeblogicManifest.mjs
+  - docker/trust/verify/websphere/TrustVerify5WebsphereManifest.mjs
+  - docker/trust/verify/websphere/TrustVerify4WebsphereManifest.mjs

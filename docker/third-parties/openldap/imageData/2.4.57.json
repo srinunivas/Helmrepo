@@ -1,0 +1,14 @@
+{
+  "imageData" : {
+    "name" : "jenkins-deploy.fircosoft.net/third-parties/openldap:2.4.57",
+    "product": "third-parties",
+    "asset": "OpenLDAP",
+    "component": "server",
+    "version": "1.5.0",
+    "env": "release",
+    "autoBuild": true,
+    "autoPush": true,
+    "tags": [],
+    "dependencies": []
+  }
+}

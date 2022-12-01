@@ -1,0 +1,50 @@
+{
+  "imageData": {
+    "name": "jenkins-deploy.fircosoft.net/shared/fircosoft-base-rhel:8.3",
+    "buildOptions": ["--no-cache"],
+    "product": "shared",
+    "asset": "base-image",
+    "component": "rhel",
+    "version": "8.3",
+    "autoBuild": true,
+    "autoPush": true,
+    "tags": ["8", "8-latest", "latest"],
+    "dependencies": [
+      {
+        "type": "image",
+        "name": "base",
+        "reference": "jenkins-deploy.fircosoft.net/third-parties/ubi8:8.3"
+      },
+      {
+        "type": "artifact",
+        "name": "libnsl",
+        "reference": "linux-libnsl-2.28.x86",
+        "download": true
+      },
+      {
+        "type": "artifact",
+        "name": "mq_client",
+        "reference": "ibm-mq-client-9.2.0.1.x86_64",
+        "expand": true
+      },
+      {
+        "type": "artifact",
+        "name": "instantclient_basic",
+        "reference": "oracle-instantclient-basic-19.6.0.0.0.i386",
+        "download": true
+      },
+      {
+        "type": "artifact",
+        "name": "instantclient_sqlplus",
+        "reference": "oracle-instantclient-sqlplus-19.6.0.0.0-i386",
+        "download": true
+      },
+      {
+        "type": "artifact",
+        "name": "instantclient_odbc",
+        "reference": "oracle-instantclient-odbc-19.6.0.0.0.i386",
+        "download": true
+      }
+    ]
+  }
+}

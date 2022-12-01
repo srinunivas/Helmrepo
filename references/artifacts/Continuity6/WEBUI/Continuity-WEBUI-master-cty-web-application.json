@@ -1,0 +1,20 @@
+{
+  "artifact": {
+    "name": "Continuity-WEBUI-master-cty-web-application",
+    "buildDate": "20220314T114749Z",
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/cty/continuity.git",
+      "commit": "a40611af3e9ad5343e6c29553ae243c8c542470c",
+      "date": "20220314T114749Z"
+    },
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/Continuity-WEBUI/6.8.0.0.p64-develop-master/cty-web-application-6.8.0.0.p64.zip",
+    "product": "continuity6",
+    "asset": "WEBUI",
+    "component": "cty-web-application",
+    "version": "6.8.0.0",
+    "push": "64",
+    "latest": true,
+    "comment": "Continuity master verify web"
+  }
+}

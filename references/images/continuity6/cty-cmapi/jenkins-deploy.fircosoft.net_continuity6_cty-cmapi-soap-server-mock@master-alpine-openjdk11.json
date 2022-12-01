@@ -1,0 +1,33 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity6/cty-cmapi-soap-server-mock:master-alpine-openjdk11",
+    "product": "continuity6",
+    "asset": "cty-cmapi",
+    "version": "master",
+    "digest": "sha256:ea4183ff4c307a063452422472d6cb528ab20aafa0bd4860fefb024551c31b93",
+    "buildDate": "2022-02-24T11:22:29.875Z",
+    "labels": {
+      "asset": "cty-cmapi",
+      "component": "cmapi-soap-server-mock",
+      "maintainer": "RBI-DL Fircosoft Continuity Paris <FircosoftContinuityParis@reedbusiness.com>",
+      "product": "continuity6",
+      "version": "master",
+      "com.accuity.asset": "cty-cmapi",
+      "com.accuity.product": "continuity6",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "cmapi-soap-server-mock",
+      "com.accuity.product.vcs-ref": "a027415ca71b79a39b40058ec6868e68a55dcb26",
+      "com.accuity.product.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/cty/continuity.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "master",
+      "org.label-schema.build-date": "2021-04-29T07:15:29Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "continuity6 cty-cmapi cmapi-soap-server-mock master",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "8962bfbb078a32a5826043057bb6b4175423be18",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "master"
+    }
+  }
+}

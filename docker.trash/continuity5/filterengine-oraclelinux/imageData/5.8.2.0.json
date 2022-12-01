@@ -1,0 +1,17 @@
+{
+    "imageData" : { 
+        "name" : "jenkins-deploy.fircosoft.net/continuity5/filterengine-oraclelinux:5.8.2.0",
+        "dependencies" : [
+            {
+                "type"      : "image",
+                "name"      : "fircosoftBase",
+                "reference" : "jenkins-deploy.fircosoft.net/shared/fircosoft-base-oraclelinux:7-slim"
+            },
+            {
+                "type"      : "artifact",
+                "name"      : "filterengine",
+                "reference" : "filter-filter_engine-5.8.2.0-linux"
+            }
+        ]
+    }
+}

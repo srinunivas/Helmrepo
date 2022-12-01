@@ -1,0 +1,36 @@
+#!groovy
+
+node('docker-build') {
+  parameters {
+        string(name: 'IMAGE', defaultValue: '', description: 'Name of the Image to update.')
+    }
+    checkout scm
+    stage('Prepare shadoker-cli tool') {
+        sh """pushd shadoker
+pip3 install --user \$USER -r requirements.txt
+popd"""
+    }
+    try {
+      withEnv([
+        "DOCKER_CONFIG=${WORKSPACE}/.docker",
+        "DOCKER_CREDENTIALS=Jenkins2Portus",
+        "REGISTRY=jenkins-deploy.fircosoft.net"
+      ]) {
+        stage('Changed references') {
+          withCredentials([usernamePassword(credentialsId:"${DOCKER_CREDENTIALS}", passwordVariable: 'DOCKER_CREDS_PSW', usernameVariable: 'DOCKER_CREDS_USR')]) {
+            sh "echo \"${DOCKER_CREDS_PSW}\" | docker login --username \"${DOCKER_CREDS_USR}\" --password-stdin \"${REGISTRY}\""
+            if (params.IMAGE) {
+                cmd = './shadoker-cli.sh docker build -w -b ${BUILD_NUMBER} ${params.IMAGE}'
+                sh "$cmd"
+            } else {
+                sh "echo ERROR NO IMAGE PROVIDED"
+            }
+          }  
+        }
+      }
+    } catch (e) {
+        throw e
+    } finally {
+        sh 'echo done'
+    }
+}

@@ -1,0 +1,30 @@
+{
+  "imageData": {
+    "name": "jenkins-deploy.fircosoft.net/continuity5/jdbcproxy:5.6.13.1_k8s-alpinejre-11.0.11_9-openjdk11-develop",
+    "product": "continuity5",
+    "asset": "jdbcproxy",
+    "component": "jdbcproxy",
+    "version": "5.6.13.1_k8s",
+    "env": "develop",
+    "manifest": {
+      "entry": "docker/continuity5/backend/jdbcproxy/jdbcproxy.mjs",
+      "commit": "f7727acac7bd63a2402b7e411d027b45fd3f8cee"
+    },
+    "autoBuild": true,
+    "autoPush": true,
+    "tags": [],
+    "dependencies": [
+      {
+        "type": "artifact",
+        "name": "jdbcproxy",
+        "reference": "continuity5-jdbcproxy-5.6.13.1_k8s-jdbcproxy-develop",
+        "expand": false
+      }
+    ],
+    "schemas": "e2e-121",
+    "thirdParties": {
+      "java": "openjdk11"
+    },
+    "os": "alpinejre-11.0.11_9"
+  }
+}

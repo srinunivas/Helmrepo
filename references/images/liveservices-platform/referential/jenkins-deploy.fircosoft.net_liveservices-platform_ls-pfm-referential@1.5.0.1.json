@@ -1,0 +1,35 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/liveservices-platform/ls-pfm-referential:1.5.0.1",
+    "product": "liveservices-platform",
+    "asset": "referential",
+    "version": "1.5.0.1",
+    "digest": "sha256:54838e716ee9a87f3a3ccc13ba527814c804d0d57d849e2b37a200cad407bee3",
+    "buildDate": "2021-07-09T14:14:44.704Z",
+    "labels": {
+      "asset": "referential",
+      "com.accuity.asset": "referential",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "referential",
+      "com.accuity.product": "liveservices-platform",
+      "com.accuity.product.vcs-url": "ssh://git@bitbucket.fpa.rbxd.ds/ls/referential.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "1.5.0.1",
+      "maintainer": "Glauber ARAUJO <glauber.araujo@accuity.com>",
+      "org.label-schema.build-date": "20200809",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "liveservices-platform referential referential 1.5.0.1",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "208a0a3ed10f421ae93d9eba4f62cace2ec244ca",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "1.5.0.1",
+      "org.opencontainers.image.created": "2020-08-09 00:00:00+01:00",
+      "org.opencontainers.image.licenses": "GPL-2.0-only",
+      "org.opencontainers.image.title": "CentOS Base Image",
+      "org.opencontainers.image.vendor": "CentOS",
+      "product": "liveservices-platform",
+      "version": "1.5.0.1"
+    }
+  }
+}

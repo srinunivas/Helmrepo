@@ -1,0 +1,9 @@
+{
+  "artifact": {
+    "name": "Example-UnitTest-1.2",
+    "product": "Example",
+    "asset": "UnitTest",
+    "version": "1.2",
+    "env": "increment"
+  }
+}

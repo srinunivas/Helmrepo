@@ -1,0 +1,19 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/erf/samnet-cty:4.0.BETA-OEL7",
+    "product": "erf",
+    "asset": "samnet-cty",
+    "version": "Beta.4.0",
+    "digest": "sha256:793c1124dcc10997fdbd750d345f1dacef47ca6981b916111b15b6848f48907b",
+    "buildDate": "2020-10-20T08:49:21.395Z",
+    "labels": {
+      "asset": "samnet-cty",
+      "com.accuity.asset": "samnet-cty",
+      "com.accuity.product": "erf",
+      "maintainer": "RBI-DL Fircosoft Continuity Paris <FircosoftContinuityParis@reedbusiness.com>",
+      "product": "erf",
+      "push": "Beta.4-oel7",
+      "version": "Beta.4.0"
+    }
+  }
+}

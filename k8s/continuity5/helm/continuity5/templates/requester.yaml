@@ -1,0 +1,156 @@
+{{- range $key, $value := .Values.requesters }}
+---
+# mount this configmap in /fircosoft/www/dapr
+# it contains the response to dapr to the /dapr/subscribe end point
+# and tells dapr which topic to consume
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $key }}-cfgd
+  labels:
+    {{- include "continuity5.labels" $ | nindent 4 }}
+data:
+  subscribe: |
+    {{- include "continuity5.subscribe" $value | nindent 4 }}
+---
+# mount this configmap in /fircosoft/config
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $key }}-cfg
+  labels:
+    {{- include "continuity5.labels" $ | nindent 4 }}
+data:
+  fof.cfg: |
+    LOGSTDOUT
+    VERBOSE=99
+    NOLOG=Y
+    NOSTAT
+    MAINT=.
+    DATA=.
+    REFERENCE=/fircosoft/refdata/{{ $value.refDataFolder }}
+    REFRULES=/fircosoft/refdata/{{ $value.refDataFolder }}
+    RESOURCES=/fircosoft/refdata/{{ $value.refDataFolder }}/fkof.res
+    RULESNAME=fml
+    SERVICE=5500
+    {{ $value.filterConfiguration | nindent 4 }}
+  routing.rule: |
+    {{ include "continuity5.routingRule" $value | nindent 4 }}
+  config.cfg: |
+    {{- include "continuity5.sharedConfiguration" $value | nindent 4 }}
+    fkscript ContinuityRequester.kl
+    filter FILTER FML localhost:5500
+    {{- include "continuity5.inputConnectionPoint" $ | nindent 4 -}}
+    {{- include "continuity5.ouputConnectionPoints" $value | nindent 4 }}
+    set FORMAT_IN "{{ $value.input.format }}"
+    run j "requester" by 1 forever timeout 0
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $key }}
+  labels:
+    {{- include "continuity5.labels" $ | nindent 4 }}
+    app.kubernetes.io/component: "requester"
+spec:
+  {{- if not $.Values.autoscaling.enabled }}
+  replicas: {{ $value.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "continuity5.selectorLabels" $ | nindent 6 }}
+  template:
+    metadata:
+      annotations:
+        checksum/config: "{{ toYaml $value | sha256sum }}"
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "requester-{{ $key }}"
+        dapr.io/app-max-concurrency: "1"
+      {{- with $.Values.podAnnotations }}
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "continuity5.selectorLabels" $ | nindent 8 }}
+    spec:
+      {{- with $.Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "continuity5.serviceAccountName" $ }}
+      securityContext:
+        {{- toYaml $.Values.podSecurityContext | nindent 8 }}
+      volumes:
+        - name: firco-shared
+          configMap:
+            name: firco-shared
+        - name: {{ $key }}-cfg
+          configMap:
+            name: {{ $key }}-cfg
+        - name: {{ $key }}-cfgd
+          configMap:
+            name: {{ $key }}-cfgd
+        - name: filter-refdata-volume
+          persistentVolumeClaim:
+            claimName: {{ .persistentVolumeClaimName }}
+      containers:
+        - name: "requester"
+          securityContext:
+            {{- toYaml $.Values.securityContext | nindent 12 }}
+          {{- with index $.Values.images $value.image }}
+          image: "{{ .backend }}"
+          imagePullPolicy: {{ .pullPolicy }}
+          {{- end }}
+          args: ["-s", "4", "2", "-options", "/fircosoft/config/config.cfg"]
+          volumeMounts:
+            - name: firco-shared
+              mountPath: "/fircosoft/shared"
+            - name: {{ $key }}-cfg
+              mountPath: "/fircosoft/config"
+            - name: {{ $key }}-cfgd
+              mountPath: "/fircosoft/www/dapr"
+          ports:
+            - name: http
+              containerPort: 5400
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 5400
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 5400
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          resources:
+            {{- toYaml $.Values.resources | nindent 12 }}
+        - name: filter
+          securityContext:
+            {{- toYaml $.Values.securityContext | nindent 12 }}
+          {{- with index $.Values.images $value.image }}
+          image: "{{ .filter }}"
+          imagePullPolicy: {{ .pullPolicy }}
+          {{- end }}
+          args: ["-OPTIONS=/fircosoft/config/fof.cfg"]
+          volumeMounts:
+            - name: firco-shared
+              mountPath: "/fircosoft/shared"
+            - name: {{ $key }}-cfg
+              mountPath: "/fircosoft/config"
+            - name: filter-refdata-volume
+              mountPath: "/fircosoft/refdata"
+      {{- with $.Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with $.Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with $.Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+{{- end }}

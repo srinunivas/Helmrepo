@@ -1,0 +1,36 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/filter/filter-engine:5.6.1.latest",
+    "product": "filter",
+    "asset": "filter-engine",
+    "version": "5.6.1.8",
+    "digest": "sha256:c5dfe87186c24478932c62b42f69a295ad8340ff728bfcfc0f5843bcc4fe9e21",
+    "buildDate": "2021-02-22T12:00:51.944Z",
+    "labels": {
+      "asset": "filter-engine",
+      "maintainer": "DevOps <devops@accuity.com>",
+      "product": "filter",
+      "push": "p22",
+      "version": "",
+      "com.accuity.asset": "filter-engine",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.dependencies.filter": "5.6.1.8",
+      "com.accuity.environment": "incremental",
+      "com.accuity.os": "oel7",
+      "com.accuity.product": "filter",
+      "com.accuity.product.vcs-branch": "5.6.1",
+      "com.accuity.product.vcs-ref": "26574636f",
+      "com.accuity.product.vcs-url": "ssh://git@bitbucket.fpa.rbxd.ds/fil/filter.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.version": "5.6.1.8",
+      "org.label-schema.build-date": "2021-02-22T11:06:03Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "filter filter-engine  5.6.1.8",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "aea24a18aa2809f3bec5fd66d3b73de9b7fcc6eb",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "5.6.1.8"
+    }
+  }
+}

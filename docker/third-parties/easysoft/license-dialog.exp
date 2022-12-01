@@ -1,0 +1,25 @@
+#!/usr/bin/expect
+
+set timeout 20
+
+spawn /usr/local/easysoft/license/licshell
+
+set finito 0
+
+expect {
+ -re "Option:.*" {
+    if { $finito!=0 } {
+      send -- "0\r"; exit
+    } else {
+      send -- "2\r"; exp_continue
+    }
+  }
+ -re "Name.*:.*" { send -- "Fircosoft\r"; exp_continue }
+ -re "Company.*:.*" { send -- "Fircosoft\r"; exp_continue }
+ -re "Email.*:.*" { send -- "devops@fircosoft.com\r"; exp_continue }
+ -re "Phone.*:.*" { send -- "\r"; exp_continue }
+ -re "Fax.*:.*" { send -- "\r"; exp_continue }
+ -re "Ref.*:.*" { send -- "\r"; exp_continue }
+ -re ".*Automatically by contacting the Easysoft License Daemon.*" { send -- "1\r"; exp_continue }
+ -re "A trial has already been issued for this machine, please contact Easysoft" { incr finito; exp_continue }
+}

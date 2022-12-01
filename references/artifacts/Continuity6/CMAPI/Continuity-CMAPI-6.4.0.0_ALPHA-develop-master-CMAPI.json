@@ -1,0 +1,20 @@
+{
+  "artifact": {
+    "name": "Continuity-CMAPI-master-CaseManagerAPI",
+    "buildDate": "20220311T093119Z",
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@dev-bitbucket.fircosoft.net:7999/cty/continuity.git",
+      "commit": "73e8b573a4fc018145b19f3acdbe647ed187c2fe",
+      "date": "20220311T093119Z"
+    },
+    "uri": "http://dev-nexus.fircosoft.net/content/sites/site-builds/Continuity-CMAPI/6.7.0.0_BETA.p0-develop-6.7.x/ContinuityCaseManagerAPI-6.7.0.0_BETA.p0.zip",
+    "product": "continuity6",
+    "asset": "CMAPI",
+    "component": "ContinuityCaseManagerAPI",
+    "version": "6.7.0.0_BETA",
+    "push": "0_BETA.0",
+    "latest": true,
+    "comment": "Continuity Case Manager API"
+  }
+}

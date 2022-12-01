@@ -1,0 +1,353 @@
+{{- range $key, $value := .Values.frontends.webAppServer }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $key }}-cfg
+  labels:
+    {{- include "continuity5.frontend.labels" $ | nindent 4 }}
+data:
+  server.xml: |
+    <?xml version="1.0" encoding="UTF-8"?>
+    <Server port="8005" shutdown="SHUTDOWN">
+      <Listener className="org.apache.catalina.startup.VersionLoggerListener" />
+      <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on" />
+      <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener" />
+      <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener" />
+      <Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener" />
+      <GlobalNamingResources>
+        <Resource name="UserDatabase" auth="Container"
+                  type="org.apache.catalina.UserDatabase"
+                  description="User database that can be updated and saved"
+                  factory="org.apache.catalina.users.MemoryUserDatabaseFactory"
+                  pathname="conf/tomcat-users.xml" />
+      </GlobalNamingResources>
+      <Service name="Catalina">
+        <Connector port="8080" protocol="HTTP/1.1"
+                  connectionTimeout="20000"
+                  redirectPort="8443" />
+        <Connector port="8443" protocol="org.apache.coyote.http11.Http11AprProtocol"
+                  maxThreads="150" SSLEnabled="true" >
+            <UpgradeProtocol className="org.apache.coyote.http2.Http2Protocol" />
+            <SSLHostConfig>
+                <Certificate certificateKeyFile="conf/fircosoft.key"
+                            certificateFile="conf/fircosoft.crt"
+                            type="RSA" />
+            </SSLHostConfig>
+        </Connector>
+        <Engine name="Catalina" defaultHost="localhost">
+          <Realm className="org.apache.catalina.realm.LockOutRealm">
+            <Realm className="org.apache.catalina.realm.UserDatabaseRealm"
+                  resourceName="UserDatabase"/>
+          </Realm>
+          <Host name="localhost"  appBase="webapps"
+                unpackWARs="true" autoDeploy="true">
+            <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
+                  prefix="localhost_access_log" suffix=".txt"
+                  pattern="%h %l %u %t &quot;%r&quot; %s %b" />
+            <Valve className="org.apache.catalina.valves.ErrorReportValve"
+                  showReport="false" 
+                  showServerInfo="false" 
+                  errorCode.0="/usr/local/tomcat/webapps/error.html" />
+          </Host>
+        </Engine>
+      </Service>
+    </Server>
+  context.xml: |
+    {{- with index $.Values.databases $value.database }}
+    <?xml version="1.0" encoding="UTF-8"?>
+    <Context>
+        <WatchedResource>WEB-INF/web.xml</WatchedResource>
+        <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
+        <WatchedResource>${catalina.base}/conf/cors.xml</WatchedResource>
+        <Resource name="jdbc/workflow"
+            auth="Container"
+            type="javax.sql.DataSource"
+            maxActive="100"
+            maxIdle="30"
+            maxWait="10000"
+            username="{{ .user }}"
+            password="{{ .password }}"
+            driverClassName="{{ .jdbcDriver }}"
+            url="{{ .jdbcUrl }}"
+            defaultAutoCommit="true" />
+        <Resource name="jdbc/application"
+            auth="Container"
+            type="javax.sql.DataSource"
+            maxActive="100"
+            maxIdle="30"
+            maxWait="10000"
+            username="{{ .user }}"
+            password="{{ .password }}"
+            driverClassName="{{ .jdbcDriver }}"
+            url="{{ .jdbcUrl }}"
+            defaultAutoCommit="true" />
+        <Resource name="jdbc/authentication"
+            auth="Container"
+            type="javax.sql.DataSource"
+            maxActive="100"
+            maxIdle="30"
+            maxWait="10000"
+            username="{{ .user }}"
+            password="{{ .password }}"
+            driverClassName="{{ .jdbcDriver }}"
+            url="{{ .jdbcUrl }}"
+            defaultAutoCommit="true" />
+    </Context>
+    {{- end }}
+  log4j2.xml: |
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE xml>
+    <Configuration>
+        <Properties>
+            <Property name="pattern">%-5p %d{dd/MM/yyyy HH:mm:ss} (%F:%L %X{threadId}:%X{sessionId}:%X{windowId}:%X{tx})          %m%n</Property>
+        </Properties>
+        <Appenders>
+
+            <!-- Note that the console appender and rolling file appender both use the same conversion pattern -->
+            <Console name="stdout">
+                <PatternLayout pattern="${pattern}"/>
+            </Console>
+
+            <!-- The daily rolling file appender writes to logs at a location specified by the FIRCO_LOG_DIR environment variable -->
+            <RollingFile name="rolling" fileName="${sys:firco.log.dir}/firco-platform.log" filePattern="${sys:firco.log.dir}/firco-platform.log.%d{yyyy-MM-dd}">
+                <PatternLayout pattern="${pattern}"/>
+                <TimeBasedTriggeringPolicy/>
+            </RollingFile>
+
+        </Appenders>
+        <Loggers>
+
+            <!--
+            PLATFORM LOGGING CONFIGURATION
+            Modify any of all of the appenders below in order to raise or lower logging levels in the Firco Platform.
+            Changing all ERROR levels to ERROR will set the Platform into standard ERROR mode.
+            -->
+
+            <Logger name="org.apache" level="error"/>
+
+            <!-- Raising these loggers to ERROR level will provide detailed logs of database traffic. -->
+            <Logger name="java.sql.PreparedStatement" level="error"/>
+            <Logger name="java.sql.Connection" level="error"/>
+            <Logger name="java.sql" level="error"/>
+
+            <!--
+            These loggers all control the output of core Firco Platform components - note that logging levels on ALL Controllers, Services,
+            etc will open up if these levels are changed - consequently, for more detailed tracking of behaviors, more specific loggers could
+            be defined (For example, the com.fircosoft.controllers.WorkflowController category will debug all interactions between the MVC framework
+            and the flow engine)
+            -->
+            <Logger name="com.fircosoft.config.DBClassLoader" level="error"/>
+            <Logger name="com.fircosoft.container" level="error"/>
+            <Logger name="com.fircosoft.container.PlatformDispatcher" level="error"/>
+            <Logger name="com.fircosoft.container.PlatformDispatcher.browserExpiryThread" level="error"/>
+            <Logger name="com.fircosoft.controllers" level="error"/>
+            <Logger name="com.fircosoft.controllers.remote" level="error"/>
+            <Logger name="com.fircosoft.controllers.WorkflowController" level="error"/>
+            <Logger name="com.fircosoft.core" level="error"/>
+            <Logger name="com.fircosoft.core.Environment" level="error"/>
+            <Logger name="com.fircosoft.core.Dispatcher" level="error"/>
+            <Logger name="com.fircosoft.core.XmlLoader" level="error"/>
+            <Logger name="com.fircosoft.deployment" level="error"/>
+            <Logger name="com.fircosoft.deployment.DeploymentServiceImpl" level="error"/>
+            <Logger name="com.fircosoft.helpers" level="error"/>
+            <Logger name="com.fircosoft.helpers.LocalizationHelper" level="error"/>
+            <Logger name="com.fircosoft.helpers.ScriptHelper" level="error"/>
+            <Logger name="com.fircosoft.helpers.SessionHelper" level="error"/>
+            <Logger name="com.fircosoft.helpers.SerializationHelper" level="error"/>
+            <Logger name="com.fircosoft.helpers.MessageCommentAndAttachmentHelper" level="error"/>
+            <Logger name="com.fircosoft.helpers.UserDisconnectionHelper" level="error"/>
+            <Logger name="com.fircosoft.helpers.CSRFTokenHelper" level="error"/>
+            <Logger name="com.fircosoft.helpers.HitParser" level="error"/>
+            <Logger name="com.fircosoft.models" level="error"/>
+            <Logger name="com.fircosoft.persistence" level="error"/>
+            <Logger name="com.fircosoft.services" level="error"/>
+            <Logger name="com.fircosoft.tags" level="error"/>
+            <Logger name="com.fircosoft.view" level="error"/>
+            <Logger name="com.fircosoft.workflow" level="error"/>
+            <Logger name="com.fircosoft.events" level="error"/>
+            <Logger name="com.fircosoft.events.AuthenticationListener" level="error"/>
+            <Logger name="com.fircosoft.events.DisconnectionListener" level="error"/>
+            <Logger name="com.fircosoft.security" level="error"/>
+
+            <Logger name="com.fircosoft.auth.radius" level="off"/>
+
+            <Logger name="net.jradius" level="error"/>
+
+
+            <!-- DO NOT MODIFY THIS SECTION -->
+
+            <!--
+            Spring framework logging categories are useful in cases where beans cannot be identified or loaded - but setting their
+            logging level to anything above ERROR will result in extremely verbose logs
+            -->
+            <Logger name="com.tcspring" level="error"/>
+            <Logger name="org.springframework" level="error"/>
+            <Logger name="org.springframework.web.context" level="error"/>
+            <Logger name="org.springframework.ws.server" level="error"/>
+            <Logger name="org.springframework.ws.server.endpoint" level="error"/>
+            <Logger name="org.springframework.jdbc.support" level="error"/>
+            <Logger name="org.springframework.jdbc.datasource.DataSourceTransactionManager" level="error"/>
+
+        <!-- Logging of Spring Security -->
+            <Logger name="org.springframework.security" level="error"/>
+
+            <!-- Logging of Spring Security extension saml -->
+            <Logger name="org.springframework.security.saml" level="error"/>
+    <!--         <Logger name="org.springframework.security.saml" level="trace"/> -->
+
+            <!-- Logging of SAML messages, set to FINEST to enable -->
+            <Logger name="PROTOCOL_MESSAGE" level="error"/>
+
+            <!-- Logging of OpenSAML library -->
+            <Logger name="org.opensaml" level="error"/>
+    <!--         <Logger name="org.opensaml" level="trace"/> -->
+            
+            <!-- The DWR logger is useful in the case where reverse AJAX feeds are not being generated correctly on the server -->
+            <Logger name="org.directwebremoting" level="error"/>
+
+            <!--
+            <Logger name="org.springframework.security.saml.provider.service.authentication" level="trace"/>
+            <Logger name="org.springframework.security.saml.provider.service.authentication.SamlAuthenticationResponseFilter" level="trace"/>
+            <Logger name="org.opensaml.xmlsec.signature" level="trace"/>
+            <Logger name="org.opensaml.xmlsec.signature.support.Signer" level="trace"/>
+            <Logger name="org.opensaml.xmlsec.signature.support.impl.provider.ApacheSantuarioSignerProviderImpl" level="trace"/>
+            <Logger name="org.apache.xml.security" level="trace"/>
+            <Logger name="org.apache.xml.security.signature.XMLSignature" level="trace"/>
+            -->
+            
+            <!--
+            The ResourceLoader is another logger that can be very useful in cases where core resource loading patterns are not behaving as
+            expected - but any level above ERROR will cause extreme verbosity.
+            -->
+            <Logger name="com.fircosoft.config.FircoResourceLoader" level="error"/>
+
+            <!-- DO NOT raise the logging level of this appender -->
+            <Logger name="com.ibatis" level="error"/>
+
+            <Root level="error">
+                <AppenderRef ref="stdout"/>
+                <AppenderRef ref="rolling"/>
+            </Root>
+        </Loggers>
+    </Configuration>
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $key }}
+  labels:
+    {{- include "continuity5.frontend.labels" $ | nindent 4 }}
+    app.kubernetes.io/component: "frontend"
+spec:
+  {{- if not $.Values.autoscaling.enabled }}
+  replicas: {{ $value.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "continuity5.frontend.selectorLabels" $ | nindent 6 }}
+  template:
+    metadata:
+      annotations:
+        checksum/config: "{{ toYaml $value | sha256sum }}"
+      {{- with $.Values.podAnnotations }}
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "continuity5.frontend.selectorLabels" $ | nindent 8 }}
+    spec:
+      {{- with $.Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "continuity5.serviceAccountName" $ }}
+      securityContext:
+        {{- toYaml $.Values.podSecurityContext | nindent 8 }}
+      volumes:
+        - name: {{ $key }}-cfg
+          configMap:
+            name: {{ $key }}-cfg
+            items:
+            - key: server.xml
+              path: server.xml
+            - key: context.xml
+              path: context.xml
+            - key: log4j2.xml
+              path: log4j2.xml
+      containers:
+        - name: "frontend"
+          securityContext:
+            {{- toYaml $.Values.securityContext | nindent 12 }}
+          {{- with index $.Values.images $value.image }}
+          image: "{{ .frontend }}"
+          imagePullPolicy: {{ .pullPolicy }}
+          {{- end }}
+          env:
+          {{- with index $.Values.databases $value.database }}
+          - name: DB_VENDOR
+            value: {{ .vendorName }}
+          - name: DB_USER
+            value: {{ .user }}
+          - name: DB_PASSWORD
+            value: {{ .password }}
+          - name: DB_URL
+            value: {{ .jdbcUrl }}
+          - name: DB_DRIVER
+            value: {{ .jdbcDriver }}
+          {{- end }}
+          - name: JAVA_OPTS
+            value:
+              -Dfirco.log.config=$CATALINA_HOME/conf/log4j2.xml 
+              -Dlog4j2.configurationFile=$CATALINA_HOME/conf/log4j2.xml
+          args: []
+          volumeMounts:
+            - name: {{ $key }}-cfg
+              mountPath: "/usr/local/tomcat/conf/server.xml"
+              subPath: server.xml
+            - name: {{ $key }}-cfg
+              mountPath: "/usr/local/tomcat/conf/context.xml"
+              subPath: context.xml
+            - name: {{ $key }}-cfg
+              mountPath: "/usr/local/tomcat/conf/log4j2.xml"
+              subPath: log4j2.xml
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+            - name: https
+              containerPort: 8443
+              protocol: TCP
+          # startupProbe:
+          #   httpGet:
+          #     path: /continuity
+          #     port: 8080
+          #   initialDelaySeconds: 60
+          #   failureThreshold: 20
+          #   periodSeconds: 5
+          # livenessProbe:
+          #   httpGet:
+          #     path: /continuity
+          #     port: 8080
+          #   initialDelaySeconds: 60
+          #   periodSeconds: 20
+          # readinessProbe:
+          #   httpGet:
+          #     path: /continuity
+          #     port: 8080
+          #   initialDelaySeconds: 60 
+          #   periodSeconds: 20
+          resources:
+            {{- toYaml $.Values.resources | nindent 12 }}
+      {{- with $.Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with $.Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with $.Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+{{- end }}

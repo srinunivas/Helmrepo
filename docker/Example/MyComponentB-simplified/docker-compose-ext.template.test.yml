@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+    sut:
+        build:
+            context: ./tests
+            dockerfile: Dockerfile.test
+        depends_on:
+            - mycomponentb
+        links:
+            - mycomponentb
+
+    mycomponentb:
+        image: {{name}}
+        ports:
+            - "80"

@@ -1,0 +1,19 @@
+{
+  "artifact": {
+    "name": "soc-local-agent-1.6.0.0",
+    "buildDate": "2021-11-05T13:54:02.3NZ",
+    "repository": {
+      "type": "git",
+      "url": "ssh://git@bitbucket.fpa.rbxd.ds/ls/agent.git",
+      "commit": "",
+      "date": ""
+    },
+    "uri": "http://nexus.fpa.rbxd.ds/content/repositories/snapshots/com/accuity/liveservices/ls-agent/1.6.0.0.66/ls-agent-1.6.0.0.66-local.zip",
+    "product": "liveservices-soc",
+    "asset": "soc-local-agent",
+    "component": "agent",
+    "version": "1.6.0.0",
+    "push": "66",
+    "latest": true
+  }
+}

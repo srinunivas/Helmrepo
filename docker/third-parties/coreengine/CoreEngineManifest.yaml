@@ -1,0 +1,16 @@
+#
+## CoreEngine Manifest for Linux i686
+---
+project: CoreEngine
+product: Third Parties
+asset: CoreEngine
+component: Linux
+buildDescFilenameFilterRegex: buildDesc-Linux-i686\.json$
+environments:
+  release:
+    generateLatestTags: true
+    generateArtifactFiles: true
+    branchPrefixFilter: release
+    artifacts:
+      - name: CoreEngine
+        filter: CoreEngine

@@ -1,0 +1,38 @@
+#+title: To do list for shadoker project
+
+Architecture chapter 28-Jan-2021
+* TODO add "env" for E2E-121 --> create a ticket
+* TODO set E2E-121 matrix as JSON file --> DEVOPS-1891
+
+PI8
+* Sprint 8.1
+* Sprint 8.2
+ * TODO DEVOPS-1441 automate artifact creation
+ * TODO DEVOPS-1288 Docker registry and shadoker builds housekeeping - step 1
+* Sprint 8.3
+* Sprint 8.4
+* Sprint 8.5
+* Sprint 8.6
+
+Backlog
+* TODO DEVOPS-1895 build tree order
+* TODO DEVOPS-1367 POC on Windows containers
+* TODO DEVOPS-1337 Run Linter before build
+* TODO DEVOPS-1146 split shadoker tool and repo
+* TODO DEVOPS-1002 Integrate FISSA in Jenkins job
+* TODO DEVOPS-1178 docker: portus: 3parties: restrict image push rights to devops only  
+* TODO DEVOPS-1180 loopback Docker image status into Build pipeline
+* TODO DEVOPS-1236 Templating of Docker resources
+* TODO DEVOPS-1289 dsl-jobs integration with shadoker
+* TODO DEVOPS-1311 AutoTest on image build
+* TODO DEVOPS-1320 More shadoker environment variables
+* TODO DEVOPS-1466 provide shadoker version/revision info into built Docker images
+* TODO DEVOPS-1540 register new artifact+image derived from existing ones
+* TODO DEVOPS-1570 check if artifact package already exists (same hash)
+* TODO DEVOPS-1606 improve docker image security
+
+Ideas garage
+* minimize rebuild when touching documentation files. Options are:
+ 1. inspect Dockerfile
+ 2. all resources in a separate sub-folder
+ 3. all documentation in a separate sub-folder

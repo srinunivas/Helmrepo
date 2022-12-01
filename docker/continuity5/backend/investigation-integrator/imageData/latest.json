@@ -1,0 +1,21 @@
+{
+    "imageData" : {
+        "name" : "jenkins-deploy.fircosoft.net/continuity5/investigation-integrator:latest",
+        "dependencies" : [
+            {
+                "type"      : "image",
+                "name"      : "fircobase",
+                "reference" : "jenkins-deploy.fircosoft.net/shared/fircobase:1.0-centos7"
+            },
+            {
+                "type"      : "artifact",
+                "name"      : "main",
+                "reference" : "investigation-integrator"
+            }
+        ],
+        "product": "continuity5",
+        "asset": "investigation-integrator",
+        "autoBuild": true,
+        "autoPush": true
+    }
+}

@@ -1,0 +1,34 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity6/requester:6.4.0.0_alpha-centos7-coreengine6.2.0.0-filter5.8.3.1",
+    "product": "continuity6",
+    "asset": "requester",
+    "version": "6.4.0.0_ALPHA",
+    "digest": "sha256:bd81482ae6bbdf63a83ddb675dba87f3c479051c9b05848f9634764e6248138d",
+    "buildDate": "2021-01-29T16:09:54.920Z",
+    "labels": {
+      "com.accuity.asset": "requester",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "Linux",
+      "com.accuity.environment": "release",
+      "com.accuity.os": "centos7",
+      "com.accuity.product": "continuity6",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.third-parties.coreengine": "coreengine6.2.0.0",
+      "com.accuity.third-parties.filter": "filter5.8.3.1",
+      "com.accuity.version": "6.4.0.0_ALPHA",
+      "org.label-schema.build-date": "2021-01-29T15:51:16Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "continuity6 requester Linux 6.4.0.0_ALPHA",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "a90f4530e9b5b651c069eccaf1ccc7300812dd74",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "6.4.0.0_ALPHA",
+      "org.opencontainers.image.created": "2020-11-13 00:00:00+00:00",
+      "org.opencontainers.image.licenses": "GPL-2.0-only",
+      "org.opencontainers.image.title": "CentOS Base Image",
+      "org.opencontainers.image.vendor": "CentOS"
+    }
+  }
+}

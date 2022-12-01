@@ -1,0 +1,34 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/third-parties/unixodbc:2.3.1-centos7-oracle12.1-easysoft3.5.1",
+    "product": "third-parties",
+    "asset": "unixodbc",
+    "version": "2.3.1-centos7-oracle12.1-easysoft3.5.1",
+    "digest": "sha256:9c3b1de8b7f14d3d0727c11ba69623cd83b10909d5a68dcc5ad04a64f2d9f32a",
+    "buildDate": "2021-05-20T09:05:30.711Z",
+    "labels": {
+      "com.accuity.asset": "unixodbc",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "easysoft",
+      "com.accuity.os": "centos7",
+      "com.accuity.product": "third-parties",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.third-parties.easy-soft": "easysoft3.5.1",
+      "com.accuity.third-parties.odbc-client": "oracle12.1",
+      "com.accuity.third-parties.odbc-manager": "unixodbc2.3.1",
+      "com.accuity.version": "2.3.1-centos7-oracle12.1-easysoft3.5.1",
+      "env.oracle-client.version": "12.1.0.2.0",
+      "env.os": "CentOS 7",
+      "env.unixodbc.version": "2.3.1",
+      "maintainer": "Sébastien Demanou <sebastien.demanou@accuity.com>",
+      "org.label-schema.build-date": "2021-05-20T09:04:35Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "third-parties unixodbc easysoft 2.3.1-centos7-oracle12.1-easysoft3.5.1",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "6adedca7d426c22739a3a4cfc53f7c6066b8f2b0",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "2.3.1-centos7-oracle12.1-easysoft3.5.1"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+    "artifact" : {
+        "name" : "Continuity-5.3.16.15_BTA-release-5.3.16.x-Sql-Main-Oracle",
+        "buildDate" : "23/02/2020",
+        "commit" : "0b7744cb9d6",
+        "uri" : "http://dev-nexus.fircosoft.net/content/sites/site-builds/Continuity/5.3.16.15_BTA.p2-release-5.3.16.x/Continuity-5.3.16.15_BTA.p2-Sql-Main-Oracle.tar.gz",
+        "product" : "continuity5",
+        "asset": "database",
+        "component": "oracle",
+        "prefix" : "release-5.3.16.x",
+        "version" : "5.3.16.15_BTA",
+        "push" : "p2",
+        "comment" : ""
+        }
+}

@@ -1,0 +1,40 @@
+{
+  "image": {
+    "name": "jenkins-deploy.fircosoft.net/continuity5/dbtools:5.3.27.0-centos7-coreengine5.6.12.0-oracleclient19.6-webspheremq9.1.3-fircobase1.0-continuity5.3.27.0",
+    "product": "continuity5",
+    "asset": "dbtools",
+    "version": "5.3.27.0",
+    "digest": "sha256:27fa817f5f54f12bf3ed44445f71b7d85bdf5d805b63f06c680525ffe7a36d3e",
+    "buildDate": "2022-02-22T13:06:18.031Z",
+    "labels": {
+      "com.accuity.asset": "dbtools",
+      "com.accuity.build-tool": "shadoker",
+      "com.accuity.component": "dbtools",
+      "com.accuity.dependencies.coreengine": "COREENGINE5.6.12.0",
+      "com.accuity.environment": "release",
+      "com.accuity.os": "centos7",
+      "com.accuity.product": "continuity5",
+      "com.accuity.product.vcs-branch": "release/5.3.x",
+      "com.accuity.product.vcs-ref": "c733e1f748003ad7379ff47570ff924de10ea9ef",
+      "com.accuity.product.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/cty/continuity.git",
+      "com.accuity.schema-version": "ALC-1.0.0",
+      "com.accuity.third-parties.coreengine": "coreengine5.6.12.0",
+      "com.accuity.third-parties.mq-client": "webspheremq9.1.3",
+      "com.accuity.third-parties.odbc-client": "oracleclient19.6",
+      "com.accuity.version": "5.3.27.0",
+      "maintainer": "Emmanuel MESSEGUE <emmanuel.messegue@fircosoft.com>",
+      "org.label-schema.build-date": "2021-02-05T13:23:35Z",
+      "org.label-schema.license": "Fircosoft",
+      "org.label-schema.name": "continuity5 dbtools dbtools 5.3.27.0",
+      "org.label-schema.schema-version": "1.0.0-rc.1",
+      "org.label-schema.vcs-ref": "9cff4be26387bf827372bd42a6752d3ed7f51d8c",
+      "org.label-schema.vcs-url": "ssh://git@dev-bitbucket.fircosoft.net:7999/fir/shadoker.git",
+      "org.label-schema.vendor": "Fircosoft",
+      "org.label-schema.version": "5.3.27.0",
+      "org.opencontainers.image.created": "2020-11-13 00:00:00+00:00",
+      "org.opencontainers.image.licenses": "GPL-2.0-only",
+      "org.opencontainers.image.title": "CentOS Base Image",
+      "org.opencontainers.image.vendor": "CentOS"
+    }
+  }
+}

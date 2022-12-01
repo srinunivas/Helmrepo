@@ -1,0 +1,12 @@
+{
+    "imageData" : {
+        "name" : "jenkins-deploy.fircosoft.net/example/mycomponentb:1.0",
+        "dependencies" : [
+            {
+                "type"      : "artifact",
+                "name"      : "main",
+                "reference" : "Example-MyComponentB-latest"
+            }
+        ]
+    }
+}
